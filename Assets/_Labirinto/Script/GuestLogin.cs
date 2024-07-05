@@ -18,18 +18,26 @@ public class GuestLogin : MonoBehaviour
             if (response.success)
             {
                 gotResponse = true;
-                UIManager.Instance.ShowUsername();
+                
+                if (PlayerPrefs.HasKey("Username"))
+                {
+                    UIManager.Instance.ShowHome();
+                }
+                else
+                {
+                    UIManager.Instance.ShowUsername();
+                }
             }
             else
             {
                 gotResponse = true;
-                 Debug.LogError("Guest login failed: " + response.errorData);
+                Debug.LogError("Guest login failed: " + response.errorData);
             }
         });
         yield return new WaitWhile(() => gotResponse == false);
     }
 
-
+    // this login is will not wait for the response of lootlocker, offline login
     public bool isLoggedIn;
     public void SimpleGuestLogin()
     {

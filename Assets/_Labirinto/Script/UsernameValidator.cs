@@ -21,12 +21,11 @@ public class UsernameValidator : MonoBehaviour
         {
             StartCoroutine( ValidateUsername(usernameInputField.text));
             Debug.Log("Initiated username validation: " + username);
-
-            string storedUsername = PlayerPrefs.GetString("Username", "DefaultUsername");
-            Debug.Log("Retrieved Username: " + storedUsername);
+            UIManager.Instance.ShowHome();
         }
         else {
             SetTemporaryUsername(username);
+            UIManager.Instance.ShowHome();
         }
     }
 
