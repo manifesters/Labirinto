@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIManager : SingletonMonobehaviour<UIManager>
+public class CanvasManager : SingletonMonobehaviour<CanvasManager>
 {
 
     public Canvas splashCanvas;
@@ -15,11 +15,6 @@ public class UIManager : SingletonMonobehaviour<UIManager>
     private void Start() {
         ShowSplash();
     }
-
-    // SCENE
-
-    
-    //CANVAS
 
     public void ShowSplash()
     {
