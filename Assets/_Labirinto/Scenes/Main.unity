@@ -253,11 +253,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 244685830}
-  - component: {fileID: 244685831}
+  - component: {fileID: 244685834}
   - component: {fileID: 244685832}
   - component: {fileID: 244685833}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: CanvasManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,22 +278,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2044296421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &244685831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244685829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff1d9b5c23f2f180ab050f7a79940039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 0
-  splashCanvas: {fileID: 657180233}
-  usernameCanvas: {fileID: 1303273191}
-  homeCanvas: {fileID: 1961245650}
 --- !u!114 &244685832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +304,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usernameInputField: {fileID: 1115115394}
+--- !u!114 &244685834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244685829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1d9b5c23f2f180ab050f7a79940039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 0
+  splashCanvas: {fileID: 657180233}
+  usernameCanvas: {fileID: 1303273191}
+  homeCanvas: {fileID: 1961245650}
 --- !u!1 &319325022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3610,7 +3610,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 244685832}
         m_TargetAssemblyTypeName: GuestLogin, Assembly-CSharp
-        m_MethodName: Login
+        m_MethodName: SimpleGuestLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

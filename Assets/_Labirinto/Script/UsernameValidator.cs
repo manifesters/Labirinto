@@ -21,11 +21,11 @@ public class UsernameValidator : MonoBehaviour
         {
             StartCoroutine( ValidateUsername(usernameInputField.text));
             Debug.Log("Initiated username validation: " + username);
-            UIManager.Instance.ShowHome();
+            CanvasManager.Instance.ShowHome();
         }
         else {
             SetTemporaryUsername(username);
-            UIManager.Instance.ShowHome();
+            CanvasManager.Instance.ShowHome();
         }
     }
 

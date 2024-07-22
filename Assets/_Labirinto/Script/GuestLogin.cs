@@ -21,11 +21,11 @@ public class GuestLogin : MonoBehaviour
                 
                 if (PlayerPrefs.HasKey("Username"))
                 {
-                    UIManager.Instance.ShowHome();
+                    CanvasManager.Instance.ShowHome();
                 }
                 else
                 {
-                    UIManager.Instance.ShowUsername();
+                    CanvasManager.Instance.ShowUsername();
                 }
             }
             else
@@ -42,6 +42,6 @@ public class GuestLogin : MonoBehaviour
     public void SimpleGuestLogin()
     {
         LootLockerSDKManager.StartGuestSession((response) => {if(response.success) isLoggedIn = true; });
-        UIManager.Instance.ShowUsername();
+        CanvasManager.Instance.ShowUsername();
     }
 }
