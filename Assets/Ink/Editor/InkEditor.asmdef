@@ -1,16 +1,19 @@
 {
     "name": "InkEditor",
+    "rootNamespace": "",
     "references": [
         "Ink-Libraries"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [
-        "Editor"
+        "Editor",
+        "LinuxStandalone64"
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": []
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

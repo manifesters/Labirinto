@@ -26,6 +26,10 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Labirinto.DialogueSystem.DialogueManager.Instance.dialogueIsPlaying)
+        {
+            return;
+        }
         playerRb.MovePosition(playerRb.position + input * movementSpeed * Time.fixedDeltaTime);
     }
 }
