@@ -11,21 +11,21 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Water
+  - Ground
+  - HighGround
+  - LowGround
+  - Path
+  - Rocks
+  - Trees
+  - Decoration
+  - Wall
+  - Sand
+  - Structure
+  - River
+  - Character
+  - NPC
+  - Shadow
   - 
   - 
   - 
@@ -40,4 +40,61 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Water
+    uniqueID: 2300338077
+    locked: 0
+  - name: Ground
+    uniqueID: 3975676613
+    locked: 0
+  - name: LowGround
+    uniqueID: 2623828917
+    locked: 0
+  - name: Grass
+    uniqueID: 2850481143
+    locked: 0
+  - name: Sand
+    uniqueID: 1636386777
+    locked: 0
+  - name: HighGround
+    uniqueID: 645037191
+    locked: 0
+  - name: Path
+    uniqueID: 3508570087
+    locked: 0
+  - name: Rocks
+    uniqueID: 1882712687
+    locked: 0
+  - name: Wall
+    uniqueID: 652167291
+    locked: 0
+  - name: Shadow
+    uniqueID: 3238633155
+    locked: 0
+  - name: Trees
+    uniqueID: 3004637539
+    locked: 0
+  - name: Plants
+    uniqueID: 4281594109
+    locked: 0
+  - name: Decoration
+    uniqueID: 142445469
+    locked: 0
+  - name: Building
+    uniqueID: 1510522559
+    locked: 0
+  - name: Structure
+    uniqueID: 663408791
+    locked: 0
+  - name: River
+    uniqueID: 18657363
+    locked: 0
+  - name: MiidleGround
+    uniqueID: 235502623
+    locked: 0
+  - name: Character
+    uniqueID: 1984342849
+    locked: 0
+  - name: NPC
+    uniqueID: 675748349
     locked: 0
