@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PanelManager : BasicSingleton<PanelManager>
+public class PanelManager : SingletonMonobehaviour<PanelManager>
 {
     private List<PanelInstanceModel> _listInstances = new List<PanelInstanceModel>();
 
@@ -10,6 +10,7 @@ public class PanelManager : BasicSingleton<PanelManager>
 
     private void Start() {
         _objectPool = ObjectPool.Instance;
+        Debug.Log("Creata an instance of object pool");
     }
 
     public void ShowPanel(string panelID, PanelShowBehaviour behaviour = PanelShowBehaviour.KEEP_PREVIOUS)
@@ -59,9 +60,9 @@ public class PanelManager : BasicSingleton<PanelManager>
         }
     }
 
-    PanelInstanceModel GetLastPanel()
+    public PanelInstanceModel GetLastPanel()
     {
-        return _listInstances[_listInstances.Count - 1];
+         return _listInstances.Count > 0 ? _listInstances[_listInstances.Count - 1] : null;
     }
 
     public bool AnyPanelShowing()

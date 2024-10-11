@@ -5,13 +5,8 @@ public class CanvasManager : SingletonMonobehaviour<CanvasManager>
 {
 
     public Canvas splashCanvas;
-    public Canvas usernameCanvas;
-    public Canvas homeCanvas;
-
-     public override void Awake() {
-        base.Awake();
-    }
-
+    public Canvas authenticationCanvas;
+    
     private void Start() {
         ShowSplash();
     }
@@ -19,22 +14,19 @@ public class CanvasManager : SingletonMonobehaviour<CanvasManager>
     public void ShowSplash()
     {
         splashCanvas.gameObject.SetActive(true);
-        usernameCanvas.gameObject.SetActive(false);
-        homeCanvas.gameObject.SetActive(false);
+        authenticationCanvas.gameObject.SetActive(false);
     }
 
-    public void ShowUsername()
+    public void ShowAuthentication()
     {
         splashCanvas.gameObject.SetActive(false);
-        usernameCanvas.gameObject.SetActive(true);
-        homeCanvas.gameObject.SetActive(false);
+        authenticationCanvas.gameObject.SetActive(true);
     }
 
     public void ShowHome()
     {
         splashCanvas.gameObject.SetActive(false);
-        usernameCanvas.gameObject.SetActive(false);
-        homeCanvas.gameObject.SetActive(true);
+        authenticationCanvas.gameObject.SetActive(false);
     }
 
 }
