@@ -1,17 +1,21 @@
 using UnityEngine;
 
-public class SingletonMonobehaviour <T> : MonoBehaviour where T : MonoBehaviour
+namespace Helper
 {
-    private static T _instance;
-    public static T Instance => _instance;
-    public bool dontDestroyOnLoad = false;
-
-    public virtual void Awake() 
+    public class SingletonMonobehaviour <T> : MonoBehaviour where T : MonoBehaviour
     {
-        _instance = this as T;
-        if(dontDestroyOnLoad)
+        private static T _instance;
+        public static T Instance => _instance;
+        public bool dontDestroyOnLoad = false;
+
+        public virtual void Awake() 
         {
-            DontDestroyOnLoad(gameObject);
-        }    
+            _instance = this as T;
+            if(dontDestroyOnLoad)
+            {
+                DontDestroyOnLoad(gameObject);
+            }    
+        }
     }
 }
+

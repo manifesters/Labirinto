@@ -1,7 +1,9 @@
 using UnityEngine;
 
-public class BasicSingleton<T> : MonoBehaviour where T : MonoBehaviour
+namespace Helper
 {
+    public class BasicSingleton<T> : MonoBehaviour where T : MonoBehaviour
+    {
     private static T _instance;
     public static T Instance => _instance;
 
@@ -12,4 +14,6 @@ public class BasicSingleton<T> : MonoBehaviour where T : MonoBehaviour
             _instance = this as T;
         }
     }
+    }
 }
+

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Helper;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 namespace Labirinto.DialogueSystem
 {
-    public class DialogueManager : BasicSingleton<DialogueManager>
+    public class DialogueManager : SingletonMonobehaviour<DialogueManager>
     {   
         [Header("Params")]
         [SerializeField] private float typingSpeed = 0.04f;
@@ -31,7 +32,7 @@ namespace Labirinto.DialogueSystem
         private Coroutine displayLineCoroutine;
         private DialogueVariables dialogueVariables;
 
-        protected override void Awake()
+        public override void Awake()
         {
             base.Awake();
             dialogueVariables = new DialogueVariables(loadGlobalsJSON);

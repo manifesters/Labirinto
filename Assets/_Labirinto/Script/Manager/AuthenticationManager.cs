@@ -1,11 +1,12 @@
 using System.Collections;
+using Helper;
 using LootLocker.Requests;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
-namespace Name
+namespace Manager
 {
     public class AuthenticationManager : SingletonMonobehaviour<AuthenticationManager>
     {
