@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using DataPersistence;
 using UnityEngine;
@@ -15,6 +14,7 @@ public class SaveSlotsMenu : MonoBehaviour
 
     [Header("Confirmation Popup")]
     [SerializeField] private ConfirmationPopupMenu confirmationPopupMenu;
+    [SerializeField] private SavedNamePopupMenu savedNamePopupMenu;
 
     private SaveSlot[] saveSlots;
 
@@ -42,9 +42,22 @@ public class SaveSlotsMenu : MonoBehaviour
                 "Starting a New Game with this slot will override the currently saved data. Are you sure?",
                 // function to execute if we select 'yes'
                 () => {
-                    DataPersistenceManager.instance.ChangeSelectedProfileId(saveSlot.GetProfileId());
-                    DataPersistenceManager.instance.NewGame();
-                    SaveGameAndLoadScene();
+                    savedNamePopupMenu.ActivateMenu(
+                        "Enter save name",
+                        (inputText) => {
+                            // Handle the inputText when "Confirm" is pressed
+                            Debug.Log("User entered: " + inputText);
+                            // Proceed with game logic using inputText
+                            DataPersistenceManager.instance.ChangeSelectedProfileId(saveSlot.GetProfileId());
+                            DataPersistenceManager.instance.NewGame(inputText);
+                            SaveGameAndLoadScene();
+                        },
+                        // function to execute if we select 'cancel'
+                        () => {
+                            Debug.Log("Cancelled");
+                            this.ActivateMenu(isLoadingGame); // Re-activate if needed
+                        }
+                    );
                 },
                 // function to execute if we select 'cancel'
                 () => {
@@ -55,9 +68,22 @@ public class SaveSlotsMenu : MonoBehaviour
         // new game in slot whithout data
         else 
         {
-            DataPersistenceManager.instance.ChangeSelectedProfileId(saveSlot.GetProfileId());
-            DataPersistenceManager.instance.NewGame();
-            SaveGameAndLoadScene();
+            savedNamePopupMenu.ActivateMenu(
+                "Enter save name",
+                (inputText) => {
+                    // Handle the inputText when "Confirm" is pressed
+                    Debug.Log("User entered: " + inputText);
+                    // Proceed with game logic using inputText
+                    DataPersistenceManager.instance.ChangeSelectedProfileId(saveSlot.GetProfileId());
+                    DataPersistenceManager.instance.NewGame(inputText);
+                    SaveGameAndLoadScene();
+                },
+                // function to execute if we select 'cancel'
+                () => {
+                    Debug.Log("Cancelled");
+                    this.ActivateMenu(isLoadingGame); // Re-activate if needed
+                }
+            );
         }
     }
 

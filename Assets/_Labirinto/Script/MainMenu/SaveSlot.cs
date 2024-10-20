@@ -46,7 +46,7 @@ public class SaveSlot : MonoBehaviour
             clearButton.gameObject.SetActive(true);
 
             // TODO: player saved name
-            
+            playerSavedName.text = data.GetPlayerSavedName();
         }
     }
 
