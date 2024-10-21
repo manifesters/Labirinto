@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using Helper;
 using LootLocker.Requests;
 using TMPro;
@@ -41,7 +41,7 @@ namespace Manager
                     SendGuestLoginRequest();
                 }
                 yield return new WaitForSeconds(1f);
-            }
+            }   
         }
 
         public static void CheckForExistingSession()
@@ -115,6 +115,13 @@ namespace Manager
             }
         }
 
+        public void DeleteSession()
+        {
+			PlayerPrefs.DeleteAll();
+
+			// Optionally, log a message to confirm the action
+			Debug.Log("All PlayerPrefs have been deleted.");
+		}
         public static void ProceedToHome()
         {
             SceneManager.LoadScene("Main");
