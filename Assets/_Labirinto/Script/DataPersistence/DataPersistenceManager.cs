@@ -105,11 +105,12 @@ namespace DataPersistence
             }
         }
 
-        public void NewGame() 
+        public void NewGame(string playerSavedName) 
         {
             this.gameData = new GameData();
-            Debug.Log("New game data created");
-            
+            this.gameData.playerSavedName = playerSavedName;
+
+            Debug.Log("New game data created with save name: " + playerSavedName);
         }
 
         public void LoadGame()
@@ -122,13 +123,7 @@ namespace DataPersistence
 
             // load any saved data from a file using the data handler
             this.gameData = dataHandler.Load(selectedProfileId);
-
-            // start a new game if the data is null and we're configured to initialize data for debugging purposes
-            if (this.gameData == null && initializeDataIfNull) 
-            {
-                NewGame();
-            }
-
+            
             // if no data can be loaded, don't continue
             if (this.gameData == null) 
             {

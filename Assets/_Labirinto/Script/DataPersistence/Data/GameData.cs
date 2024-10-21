@@ -16,5 +16,10 @@ namespace DataPersistence
         {
             playerPosition = Vector2.zero;
         }
+
+        public string GetPlayerSavedName()
+        {
+            return playerSavedName;
+        }
     }
 }
