@@ -103,29 +103,29 @@ namespace Labirinto.DialogueSystem
         private void ContinueStory() 
         {
             if (currentStory.canContinue) 
-            {
-                // set text for the current dialogue line
-                if (displayLineCoroutine != null) 
                 {
-                    StopCoroutine(displayLineCoroutine);
-                }
-                string nextLine = currentStory.Continue();
-                
-                //if the last line is AnchoredJoint2D external function
-                if (nextLine.Equals("") && !currentStory.canContinue)
-                {
-                    StartCoroutine(ExitDialogueMode());
+                    // Get the next line of the story
+                    string nextLine = currentStory.Continue();
+
+                    // Display the next line
+                    if (displayLineCoroutine != null) 
+                    {
+                        StopCoroutine(displayLineCoroutine);
+                    }
+                    displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
+
+                    // Check for tags in the current line
+                    List<string> tags = currentStory.currentTags;
+                    foreach (string tag in tags) 
+                    {
+                        HandleTag(tag);
+                    }
                 }
                 else 
                 {
-                    displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
+                    Debug.Log("Exit Dialogue");
+                    StartCoroutine(ExitDialogueMode());
                 }
-            }
-            else 
-            {
-                Debug.Log("Exit Dialogue");
-                StartCoroutine(ExitDialogueMode());
-            }
         }
 
         private IEnumerator DisplayLine(string line) 
@@ -207,6 +207,33 @@ namespace Labirinto.DialogueSystem
                 currentStory.ChooseChoiceIndex(choiceIndex);
                 ContinueStory();
             }
+        }
+
+        private void HandleTag(string tag) 
+        {
+            switch (tag) 
+            {
+                case "START_CHALLENGE_QUIZ":
+                    Debug.Log("Enter a challenge");
+                    ShowChallengePanel("Panel_QuizWindow", PanelShowBehaviour.KEEP_PREVIOUS); 
+                    break;
+                 case "START_CHALLENGE_DRAGDROP":
+                    Debug.Log("Enter a challenge");
+                    ShowChallengePanel("Panel_DragDropWindow", PanelShowBehaviour.KEEP_PREVIOUS); 
+                    break;    
+                // Add more tags if necessary
+                default:
+                    Debug.Log("Unhandled tag: " + tag);
+                    break;
+            }
+        }
+
+        private void ShowChallengePanel(string panelID, PanelShowBehaviour behaviour = PanelShowBehaviour.KEEP_PREVIOUS) 
+        {
+            Debug.Log($"Starting the {panelID} challenge...");
+
+            // Call the PanelManager directly to show the panel
+            PanelManager.Instance.ShowPanel(panelID, behaviour);
         }
 
         public Ink.Runtime.Object GetVariableState(string variableName) 
