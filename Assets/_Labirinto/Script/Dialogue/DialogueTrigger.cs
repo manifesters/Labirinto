@@ -16,6 +16,9 @@ namespace Labirinto.DialogueSystem
         [Header("Ink JSON")]
         [SerializeField] private TextAsset inkJSON;
 
+        [Header("Quiz JSON")]
+        [SerializeField] public TextAsset quizJson;
+
         private RectTransform buttonRectTransform;
         private bool playerInRange;
 
@@ -38,7 +41,11 @@ namespace Labirinto.DialogueSystem
                 buttonRectTransform.anchoredPosition = new Vector2(280, -70);
 
                 npcButton.onClick.RemoveAllListeners();
-                npcButton.onClick.AddListener(() => DialogueManager.Instance.EnterDialogueMode(inkJSON));
+                npcButton.onClick.AddListener(() => 
+                {
+                    ChallengeManager.Instance.SetJson(quizJson);
+                    DialogueManager.Instance.EnterDialogueMode(inkJSON);
+                });
             }
             else 
             {

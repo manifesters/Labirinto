@@ -30,6 +30,7 @@ namespace Helper
                 var newInstance = Instantiate(prefab, Vector3.zero, Quaternion.identity, transform);
                 newInstance.transform.localPosition = Vector3.zero;
                 newInstance.name = objectName;
+                newInstance.SetActive(true);
                 return newInstance;
             }
             Debug.LogWarning("Object pool dont have a prefab for the object");
