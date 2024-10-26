@@ -3,48 +3,52 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 
-public class SavedNamePopupMenu : MonoBehaviour
+namespace MainMenu
 {
-    [Header("Components")]
-    [SerializeField] private TextMeshProUGUI displayText;
-    [SerializeField] private TMP_InputField nameInputField;
-    [SerializeField] private Button confirmButton;
-    [SerializeField] private Button cancelButton;
-
-    public void ActivateMenu(string displayText, UnityAction<string> confirmAction, UnityAction cancelAction)
+    public class SavedNamePopupMenu : MonoBehaviour
     {
-        this.gameObject.SetActive(true);
+        [Header("Components")]
+        [SerializeField] private TextMeshProUGUI displayText;
+        [SerializeField] private TMP_InputField nameInputField;
+        [SerializeField] private Button confirmButton;
+        [SerializeField] private Button cancelButton;
 
-        // Ensure the input field is cleared or has a default value
-        nameInputField.text = "";
+        public void ActivateMenu(string displayText, UnityAction<string> confirmAction, UnityAction cancelAction)
+        {
+            this.gameObject.SetActive(true);
 
-        // Remove any existing listeners to avoid duplication
-        confirmButton.onClick.RemoveAllListeners();
-        cancelButton.onClick.RemoveAllListeners();
+            // Ensure the input field is cleared or has a default value
+            nameInputField.text = "";
 
-        // Assign listeners
-        confirmButton.onClick.AddListener(() => {
-            string inputText = nameInputField.text; // Get the text from the input field
+            // Remove any existing listeners to avoid duplication
+            confirmButton.onClick.RemoveAllListeners();
+            cancelButton.onClick.RemoveAllListeners();
 
-            if (!string.IsNullOrEmpty(inputText)) // Ensure the input text is not blank
-            {
-                confirmAction(inputText);
+            // Assign listeners
+            confirmButton.onClick.AddListener(() => {
+                string inputText = nameInputField.text;
+
+                if (!string.IsNullOrEmpty(inputText)) 
+                {
+                    confirmAction(inputText);
+                    DeactivateMenu();
+                }
+                else
+                {
+                    Debug.Log("Player's name cannot be empty!");
+                }
+            });
+
+            cancelButton.onClick.AddListener(() => {
+                cancelAction();
                 DeactivateMenu();
-            }
-            else
-            {
-                Debug.Log("Player's name cannot be empty!"); // Optional: Add a prompt for empty input
-            }
-        });
+            });
+        }
 
-        cancelButton.onClick.AddListener(() => {
-            cancelAction();
-            DeactivateMenu();
-        });
-    }
-
-    private void DeactivateMenu()
-    {
-        this.gameObject.SetActive(false);
+        private void DeactivateMenu()
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 }
+

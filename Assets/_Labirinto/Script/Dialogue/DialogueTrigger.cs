@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+using Challenge;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Labirinto.DialogueSystem
+namespace Dialogue
 {
     public class DialogueTrigger : MonoBehaviour
     {

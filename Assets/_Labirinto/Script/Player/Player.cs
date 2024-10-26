@@ -39,7 +39,7 @@ namespace Player
         private void FixedUpdate()
         {
             // Stop player movement if a dialogue is playing
-            if (Labirinto.DialogueSystem.DialogueManager.Instance.dialogueIsPlaying)
+            if (Dialogue.DialogueManager.Instance.dialogueIsPlaying)
             {
                 return;
             }

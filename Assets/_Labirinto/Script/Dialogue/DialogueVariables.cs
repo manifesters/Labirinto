@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 
-namespace Labirinto.DialogueSystem
+namespace Dialogue
 {
     public class DialogueVariables
     {

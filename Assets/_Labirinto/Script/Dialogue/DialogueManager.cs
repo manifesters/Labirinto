@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Helper;
 using Ink.Runtime;
+using Panel;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Labirinto.DialogueSystem
+namespace Dialogue
 {
     public class DialogueManager : SingletonMonobehaviour<DialogueManager>
     {   

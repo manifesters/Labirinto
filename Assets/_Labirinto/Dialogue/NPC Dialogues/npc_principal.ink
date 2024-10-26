@@ -10,7 +10,20 @@ MAGANDANG UMAGA! Ikaw ba ay nagtataka?
 === oo_response ===
 Mahusay! Ang lugar na ito ay tinatawag na Labirinto. 
 Ito ay hindi lamang basta kasaysayan—ito ay isang pagsasalamin ng iyong sariling paglalakbay. 
-Haharapin mo ang mga pagsubok at matutuklasan mo ang mga lihim ng nakaraan. Handang-handa ka na ba?
+Haharapin mo ang mga pagsubok at matutuklasan mo ang mga lihim ng nakaraan. 
+Handa ka bang tanggapin ang hamon?
+    * [Tanggapin] -> accept_challenge
+    * [Tanggihan] -> decline_challenge
+
+=== accept_challenge ===
+Mahusay! Ngayon ay magsisimula na ang iyong pagsubok. 
+# START_CHALLENGE_QUIZ
+Congrats.
+-> END
+
+=== decline_challenge ===
+Naiintindihan ko. Hindi lahat ay handa sa mga hamon ng Labirinto. Babalik ka na lamang kung handa ka na. 
+# START_CHALLENGE_DRAGDROP
 -> END
 
 === hindi_response ===

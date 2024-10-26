@@ -1,5 +1,8 @@
-public enum PanelShowBehaviour
+namespace Panel
 {
-    KEEP_PREVIOUS,
-    HIDE_PREVIOUS
+    public enum PanelShowBehaviour
+    {
+        KEEP_PREVIOUS,
+        HIDE_PREVIOUS
+    }
 }

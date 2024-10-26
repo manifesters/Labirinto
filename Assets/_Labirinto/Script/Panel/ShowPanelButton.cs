@@ -1,21 +1,24 @@
 using UnityEngine;
 
-public class ShowPanelButton : MonoBehaviour
+namespace Panel
 {
-    public string PanelID;
-
-    public PanelShowBehaviour Behaviour;
-
-    private PanelManager _panelManager;
-
-    void Start()
+    public class ShowPanelButton : MonoBehaviour
     {
-        _panelManager = PanelManager.Instance;
-    }
+        public string PanelID;
 
-    public void DoShowPanel()
-    {
-        Debug.Log("The button is clicked");
-        _panelManager.ShowPanel(PanelID, Behaviour);
-    }
+        public PanelShowBehaviour Behaviour;
+
+        private PanelManager _panelManager;
+
+        void Start()
+        {
+            _panelManager = PanelManager.Instance;
+        }
+
+        public void DoShowPanel()
+        {
+            Debug.Log("The button is clicked");
+            _panelManager.ShowPanel(PanelID, Behaviour);
+        }
+    }   
 }

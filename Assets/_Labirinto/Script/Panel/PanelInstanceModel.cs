@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class PanelInstanceModel
+namespace Panel
 {
-    public string PanelID;
-    public GameObject PanelInstance;
+    public class PanelInstanceModel
+    {
+        public string PanelID;
+        public GameObject PanelInstance;
+    }   
 }

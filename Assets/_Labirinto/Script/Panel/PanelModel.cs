@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
 
-[Serializable]
-public class PanelModel
+namespace Panel
 {
-    public string PanelID;
-    public GameObject PanelPrefab;
+    [Serializable]
+    public class PanelModel
+    {
+        public string PanelID;
+        public GameObject PanelPrefab;
+    }
 }

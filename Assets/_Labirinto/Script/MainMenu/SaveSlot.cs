@@ -1,63 +1,62 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using DataPersistence;
 
-public class SaveSlot : MonoBehaviour
+namespace MainMenu
 {
-    [Header("Profile")]
-    [SerializeField] private string profileId = "";
-
-    [Header("Content")]
-    [SerializeField] private GameObject noDataContent;
-    [SerializeField] private GameObject hasDataContent;
-    [SerializeField] private TextMeshProUGUI playerSavedName;
-
-    [Header("Clear Data Button")]
-    [SerializeField] private Button clearButton;
-
-    public bool hasData { get; private set; } = false;
-
-    private Button saveSlotButton;
-
-    private void Awake() 
+    public class SaveSlot : MonoBehaviour
     {
-        saveSlotButton = this.GetComponent<Button>();
-    }
+        [Header("Profile")]
+        [SerializeField] private string profileId = "";
 
-    public void SetData(GameData data) 
-    {
-        // there's no data for this profileId
-        if (data == null) 
+        [Header("Content")]
+        [SerializeField] private GameObject noDataContent;
+        [SerializeField] private GameObject hasDataContent;
+        [SerializeField] private TextMeshProUGUI playerSavedName;
+
+        [Header("Clear Data Button")]
+        [SerializeField] private Button clearButton;
+
+        public bool hasData { get; private set; } = false;
+
+        private Button saveSlotButton;
+
+        private void Awake() 
         {
-            hasData = false;
-            noDataContent.SetActive(true);
-            hasDataContent.SetActive(false);
-            clearButton.gameObject.SetActive(false);
+            saveSlotButton = this.GetComponent<Button>();
         }
-        // there is data for this profileId
-        else 
+
+        public void SetData(GameData data) 
         {
-            hasData = true;
-            noDataContent.SetActive(false);
-            hasDataContent.SetActive(true);
-            clearButton.gameObject.SetActive(true);
-
-            // TODO: player saved name
-            playerSavedName.text = data.GetPlayerSavedName();
+            // there's no data for this profileId
+            if (data == null) 
+            {
+                hasData = false;
+                noDataContent.SetActive(true);
+                hasDataContent.SetActive(false);
+                clearButton.gameObject.SetActive(false);
+            }
+            // there is data for this profileId
+            else 
+            {
+                hasData = true;
+                noDataContent.SetActive(false);
+                hasDataContent.SetActive(true);
+                clearButton.gameObject.SetActive(true);
+                playerSavedName.text = data.GetPlayerSavedName();
+            }
         }
-    }
 
-    public string GetProfileId() 
-    {
-        return this.profileId;
-    }
+        public string GetProfileId() 
+        {
+            return this.profileId;
+        }
 
-    public void SetInteractable(bool interactable)
-    {
-        saveSlotButton.interactable = interactable;
-        clearButton.interactable = interactable;
-    }
+        public void SetInteractable(bool interactable)
+        {
+            saveSlotButton.interactable = interactable;
+            clearButton.interactable = interactable;
+        }
+    }   
 }

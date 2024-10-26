@@ -1,9 +1,10 @@
-    using System.Collections.Generic;
-    using System.Linq;
-    using Helper;
-    using UnityEngine;
+using System.Collections.Generic;
+using Helper;
+using UnityEngine;
 
-    public class PanelManager : SingletonMonobehaviour<PanelManager>
+namespace Panel
+{
+     public class PanelManager : SingletonMonobehaviour<PanelManager>
     {
         private List<PanelInstanceModel> _listInstances = new List<PanelInstanceModel>();
 
@@ -76,4 +77,5 @@
         {
             return _listInstances.Count;
         }
-    }
+    }   
+}

@@ -1,19 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HidePanelButton : MonoBehaviour
+namespace Panel
 {
-    private PanelManager _panelManager;
-
-    void Start()
+    public class HidePanelButton : MonoBehaviour
     {
-        _panelManager = PanelManager.Instance;
-    }
+        private PanelManager _panelManager;
 
-    public void DoHidePanel()
-    {
-        Debug.Log("The button is clicked");
-        _panelManager.HideLastPanel();
+        void Start()
+        {
+            _panelManager = PanelManager.Instance;
+        }
+
+        public void DoHidePanel()
+        {
+            Debug.Log("The button is clicked");
+            _panelManager.HideLastPanel();
+        }
     }
 }
+
