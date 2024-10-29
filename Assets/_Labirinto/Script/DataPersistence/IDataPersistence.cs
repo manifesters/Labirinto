@@ -5,6 +5,6 @@ namespace DataPersistence
 	public interface IDataPersistence
 	{
 		void LoadData(GameData data);
-		void SaveData(GameData playerData);
+		void SaveData(GameData data);
 	}
 }

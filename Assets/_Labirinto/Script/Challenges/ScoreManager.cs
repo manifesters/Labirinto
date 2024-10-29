@@ -1,35 +1,71 @@
+using DataPersistence;
+using Helper;
 using TMPro;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+namespace Score
 {
-    [SerializeField] private TextMeshProUGUI scoreText; // During game score display
-    private int score = 0;
-
-    // add points to the score
-    public void AddScore(int points)
+    public class ScoreManager : MonoBehaviour, IDataPersistence
     {
-        score += points;
-        UpdateScoreUI();
-    }
+        public static ScoreManager Instance { get; private set; }
+        [SerializeField] private TextMeshProUGUI scoreText;
+        private int score;
 
-    // deduct points from the score
-    public void DeductScore(int points)
-    {
-        score -= points;
-        if (score < 0) score = 0; // Ensure score doesn't go below 0
-        UpdateScoreUI();
-    }
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
 
-    // update the score UI during gameplay
-    private void UpdateScoreUI()
-    {
-        scoreText.text = "Score: " + score.ToString();
-    }
+        public void Start()
+        {
+            UpdateScoreUI();
+        }
 
-    // get the current score
-    public int GetCurrentScore()
-    {
-        return score;
-    }
+        public void AddScore(int points)
+        {
+            score += points;
+            UpdateScoreUI();
+        }
+
+        private void UpdateScoreUI()
+        {
+            if (scoreText == null)
+            {
+                scoreText = GameObject.Find("Score_Text")?.GetComponent<TextMeshProUGUI>();
+            }
+
+            if (scoreText != null)
+            {
+                scoreText.text = score.ToString();
+            }
+            else
+            {
+                Debug.LogWarning("ScoreText object not found in the current scene!");
+            }
+        }
+
+        public int GetCurrentScore()
+        {
+            return score;
+        }
+
+        public void LoadData(GameData data)
+        {
+            this.score = data.playerScore;
+            UpdateScoreUI();
+        }
+
+        public void SaveData(GameData data)
+        {
+            data.playerScore = score;
+        }
+    }   
 }

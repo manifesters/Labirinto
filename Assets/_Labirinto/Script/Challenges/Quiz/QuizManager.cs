@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using Newtonsoft.Json;
 using Challenge;
+using Score;
 
 namespace QuizChallenge
 {
@@ -18,6 +19,7 @@ namespace QuizChallenge
 
         private List<Question> questions;
         private int currentQuestionIndex = 0;
+        private readonly int scorePerQuestion = 10;
 
         void Start()
         {
@@ -95,6 +97,7 @@ namespace QuizChallenge
                 if (selectedAnswerIndex == currentQuestion.correctAnswerIndex)
                 {
                     // Handle correct answer (e.g., show feedback, increase score)
+                    ScoreManager.Instance.AddScore(scorePerQuestion); 
                     Debug.Log("Correct!");
                 }
                 else

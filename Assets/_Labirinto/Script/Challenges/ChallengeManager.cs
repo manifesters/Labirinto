@@ -1,3 +1,4 @@
+using Score;
 using UnityEngine;
 
 namespace Challenge
