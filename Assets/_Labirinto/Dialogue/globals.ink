@@ -1,1 +1,0 @@
-VAR npc_principal = false
