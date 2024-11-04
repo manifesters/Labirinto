@@ -33,6 +33,9 @@ namespace Dialogue
         private Coroutine displayLineCoroutine;
         private DialogueVariables dialogueVariables;
 
+        // Quest
+        private QuestPoint questPoint;
+
         public override void Awake()
         {
             base.Awake();
@@ -99,6 +102,7 @@ namespace Dialogue
             dialogueIsPlaying = false;
             dialoguePanel.SetActive(false);
             dialogueText.text = "";
+            GameEventsManager.Instance.storyEvents.TriggerOnDialogue();
         }
 
         private void ContinueStory() 
@@ -208,6 +212,11 @@ namespace Dialogue
                 currentStory.ChooseChoiceIndex(choiceIndex);
                 ContinueStory();
             }
+        }
+
+        public void SetQuestPoint(QuestPoint questPoint)
+        {
+            this.questPoint = questPoint;
         }
 
         private void HandleTag(string tag) 

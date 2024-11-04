@@ -16,7 +16,6 @@ namespace Manager
 
         public override void Awake()
         {
-            dontDestroyOnLoad = true;
             base.Awake();
         }
 

@@ -34,7 +34,7 @@ namespace MainMenu
             // if the game is loading
             if (isLoadingGame) 
             {
-                DataPersistenceManager.instance.ChangeSelectedProfileId(saveSlot.GetProfileId());
+                DataPersistenceManager.Instance.ChangeSelectedProfileId(saveSlot.GetProfileId());
                 SaveGameAndLoadScene();
             }
             // new game but has already a game data
@@ -76,8 +76,8 @@ namespace MainMenu
                         // Handle the inputText when "Confirm" is pressed
                         Debug.Log("User entered: " + inputText);
                         // Proceed with game logic using inputText
-                        DataPersistenceManager.instance.ChangeSelectedProfileId(saveSlot.GetProfileId());
-                        DataPersistenceManager.instance.NewGame(inputText);
+                        DataPersistenceManager.Instance.ChangeSelectedProfileId(saveSlot.GetProfileId());
+                        DataPersistenceManager.Instance.NewGame(inputText);
                         SaveGameAndLoadScene();
                     },
                     // function to execute if we select 'cancel'
@@ -92,7 +92,7 @@ namespace MainMenu
         private void SaveGameAndLoadScene() 
         {
             // save the game anytime before loading a new scene
-            DataPersistenceManager.instance.SaveGame();
+            DataPersistenceManager.Instance.SaveGame();
             // load the scene
             SceneManager.LoadSceneAsync("Labirinto");
         }
@@ -105,7 +105,7 @@ namespace MainMenu
                 "Are you sure you want to delete this saved data?",
                 // function to execute if we select 'yes'
                 () => {
-                    DataPersistenceManager.instance.DeleteProfileData(saveSlot.GetProfileId());
+                    DataPersistenceManager.Instance.DeleteProfileData(saveSlot.GetProfileId());
                     ActivateMenu(isLoadingGame);
                 },
                 // function to execute if we select 'cancel'
@@ -130,7 +130,7 @@ namespace MainMenu
             this.isLoadingGame = isLoadingGame;
 
             // load all of the profiles that exist
-            Dictionary<string, GameData> profilesGameData = DataPersistenceManager.instance.GetAllProfilesGameData();
+            Dictionary<string, GameData> profilesGameData = DataPersistenceManager.Instance.GetAllProfilesGameData();
 
             // ensure the back button is enabled when we activate the menu
             backButton.interactable = true;

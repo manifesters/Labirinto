@@ -23,7 +23,7 @@ namespace MainMenu
 
         private void DisableButtonsDependingOnData() 
         {
-            if (!DataPersistenceManager.instance.HasGameData()) 
+            if (!DataPersistenceManager.Instance.HasGameData()) 
             {
                 continueGameButton.interactable = false;
                 loadGameButton.interactable = false;
@@ -46,7 +46,7 @@ namespace MainMenu
         {
             DisableMenuButtons();
             // save the game anytime before loading a new scene
-            DataPersistenceManager.instance.SaveGame();
+            DataPersistenceManager.Instance.SaveGame();
             // load the next scene - which will in turn load the game because of 
             // OnSceneLoaded() in the DataPersistenceManager
             SceneManager.LoadSceneAsync("Labirinto");

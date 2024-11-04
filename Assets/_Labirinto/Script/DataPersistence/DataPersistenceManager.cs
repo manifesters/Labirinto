@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
-using DataPersistence;
+using Helper;
 
 namespace DataPersistence
 {
-    public class DataPersistenceManager : MonoBehaviour
+    public class DataPersistenceManager : SingletonMonobehaviour<DataPersistenceManager>
     {   
         [Header("Debugging")]
         [SerializeField] private bool disableDataPersistence = false;
@@ -34,14 +34,16 @@ namespace DataPersistence
 
         private void Awake() 
         {
-            if (instance != null) 
+            // Call the base SingletonMonobehaviour's Awake method
+            base.Awake();
+
+            // Prevent duplicate instances of the singleton
+            if (Instance != this) 
             {
                 Debug.Log("Found more than one Data Persistence Manager in the scene. Destroying the newest one.");
                 Destroy(this.gameObject);
                 return;
             }
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
 
             if (disableDataPersistence) 
             {
@@ -109,6 +111,8 @@ namespace DataPersistence
         {
             this.gameData = new GameData();
             this.gameData.playerSavedName = playerSavedName;
+
+            GameEventsManager.Instance.questEvents.StartQuest("InteractWithNPCQuest");
 
             Debug.Log("New game data created with save name: " + playerSavedName);
         }
