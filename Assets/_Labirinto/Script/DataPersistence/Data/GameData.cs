@@ -1,8 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 namespace DataPersistence
 {
+
+    [System.Serializable]
+    public class QuestDataEntry
+    {
+        public string questName;
+        public string questStatus;
+    }
+
     [System.Serializable]
     public class GameData
     {
@@ -12,11 +20,15 @@ namespace DataPersistence
         public string playerSavedName;
         public int playerScore;
         public Vector2 playerPosition;
+
+        // Quest
+        public List<QuestDataEntry> questDataEntries;
         
         public GameData()
         {
             playerPosition = Vector2.zero;
             playerScore = 0;
+            questDataEntries = new List<QuestDataEntry>();
         }
 
         public string GetPlayerSavedName()

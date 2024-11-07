@@ -1,9 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Helper;
+using DataPersistence;
+using System.Linq;
 
-public class QuestManager : SingletonMonobehaviour<QuestManager>
+public class QuestManager : SingletonMonobehaviour<QuestManager>, IDataPersistence
 {
     [Header("Config")]
     [SerializeField] private bool loadQuestState = true;
@@ -16,7 +17,8 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>
 
         if (Instance == this)
         {
-            questMap = CreateQuestMap();
+            Debug.Log("Created the default");
+            questMap = CreateDefaultQuestMap();
         }
     }
 
@@ -125,7 +127,7 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>
         ChangeQuestState(id, quest.state);
     }
 
-    private Dictionary<string, Quest> CreateQuestMap()
+    private Dictionary<string, Quest> CreateQuestMap(GameData data)
     {
         QuestInfoSO[] allQuests = Resources.LoadAll<QuestInfoSO>("Quests");
         Dictionary<string, Quest> idToQuestMap = new Dictionary<string, Quest>();
@@ -136,11 +138,29 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>
             {
                 Debug.LogWarning("Duplicate ID found when creating quest map: " + questInfo.id);
             }
-            idToQuestMap.Add(questInfo.id, LoadQuest(questInfo));
+            idToQuestMap.Add(questInfo.id, LoadQuest(questInfo, data));
         }
-
+        Debug.Log("Questmap from quest entries in game data is loaded");
         return idToQuestMap;
     }
+
+    // create default quest map if the questDataEntries is null
+    private Dictionary<string, Quest> CreateDefaultQuestMap()
+    {
+        QuestInfoSO[] allQuests = Resources.LoadAll<QuestInfoSO>("Quests");
+        Dictionary<string, Quest> idToQuestMap = new Dictionary<string, Quest>();
+
+        foreach (QuestInfoSO questInfo in allQuests)
+        {
+            if (idToQuestMap.ContainsKey(questInfo.id))
+            {
+                Debug.LogWarning("Duplicate ID found when creating quest map: " + questInfo.id);
+            }
+            idToQuestMap.Add(questInfo.id, new Quest(questInfo));
+        }
+        Debug.Log("Default questmap is loaded");
+        return idToQuestMap;
+    } 
 
     private Quest GetQuestById(string id)
     {
@@ -152,38 +172,16 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>
         return quest;
     }
 
-    private void OnApplicationQuit()
-    {
-        foreach (Quest quest in questMap.Values)
-        {
-            SaveQuest(quest);
-        }
-    }
-
-    private void SaveQuest(Quest quest)
-    {
-        try 
-        {
-            QuestData questData = quest.GetQuestData();
-            string serializedData = JsonUtility.ToJson(questData);
-            PlayerPrefs.SetString(quest.info.id, serializedData);
-
-            Debug.Log(serializedData);
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogError("Failed to save quest with id " + quest.info.id + ": " + e);
-        }
-    }
-
-    private Quest LoadQuest(QuestInfoSO questInfo)
+    private Quest LoadQuest(QuestInfoSO questInfo, GameData data)
     {
         Quest quest = null;
         try 
         {
-            if (PlayerPrefs.HasKey(questInfo.id) && loadQuestState)
+            if (data.questDataEntries.Any(entry => entry.questName == questInfo.id) && loadQuestState)
             {
-                string serializedData = PlayerPrefs.GetString(questInfo.id);
+                QuestDataEntry questDataEntry = data.questDataEntries.First(entry => entry.questName == questInfo.id);
+                string serializedData = questDataEntry.questStatus;
+
                 QuestData questData = JsonUtility.FromJson<QuestData>(serializedData);
                 quest = new Quest(questInfo, questData.state, questData.questStepIndex, questData.questStepStates);
             }
@@ -197,5 +195,58 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>
             Debug.LogError("Failed to load quest with id " + quest.info.id + ": " + e);
         }
         return quest;
+    }
+
+    public void LoadData(GameData data)
+    {
+        if (data.questDataEntries != null && data.questDataEntries.Count != 0)
+        {
+            questMap = CreateQuestMap(data);
+            Debug.Log("Quest Entries Loaded");
+        }
+        else
+        {
+            Debug.Log("No entries on questDataEntries");
+        }
+    }
+
+    public void SaveData(GameData data)
+    {
+        foreach (Quest quest in questMap.Values)
+        {
+            try 
+            {
+                QuestData questData = quest.GetQuestData();
+                string serializedData = JsonUtility.ToJson(questData);
+                
+                QuestDataEntry entry = new QuestDataEntry
+                {
+                    questName = quest.info.id,
+                    questStatus = serializedData
+                };
+
+                bool questExists = false;
+                for (int i = 0; i < data.questDataEntries.Count; i++)
+                {
+                    if (data.questDataEntries[i].questName == entry.questName)
+                    {
+                        data.questDataEntries[i].questStatus = entry.questStatus;
+                        questExists = true;
+                        break;
+                    }
+                }
+
+                if (!questExists)
+                {
+                    data.questDataEntries.Add(entry);
+                }
+                
+                Debug.Log(serializedData);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("Failed to save quest with id " + quest.info.id + ": " + e);
+            }
+        }
     }
 }
