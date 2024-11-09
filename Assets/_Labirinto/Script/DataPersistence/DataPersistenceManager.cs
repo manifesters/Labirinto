@@ -112,8 +112,6 @@ namespace DataPersistence
             this.gameData = new GameData();
             this.gameData.playerSavedName = playerSavedName;
 
-            GameEventsManager.Instance.questEvents.StartQuest("InteractWithNPCQuest");
-
             Debug.Log("New game data created with save name: " + playerSavedName);
         }
 
