@@ -11,7 +11,6 @@ namespace DataPersistence
     {   
         [Header("Debugging")]
         [SerializeField] private bool disableDataPersistence = false;
-        [SerializeField] private bool initializeDataIfNull = false;
         [SerializeField] private bool overrideSelectedProfileId = false;
         [SerializeField] private string testSelectedProfileId = "";
 
@@ -32,7 +31,7 @@ namespace DataPersistence
 
         public static DataPersistenceManager instance { get; private set; }
 
-        private void Awake() 
+        public override void Awake() 
         {
             // Call the base SingletonMonobehaviour's Awake method
             base.Awake();

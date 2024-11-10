@@ -6,7 +6,6 @@ public class GameEventsManager : SingletonMonobehaviour<GameEventsManager>
 {
     public InputEvents inputEvents;
     public PlayerEvents playerEvents;
-    public MedalEvents medalEvents;
     public MiscEvents miscEvents;
     public QuestEvents questEvents;
     public StoryEvents storyEvents;
@@ -20,7 +19,6 @@ public class GameEventsManager : SingletonMonobehaviour<GameEventsManager>
             // Initialize all events
             inputEvents = new InputEvents();
             playerEvents = new PlayerEvents();
-            medalEvents = new MedalEvents();
             miscEvents = new MiscEvents();
             questEvents = new QuestEvents();
             storyEvents = new StoryEvents();

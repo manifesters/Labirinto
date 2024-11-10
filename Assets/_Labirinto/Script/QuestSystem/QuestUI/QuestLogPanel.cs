@@ -10,6 +10,7 @@ public class QuestLogPanel : MonoBehaviour, ISelectHandler
 {
     [SerializeField] private GameObject panel;
     [SerializeField] private Button claimButton;
+    [SerializeField] private TextMeshProUGUI claimButtonText;
     [SerializeField] private TextMeshProUGUI questNameText;
     [SerializeField] private TextMeshProUGUI rewardsText;
     private UnityAction onSelectAction;
@@ -34,5 +35,14 @@ public class QuestLogPanel : MonoBehaviour, ISelectHandler
     public void OnSelect(BaseEventData eventData)
     {
         onSelectAction?.Invoke();
+    }
+
+    public void DisableButton()
+    {
+        if (this.claimButton != null)
+        {
+            this.claimButtonText.text = "Claimed";
+            this.claimButton.interactable = false;
+        }
     }
 }

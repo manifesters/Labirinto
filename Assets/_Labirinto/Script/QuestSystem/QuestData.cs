@@ -8,11 +8,13 @@ public class QuestData
     public QuestState state;
     public int questStepIndex;
     public QuestStepState[] questStepStates;
+    public bool rewardClaimed;
 
-    public QuestData(QuestState state, int questStepIndex, QuestStepState[] questStepStates)
+    public QuestData(QuestState state, int questStepIndex, QuestStepState[] questStepStates, bool rewardClaimed)
     {
         this.state = state;
         this.questStepIndex = questStepIndex;
         this.questStepStates = questStepStates;
+        this.rewardClaimed = rewardClaimed;
     }
 }

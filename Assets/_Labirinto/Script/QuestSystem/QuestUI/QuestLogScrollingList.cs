@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Score;
 using UnityEngine;
 
 public class QuestLogScrollingList : MonoBehaviour
@@ -37,6 +38,11 @@ public class QuestLogScrollingList : MonoBehaviour
             questLogPanel = idToPanelMap[quest.info.id];
         }
 
+        if (quest.rewardClaimed)
+        {
+            questLogPanel.DisableButton();
+        }
+
         return questLogPanel;
     }
 
@@ -54,7 +60,7 @@ public class QuestLogScrollingList : MonoBehaviour
         questLogPanel.gameObject.name = quest.info.id + "_button";
 
         // Initialize with display name, reward, and onSelect action
-        questLogPanel.Initialize(quest.info.displayName, "100", () => OnQuestSelected(quest));
+        questLogPanel.Initialize(quest.info.displayName, quest.info.pointReward.ToString(), () => OnQuestSelected(quest));
 
         idToPanelMap[quest.info.id] = questLogPanel;
         return questLogPanel;
@@ -62,7 +68,12 @@ public class QuestLogScrollingList : MonoBehaviour
 
     private void OnQuestSelected(Quest quest)
     {
-        Debug.Log("Quest selected: " + quest.info.id);
-        // Implement additional behavior when a quest is selected
+        if (idToPanelMap.TryGetValue(quest.info.id, out QuestLogPanel questLogPanel) && !quest.rewardClaimed)
+        {
+            questLogPanel.DisableButton();
+            Debug.Log("Rewards Claimed: " + quest.info.id);
+            PointManager.Instance.AddScore(quest.info.pointReward);
+            QuestManager.Instance.questMap[quest.info.id].rewardClaimed = true;
+        }
     }
 }

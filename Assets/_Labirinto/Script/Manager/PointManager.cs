@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace Score
 {
-    public class ScoreManager : MonoBehaviour, IDataPersistence
+    public class PointManager : MonoBehaviour, IDataPersistence
     {
-        public static ScoreManager Instance { get; private set; }
+        public static PointManager Instance { get; private set; }
         [SerializeField] private TextMeshProUGUI scoreText;
         private int score;
 
@@ -33,6 +33,7 @@ namespace Score
         {
             score += points;
             UpdateScoreUI();
+            Debug.Log("Added a score");
         }
 
         private void UpdateScoreUI()
