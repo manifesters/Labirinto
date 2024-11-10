@@ -63,6 +63,26 @@ namespace Panel
             }
         }
 
+        public void DestroyLastPanel()
+        {
+            if (AnyPanelShowing())
+            {
+                var lastPanel = _listInstances[_listInstances.Count - 1];
+                _listInstances.Remove(lastPanel);
+                // Destroy the last panel instead of pooling it
+                Destroy(lastPanel.PanelInstance);
+
+                if (GetAmountPanelsInQueue() > 0)
+                {
+                    lastPanel = GetLastPanel();
+                    if (lastPanel != null && !lastPanel.PanelInstance.activeInHierarchy)
+                    {
+                        lastPanel.PanelInstance.SetActive(true);
+                    }
+                }
+            }
+        }
+
         public PanelInstanceModel GetLastPanel()
         {
             return _listInstances.Count > 0 ? _listInstances[_listInstances.Count - 1] : null;

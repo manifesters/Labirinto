@@ -16,6 +16,12 @@ namespace Panel
             Debug.Log("The button is clicked");
             _panelManager.HideLastPanel();
         }
+
+        public void DestroyPanel()
+        {
+            Debug.Log("The Panel Destroyed");
+            _panelManager.DestroyLastPanel();
+        }
     }
 }
 

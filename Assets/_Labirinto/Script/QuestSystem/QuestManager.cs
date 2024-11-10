@@ -3,13 +3,17 @@ using UnityEngine;
 using Helper;
 using DataPersistence;
 using System.Linq;
+using TMPro;
 
 public class QuestManager : SingletonMonobehaviour<QuestManager>, IDataPersistence
 {
     [Header("Config")]
     [SerializeField] private bool loadQuestState = true;
 
-    private Dictionary<string, Quest> questMap;
+    [Header("Guide Label")]
+    [SerializeField] private TMP_Text inProgressQuest;
+
+    public Dictionary<string, Quest> questMap { get; set;}
 
     public override void Awake()
     {
@@ -79,10 +83,20 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>, IDataPersisten
     {
         foreach (Quest quest in questMap.Values)
         {
+            SetQuestLogInfo(quest);
             if (quest.state == QuestState.REQUIREMENTS_NOT_MET && CheckRequirementsMet(quest))
             {
                 ChangeQuestState(quest.info.id, QuestState.CAN_START);
             }
+        }
+    }
+
+     private void SetQuestLogInfo(Quest quest)
+    {
+        if(quest.state == QuestState.CAN_START)
+        {
+            // quest name
+            inProgressQuest.text = quest.info.displayName;
         }
     }
 
