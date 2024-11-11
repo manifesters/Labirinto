@@ -12,6 +12,13 @@ namespace DataPersistence
     }
 
     [System.Serializable]
+    public class CollectibleItemDataEntry
+    {
+        public string itemId;
+        public bool isCollected;
+    }
+
+    [System.Serializable]
     public class GameData
     {
         public long lastUpdated;
@@ -23,12 +30,14 @@ namespace DataPersistence
 
         // Quest
         public List<QuestDataEntry> questDataEntries;
+        public List<CollectibleItemDataEntry> collectibleItemDataEntries;
         
         public GameData()
         {
             playerPosition = Vector2.zero;
             playerScore = 0;
             questDataEntries = new List<QuestDataEntry>();
+            collectibleItemDataEntries = new List<CollectibleItemDataEntry>();
         }
 
         public string GetPlayerSavedName()
