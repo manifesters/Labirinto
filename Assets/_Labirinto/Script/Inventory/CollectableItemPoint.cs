@@ -74,7 +74,7 @@ public class CollectibleItemPoint : MonoBehaviour
             if (mainCanvas.isActiveAndEnabled && collectButton.transform.parent != mainCanvas.transform)
             {
                 buttonRectTransform.SetParent(mainCanvas.transform, false);
-                buttonRectTransform.anchoredPosition = new Vector2(280, -70);
+                buttonRectTransform.anchoredPosition = new Vector2(300, -70);
             }
 
             collectButton.gameObject.SetActive(true);

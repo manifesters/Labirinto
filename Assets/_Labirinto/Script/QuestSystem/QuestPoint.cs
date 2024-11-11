@@ -122,7 +122,7 @@ public class QuestPoint : MonoBehaviour
                 buttonRectTransform.SetParent(mainCanvas.transform, false);
 
                 // Set the desired position
-                buttonRectTransform.anchoredPosition = new Vector2(280, -70);
+                buttonRectTransform.anchoredPosition = new Vector2(300, -70);
             }
 
             interactButton.gameObject.SetActive(true);
