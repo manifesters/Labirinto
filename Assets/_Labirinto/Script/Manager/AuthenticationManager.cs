@@ -1,17 +1,12 @@
-    using System.Collections;
+using System.Collections;
 using Helper;
 using LootLocker.Requests;
-using Panel;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.SceneManagement;
 
 namespace Manager
 {
     public class AuthenticationManager : SingletonMonobehaviour<AuthenticationManager>
     {
-        private bool isGuestLoginClicked = false;
         private bool isRequestSent = false;
 
         public override void Awake()
@@ -21,22 +16,20 @@ namespace Manager
 
         public void Start()
         {
-            // will start monitoring internet connection at the start of the game
-            StartCoroutine(MonitorInternetConnection());
-            Debug.Log("Started monitoring internet connection");
+            CheckForExistingSession();
         }
 
         // Guest Login
         public void OnGuestLoginClicked()
         {
-            isGuestLoginClicked = true;
+            StartCoroutine(MonitorInternetConnection());
         }
 
         private IEnumerator MonitorInternetConnection()
         {
             while (true)
             {
-                if (Application.internetReachability != NetworkReachability.NotReachable && isGuestLoginClicked && !isRequestSent)
+                if (Application.internetReachability != NetworkReachability.NotReachable && !isRequestSent)
                 {
                     SendGuestLoginRequest();
                 }
@@ -51,7 +44,7 @@ namespace Manager
             if (!string.IsNullOrEmpty(lootLockerGuestSession))
             {
                 Debug.Log("Existing session found. Proceeding to Home.");
-                ProceedToHome();
+                ScenesManager.Instance.LoadHomeScene();
             }
         }
 
@@ -65,66 +58,13 @@ namespace Manager
                     isRequestSent = true;
                     PlayerPrefs.SetString("Player UID", response.public_uid);
                     PlayerPrefs.Save();
+                    ScenesManager.Instance.LoadHomeScene();
                 }
                 else
                 {
-                    Debug.Log("Failed to start guest session, will retry.");
+                    Debug.Log("Failed to start guest session, will retry." + response.errorData);
                 }
             });
-        }
-        
-        public static void SetUsername()
-        {
-            PanelInstanceModel lastPanel = PanelManager.Instance.GetLastPanel();
-
-            if (lastPanel != null)
-            {
-                Debug.Log($"Last panel ID: {lastPanel.PanelID}");
-                GameObject panelInstance = lastPanel.PanelInstance; // Get the GameObject from pool
-
-                TMP_InputField inputFieldUsername = panelInstance.transform.Find("InputField_Username")?.GetComponent<TMP_InputField>();
-            
-                if (inputFieldUsername != null)
-                {
-                    string playerName = inputFieldUsername.text;
-
-                    Debug.Log($"Attempting to set playerName with Name: {playerName}");
-
-                    // Call LootLocker to set player name
-                    LootLockerSDKManager.SetPlayerName(playerName, (response) =>
-                    {
-                        if (response.success)
-                        {
-                            Debug.Log("playerName successful!");
-                            ProceedToHome();
-                        }
-                        else
-                        {
-                            Debug.LogWarning("playerName failed");
-                        }
-                    });
-                }
-                else
-                {
-                    Debug.LogWarning("TMP_InputFields not found in the last panel instance.");
-                }
-            }
-            else
-            {
-                Debug.LogWarning("No panels are currently showing.");
-            }
-        }
-
-        public void DeleteSession()
-        {
-			PlayerPrefs.DeleteAll();
-
-			// Optionally, log a message to confirm the action
-			Debug.Log("All PlayerPrefs have been deleted.");
-		}
-        public static void ProceedToHome()
-        {
-            SceneManager.LoadScene("Main");
         }
     }
 }

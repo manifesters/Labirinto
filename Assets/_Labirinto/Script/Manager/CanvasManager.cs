@@ -2,9 +2,8 @@ using Helper;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CanvasManager : SingletonMonobehaviour<CanvasManager>
+public class CanvasManager : MonoBehaviour
 {
-
     public Canvas splashCanvas;
     public Canvas authenticationCanvas;
     

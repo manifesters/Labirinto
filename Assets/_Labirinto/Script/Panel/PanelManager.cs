@@ -12,7 +12,7 @@ namespace Panel
 
         private void Start() {
             _objectPool = ObjectPool.Instance;
-            Debug.Log("Creata an instance of object pool");
+            Debug.Log("Create an instance of object pool");
         }
 
         public void ShowPanel(string panelID, PanelShowBehaviour behaviour = PanelShowBehaviour.KEEP_PREVIOUS)
