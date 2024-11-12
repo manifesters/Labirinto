@@ -11,12 +11,14 @@ public class Quest
     public QuestState state;
     private int currentQuestStepIndex;
     private QuestStepState[] questStepStates;
+    public bool rewardClaimed;
 
     public Quest(QuestInfoSO questInfo)
     {
         this.info = questInfo;
         this.state = QuestState.REQUIREMENTS_NOT_MET;
         this.currentQuestStepIndex = 0;
+        this.rewardClaimed = false;
         this.questStepStates = new QuestStepState[info.questStepPrefabs.Length];
         for (int i = 0; i < questStepStates.Length; i++)
         {
@@ -24,12 +26,13 @@ public class Quest
         }
     }
 
-    public Quest(QuestInfoSO questInfo, QuestState questState, int currentQuestStepIndex, QuestStepState[] questStepStates)
+    public Quest(QuestInfoSO questInfo, QuestState questState, int currentQuestStepIndex, QuestStepState[] questStepStates, bool rewardClaimed = false)
     {
         this.info = questInfo;
         this.state = questState;
         this.currentQuestStepIndex = currentQuestStepIndex;
         this.questStepStates = questStepStates;
+        this.rewardClaimed = rewardClaimed;
 
         // if the quest step states and prefabs are different lengths,
         if (this.questStepStates.Length != this.info.questStepPrefabs.Length)
@@ -93,7 +96,7 @@ public class Quest
 
     public QuestData GetQuestData()
     {
-        return new QuestData(state, currentQuestStepIndex, questStepStates);
+        return new QuestData(state, currentQuestStepIndex, questStepStates, rewardClaimed);
     }
 
     public string GetFullStatusText()

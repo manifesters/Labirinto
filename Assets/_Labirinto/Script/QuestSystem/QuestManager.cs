@@ -125,13 +125,7 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>, IDataPersisten
     private void FinishQuest(string id)
     {
         Quest quest = GetQuestById(id);
-        ClaimRewards(quest);
         ChangeQuestState(quest.info.id, QuestState.FINISHED);
-    }
-
-    private void ClaimRewards(Quest quest)
-    {
-        GameEventsManager.Instance.medalEvents.MedalGained(quest.info.medalReward);
     }
 
     private void QuestStepStateChange(string id, int stepIndex, QuestStepState questStepState)
@@ -198,6 +192,7 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>, IDataPersisten
 
                 QuestData questData = JsonUtility.FromJson<QuestData>(serializedData);
                 quest = new Quest(questInfo, questData.state, questData.questStepIndex, questData.questStepStates);
+                quest.rewardClaimed = questData.rewardClaimed;
             }
             else 
             {
@@ -231,6 +226,7 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>, IDataPersisten
             try 
             {
                 QuestData questData = quest.GetQuestData();
+                questData.rewardClaimed = quest.rewardClaimed;
                 string serializedData = JsonUtility.ToJson(questData);
                 
                 QuestDataEntry entry = new QuestDataEntry

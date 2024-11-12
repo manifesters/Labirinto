@@ -11,12 +11,12 @@ public class GameController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI resultText; // Text for displaying result message
     [SerializeField] private int totalCorrectAnswers = 5; // Total correct answers required
     private int correctAnswersPlaced = 0;
-    private ScoreManager scoreManager; // Reference to ScoreManager
+    private PointManager scoreManager; // Reference to ScoreManager
 
     private void Start()
     {
         resultPanel.SetActive(false); // Hide result panel at start
-        scoreManager = FindObjectOfType<ScoreManager>(); // Find and store reference to ScoreManager
+        scoreManager = FindObjectOfType<PointManager>();
     }
 
     public void CorrectAnswerPlaced()

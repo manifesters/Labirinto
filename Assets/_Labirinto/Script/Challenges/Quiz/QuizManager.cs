@@ -97,7 +97,7 @@ namespace QuizChallenge
                 if (selectedAnswerIndex == currentQuestion.correctAnswerIndex)
                 {
                     // Handle correct answer (e.g., show feedback, increase score)
-                    ScoreManager.Instance.AddScore(scorePerQuestion); 
+                    PointManager.Instance.AddScore(scorePerQuestion); 
                     Debug.Log("Correct!");
                 }
                 else

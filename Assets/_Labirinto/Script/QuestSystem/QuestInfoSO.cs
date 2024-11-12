@@ -16,7 +16,7 @@ public class QuestInfoSO : ScriptableObject
     public GameObject[] questStepPrefabs;
 
     [Header("Rewards")]
-    public int medalReward;
+    public int pointReward;
 
     // ensure the id is always the name of the Scriptable Object asset
     private void OnValidate()
