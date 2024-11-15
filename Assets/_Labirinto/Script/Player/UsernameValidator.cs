@@ -1,12 +1,37 @@
-using System.Collections;
-using LootLocker.Requests;
-using TMPro;
 using UnityEngine;
+using TMPro;
+using Manager;
+using DataPersistence;
 
 public class UsernameValidator : MonoBehaviour
 {
-    [SerializeField] private GameObject setUsernamePanel;
     [SerializeField] private TMP_InputField usernameInputField;
+
+    public void Start()
+    {
+        if (!PlayerPrefs.HasKey("PlayerName") && PlayerPrefs.HasKey("TemporaryUsername"))
+        {
+            string username = PlayerPrefs.GetString("TemporaryUsername");
+            LootLockerManager.Instance.SetPlayerName(username, (success, playerName) =>
+            {
+                if (success)
+                {
+                    Debug.Log("Username set successfully.");
+                    PlayerPrefs.SetString("PlayerName", username);
+                    this.gameObject.SetActive(false);
+                }
+                else
+                {
+                    Debug.LogWarning("Failed to set username.");
+                }
+            });
+            this.gameObject.SetActive(false);
+        }
+        else if (PlayerPrefs.HasKey("PlayerName") || PlayerPrefs.HasKey("TemporaryUsername"))
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
 
     public void OnSetUsernameButtonClicked()
     {
@@ -20,74 +45,29 @@ public class UsernameValidator : MonoBehaviour
         }
     }
 
-    public void SetThisPanelActive()
+    private void SetUsername()
     {
-        setUsernamePanel.SetActive(true);
-    }
-
-    public void SetUsername()
-    {
-        if (PlayerPrefs.HasKey("TemporaryUsername"))
+        string username = usernameInputField.text;
+        LootLockerManager.Instance.SetPlayerName(username, (success, playerName) =>
         {
-            string username = PlayerPrefs.GetString("TemporaryUsername");
-            if (!string.IsNullOrEmpty(username))
+            if (success)
             {
-                LootLockerSDKManager.SetPlayerName(username, (response) =>
-                {
-                    if (response.success)
-                    {
-                        Debug.Log("Setting username is successful!");
-                        ScenesManager.Instance.LoadHomeScene();
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Setting username is failed!");
-                    }
-                });
+                Debug.Log("Username set successfully.");
+                PlayerPrefs.SetString("PlayerName", username);
+                this.gameObject.SetActive(false);
             }
-        }
-        else
-        {
-            if (usernameInputField != null)
-            {
-                string username = usernameInputField.text;
-
-                Debug.Log($"Attempting to set playerName with Name: {username}");
-
-                // Call LootLocker to set player name
-                LootLockerSDKManager.SetPlayerName(username, (response) =>
-                {
-                    if (response.success)
-                    {
-                        Debug.Log("playerName successful!");
-                        ScenesManager.Instance.LoadHomeScene();
-                    }
-                    else
-                    {
-                        Debug.LogWarning("playerName failed");
-                    }
-                });
-                }
             else
             {
-                Debug.LogWarning("TMP_InputFields not found in the last panel instance.");
+                Debug.LogWarning("Failed to set username.");
             }
-        }        
+        });
     }
-    
-    // store temporary username when offline
-    public void SetTemporaryUsername()
+
+    private void SetTemporaryUsername()
     {
-        if (usernameInputField != null)
-        {
-            string temporaryUsername = usernameInputField.text;
-            PlayerPrefs.SetString("TemporaryUsername", temporaryUsername);
-            Debug.Log("Temporary username stored: " + temporaryUsername);
-            ScenesManager.Instance.LoadHomeScene();
-        }
-        else
-        {
-            Debug.LogWarning("Temporary to set temporary username!");
-        }
+        string temporaryUsername = usernameInputField.text;
+        PlayerPrefs.SetString("TemporaryUsername", temporaryUsername);
+        Debug.Log("Temporary username stored: " + temporaryUsername);
+        this.gameObject.SetActive(false);
     }
 }

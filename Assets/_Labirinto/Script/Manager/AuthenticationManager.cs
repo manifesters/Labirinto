@@ -1,70 +1,35 @@
-using System.Collections;
-using Helper;
-using LootLocker.Requests;
 using UnityEngine;
+using Manager;
 
-namespace Manager
+public class AuthenticationSceneController : MonoBehaviour
 {
-    public class AuthenticationManager : SingletonMonobehaviour<AuthenticationManager>
+    public void OnStartGameClicked()
     {
-        private bool isRequestSent = false;
-
-        public override void Awake()
+        if (LootLockerManager.Instance.HasExistingSession())
         {
-            base.Awake();
+            Debug.Log("Existing session found, loading Main Scene.");
+            StartGuestSession();
         }
-
-        public void Start()
+        else
         {
-            CheckForExistingSession();
+            Debug.Log("No existing session found, loading Authentication Scene.");
+            ScenesManager.Instance.LoadAuthenticationScene();
         }
+    }
 
-        // Guest Login
-        public void OnGuestLoginClicked()
+    public void StartGuestSession()
+    {
+        LootLockerManager.Instance.StartGuestSession((success) =>
         {
-            StartCoroutine(MonitorInternetConnection());
-        }
-
-        private IEnumerator MonitorInternetConnection()
-        {
-            while (true)
+            if (success)
             {
-                if (Application.internetReachability != NetworkReachability.NotReachable && !isRequestSent)
-                {
-                    SendGuestLoginRequest();
-                }
-                yield return new WaitForSeconds(1f);
-            }   
-        }
-
-        public static void CheckForExistingSession()
-        {
-            // check for LootLockerGuestPlayerID stored in playerprefs
-            string lootLockerGuestSession = PlayerPrefs.GetString("LootLockerGuestPlayerID", string.Empty);
-            if (!string.IsNullOrEmpty(lootLockerGuestSession))
-            {
-                Debug.Log("Existing session found. Proceeding to Home.");
+                Debug.Log("Guest session started, loading Main Scene.");
                 ScenesManager.Instance.LoadHomeScene();
             }
-        }
-
-        public void SendGuestLoginRequest()
-        {
-            LootLockerSDKManager.StartGuestSession(SystemInfo.deviceUniqueIdentifier, (response) =>
+            else
             {
-                if (response.success)
-                {
-                    Debug.Log("Guest session started successfully!");
-                    isRequestSent = true;
-                    PlayerPrefs.SetString("Player UID", response.public_uid);
-                    PlayerPrefs.Save();
-                    ScenesManager.Instance.LoadHomeScene();
-                }
-                else
-                {
-                    Debug.Log("Failed to start guest session, will retry." + response.errorData);
-                }
-            });
-        }
+                Debug.LogWarning("Failed to start guest session.");
+            }
+        });
     }
 }
