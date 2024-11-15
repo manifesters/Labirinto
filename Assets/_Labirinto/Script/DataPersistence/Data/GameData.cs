@@ -22,8 +22,6 @@ namespace DataPersistence
     public class GameData
     {
         public long lastUpdated;
-        public string playerUID;
-        public string playerName;
         public string playerSavedName;
         public int playerScore;
         public Vector2 playerPosition;

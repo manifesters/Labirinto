@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
 using Helper;
+using Unity.VisualScripting;
 
 namespace DataPersistence
 {
@@ -22,7 +23,10 @@ namespace DataPersistence
         [SerializeField] private float autoSaveTimeSeconds = 60f;
 
         private GameData gameData;
+        private PlayerData playerData;
         private List<IDataPersistence> dataPersistenceObjects;
+        private List<IPlayerDataPersistence> playerDataPersistenceObjects;
+    
         private FileDataHandler dataHandler;
 
         private string selectedProfileId = "";
@@ -69,6 +73,7 @@ namespace DataPersistence
             Debug.Log("OnSceneLoaded Called");
             this.dataPersistenceObjects = FindAllDataPersistenceObjects();
             LoadGame();
+            this.playerDataPersistenceObjects = FindAllPlayerDataPersistenceObjects();
 
             // start up the auto saving coroutine
             if (autoSaveCoroutine != null) 
@@ -106,12 +111,30 @@ namespace DataPersistence
             }
         }
 
+        // create player data
+        public void NewPlayerData()
+        {
+            this.playerData = new PlayerData();   
+        }
+
         public void NewGame(string playerSavedName) 
         {
             this.gameData = new GameData();
             this.gameData.playerSavedName = playerSavedName;
 
             Debug.Log("New game data created with save name: " + playerSavedName);
+        }
+
+        // load player data
+        public void LoadPlayer()
+        {
+            // load any saved data from a file using the data handler
+            this.playerData = dataHandler.LoadPlayerData();
+
+            foreach (IPlayerDataPersistence playerDataPersistenceObj in playerDataPersistenceObjects) 
+            {
+                playerDataPersistenceObj.LoadPlayerData(playerData);
+            }
         }
 
         public void LoadGame()
@@ -137,6 +160,23 @@ namespace DataPersistence
             {
                 dataPersistenceObj.LoadData(gameData);
             }
+        }
+
+        // save player data
+        public void SavePlayer()
+        {
+            if (this.playerData == null) 
+            {
+                Debug.LogWarning("No player data was found");
+                return;
+            }
+
+            foreach (IPlayerDataPersistence playerDataPersistenceObj in playerDataPersistenceObjects) 
+            {
+                playerDataPersistenceObj.SavePlayerData(playerData);
+            }
+
+            dataHandler.SavePlayerData(playerData);
         }
 
         public void SaveGame()
@@ -169,7 +209,16 @@ namespace DataPersistence
 
         private void OnApplicationQuit() 
         {
+            SavePlayer();
             SaveGame();
+        }
+
+        private List<IPlayerDataPersistence> FindAllPlayerDataPersistenceObjects()
+        {
+            IEnumerable<IPlayerDataPersistence> playerDataPersistenceObjects = FindObjectsOfType<MonoBehaviour>(true)
+                .OfType<IPlayerDataPersistence>();
+
+            return new List<IPlayerDataPersistence>(playerDataPersistenceObjects);
         }
 
         private List<IDataPersistence> FindAllDataPersistenceObjects() 
@@ -186,6 +235,11 @@ namespace DataPersistence
             return gameData != null;
         }
 
+        public bool HasPlayerData()
+        {
+            return playerData != null;
+        }
+
         public Dictionary<string, GameData> GetAllProfilesGameData() 
         {
             return dataHandler.LoadAllProfiles();
@@ -196,6 +250,7 @@ namespace DataPersistence
             while (true) 
             {
                 yield return new WaitForSeconds(autoSaveTimeSeconds);
+                SavePlayer();
                 SaveGame();
                 Debug.Log("Auto Saved Game");
             }

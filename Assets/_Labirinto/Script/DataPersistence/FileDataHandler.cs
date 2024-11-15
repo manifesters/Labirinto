@@ -11,6 +11,7 @@ namespace DataPersistence
     {   
         private string dataDirPath = "";
         private string dataFileName = "";
+        private string playerDataFileName = "playerData";
         private bool useEncryption = false;
         private readonly string encryptionCodeWord = "word";
         private readonly string backupExtension = ".bak";
@@ -22,6 +23,57 @@ namespace DataPersistence
             this.useEncryption = useEncryption;
         }
 
+        // Load Player Data
+        public PlayerData LoadPlayerData(bool allowRestoreFromBackup = true)
+        {
+            string fullPath = Path.Combine(dataDirPath, playerDataFileName);  // Use the base path and filename
+            PlayerData loadedData = null;
+            if (File.Exists(fullPath))
+            {
+                try
+                {
+                    // Load the serialized data from the file
+                    string dataToLoad = "";
+                    using (FileStream stream = new FileStream(fullPath, FileMode.Open))
+                    {
+                        using (StreamReader reader = new StreamReader(stream))
+                        {
+                            dataToLoad = reader.ReadToEnd();
+                        }
+                    }
+
+                    // Optionally decrypt the data
+                    if (useEncryption)
+                    {
+                        dataToLoad = EncryptDecrypt(dataToLoad);
+                    }
+
+                    // Deserialize the data from Json back into the C# object
+                    loadedData = JsonUtility.FromJson<PlayerData>(dataToLoad);
+                }
+                catch (Exception e)
+                {
+                    if (allowRestoreFromBackup)
+                    {
+                        Debug.LogWarning("Failed to load data file. Attempting to roll back.\n" + e);
+                        bool rollbackSuccess = AttemptRollback(fullPath);
+                        if (rollbackSuccess)
+                        {
+                            // Try to load again recursively
+                            loadedData = LoadPlayerData(false);
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError("Error occurred when trying to load file at path: "
+                            + fullPath + " and backup did not work.\n" + e);
+                    }
+                }
+            }
+            return loadedData;
+        }
+
+        // Load Game Data < ------------------------------------------------------------->
         public GameData Load(string profileId, bool allowRestoreFromBackup = true) 
         {
             // base case - if the profileId is null, return right away
@@ -82,6 +134,35 @@ namespace DataPersistence
             return loadedData;
         }
 
+        // Save Player Data
+        public void SavePlayerData(PlayerData data)
+        {
+            string fullPath = Path.Combine(dataDirPath, playerDataFileName); // Use the base path and filename
+            try
+            {
+                // Serialize and optionally encrypt player data
+                string dataToStore = JsonUtility.ToJson(data, true);
+                if (useEncryption)
+                {
+                    dataToStore = EncryptDecrypt(dataToStore);
+                }
+
+                // Write to file
+                using (FileStream stream = new FileStream(fullPath, FileMode.Create))
+                {
+                    using (StreamWriter writer = new StreamWriter(stream))
+                    {
+                        writer.Write(dataToStore);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("Error occurred when trying to save player data: " + fullPath + "\n" + e);
+            }
+        }
+
+        // Save Game Data < ------------------------------------------------------------->
         public void Save(GameData data, string profileId) 
         {
             // base case - if the profileId is null, return right away
@@ -276,6 +357,16 @@ namespace DataPersistence
             }
 
             return success;
+        }
+
+        public string GetDataDirectory()
+        {
+            return dataDirPath;
+        }
+
+        public string GetFileName()
+        {
+            return playerDataFileName; 
         }
     }
 }
