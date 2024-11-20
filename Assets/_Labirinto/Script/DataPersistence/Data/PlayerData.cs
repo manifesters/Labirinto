@@ -1,25 +1,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class PlayerData
+namespace DataPersistence
 {
-
     [System.Serializable]
-    public class AchivementsDataEntry
+    public class PlayerData
     {
-        public string achievementsName;
-        public string achievementsStatus;
-    }
+        [System.Serializable]
+        public class AchievementsDataEntry
+        {
+            public string achievementName;
+            public bool isCompleted;
+            public bool isRewardClaimed;
+        }
 
-    public string playerUID;
-    public string playerName;
-    public int playerMedal;
-    public List<AchivementsDataEntry> achivementsDataEntries;
+        public string playerUID;
+        public string playerName;
+        public int playerMedal;
+        public List<AchievementsDataEntry> achievementsDataEntries;
 
-    public PlayerData()
-    {
-        playerMedal = 0;
-        achivementsDataEntries = new List<AchivementsDataEntry>();
+        public PlayerData()
+        {
+            playerMedal = 0;
+            achievementsDataEntries = new List<AchievementsDataEntry>();
+        }
     }
 }

@@ -70,10 +70,15 @@ namespace DataPersistence
 
         public void OnSceneLoaded(Scene scene, LoadSceneMode mode) 
         {
+            // Save the game data before handling the new scene
+            SavePlayer();
+            SaveGame();
+
             Debug.Log("OnSceneLoaded Called");
             this.dataPersistenceObjects = FindAllDataPersistenceObjects();
             LoadGame();
             this.playerDataPersistenceObjects = FindAllPlayerDataPersistenceObjects();
+            LoadPlayer();
 
             // start up the auto saving coroutine
             if (autoSaveCoroutine != null) 
@@ -121,6 +126,9 @@ namespace DataPersistence
         {
             this.gameData = new GameData();
             this.gameData.playerSavedName = playerSavedName;
+
+            // ACHIEVEMENT: Create First Game
+            AchievementsManager.Instance.CompleteAchievement("CreateFirstGame");
 
             Debug.Log("New game data created with save name: " + playerSavedName);
         }
