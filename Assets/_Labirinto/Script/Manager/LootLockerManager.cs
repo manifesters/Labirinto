@@ -11,6 +11,8 @@ namespace Manager
         private bool isRequestSent = false;
         public bool IsSessionActive { get; private set; } = false;
 
+        private string LEADERBOARD_KEY = "25344";
+
         public override void Awake()
         {
             base.Awake();
@@ -81,6 +83,29 @@ namespace Manager
                 {
                     Debug.LogWarning("Failed to set player name: " + response.errorData);
                     callback?.Invoke(false, response.errorData.ToString());
+                }
+            });
+        }
+
+        public void SubmitScore(int score)
+        {
+            if (!PlayerPrefs.HasKey("Player UID"))
+            {
+                Debug.LogWarning("Player UID not found in PlayerPrefs.");
+                return;
+            }
+
+            string playerUID = PlayerPrefs.GetString("Player UID");
+
+            LootLockerSDKManager.SubmitScore(playerUID, score, LEADERBOARD_KEY, (response) => 
+            {
+                if (response.success)
+                {
+                    Debug.Log("Score submitted successfully.");
+                }
+                else
+                {
+                    Debug.LogWarning("Failed to submit score: " + response.errorData);
                 }
             });
         }

@@ -1,5 +1,6 @@
 using DataPersistence;
 using Helper;
+using Manager;
 using TMPro;
 using UnityEngine;
 
@@ -53,6 +54,7 @@ namespace Medal
         {
             this.playerMedal = playerData.playerMedal;
             UpdateMedalUI();
+            LootLockerManager.Instance.SubmitScore(playerMedal);
         }
 
         public void SavePlayerData(PlayerData playerData)
