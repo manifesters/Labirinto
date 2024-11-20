@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Medal;
 using UnityEngine;
 
 public class AchievementsScrollingList : MonoBehaviour
@@ -83,6 +84,7 @@ public class AchievementsScrollingList : MonoBehaviour
         {
             achievementsBar.ClaimedButton();
             Debug.Log("Rewards Claimed: " + achievement.info.id);
+            MedalManager.Instance.AddMedal(achievement.info.medalReward);
             AchievementsManager.Instance.achievementsMap[achievement.info.id].rewardClaimed = true;
         }
     }
