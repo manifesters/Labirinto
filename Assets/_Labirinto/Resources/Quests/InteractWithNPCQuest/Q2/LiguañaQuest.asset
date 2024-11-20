@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9aee06e2fd7df2cb4feea012d86e32, type: 3}
+  m_Name: "Ligua\xF1aQuest"
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: "Ligua\xF1aQuest"
+  displayName: "Hanapin si Darague\xF1o"
+  questPrerequisites:
+  - {fileID: 11400000, guid: 40a763ac459a1be4c99485c4183276fe, type: 2}
+  questStepPrefabs:
+  - {fileID: 6356575162194951626, guid: bad91eb80531494459dd6f04903f7eba, type: 3}
+  pointReward: 100

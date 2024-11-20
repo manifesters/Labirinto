@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9aee06e2fd7df2cb4feea012d86e32, type: 3}
+  m_Name: "Masbate\xF1oQuest"
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: "Masbate\xF1oQuest"
+  displayName: Hanapin si Aroroynon
+  questPrerequisites:
+  - {fileID: 11400000, guid: c0674a8c80a9b3243a5488a7665e6314, type: 2}
+  questStepPrefabs:
+  - {fileID: 6356575162194951626, guid: a91270e61f1566f46873c9fe27403351, type: 3}
+  pointReward: 100
