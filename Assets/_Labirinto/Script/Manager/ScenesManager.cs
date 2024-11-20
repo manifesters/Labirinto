@@ -27,5 +27,9 @@ public class ScenesManager : SingletonMonobehaviour<ScenesManager>
     {
         SceneManager.LoadScene("Main");
     }
+	public void LoadQuater1()
+	{
+		SceneManager.LoadScene("Quarter 1");
+	}
 
 }
