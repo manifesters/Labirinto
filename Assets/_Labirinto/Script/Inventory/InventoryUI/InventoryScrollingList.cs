@@ -9,7 +9,11 @@ public class InventoryScrollingList : MonoBehaviour
     [Header("Inventory Item Prefab")]
     [SerializeField] private GameObject itemPrefab;
 
+    [SerializeField] private InventoryDescription itemDescription;
+
     private Dictionary<string, InventoryItem> idToInventoryMap = new Dictionary<string, InventoryItem>();
+
+    public Sprite image;
 
     private void Start()
     {
@@ -69,6 +73,8 @@ public class InventoryScrollingList : MonoBehaviour
         if (idToInventoryMap.TryGetValue(item.info.id, out InventoryItem inventoryItem))
         {
             Debug.Log("Selected Item: " + item.info.displayName);
-        }
+			itemDescription.SetDescription(item.info.icon, item.info.displayName, item.info.description);
+
+		}
     }
 }
