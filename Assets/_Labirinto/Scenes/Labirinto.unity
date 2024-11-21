@@ -328,7 +328,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.859375
+  orthographic size: 4.2708335
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2069,6 +2069,14 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 6448b8baae337514c890e25da3267356, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: dialogueInkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 3721a60ab7ddee84d9875579342c0b58, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: feaf56ba596d6451292e85bf07fe5b73, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Coach
@@ -2080,7 +2088,7 @@ PrefabInstance:
     - target: {fileID: 7836766953386508351, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: questInfoForPoint
       value: 
-      objectReference: {fileID: 11400000, guid: 12f6552c1c85a41caae900a1a4d921a7, type: 2}
+      objectReference: {fileID: 11400000, guid: 7da2d3fdc58035b46b4db895a83da37e, type: 2}
     - target: {fileID: 8471137729272905837, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Size.x
       value: 2.6666667
@@ -40132,7 +40140,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 102.4}
+  m_AnchoredPosition: {x: 185, y: 94}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1004771803
@@ -41429,6 +41437,7 @@ MonoBehaviour:
   - {fileID: 3846044699815073557, guid: 761a5fed1adb31e2493ad9ddf7d7d0e1, type: 3}
   - {fileID: 1524564644775948609, guid: 51ba077c53197e02fb752187d6b4b887, type: 3}
   - {fileID: 3846044699815073557, guid: 7820fa3ee95ffe4079621826dcdd1c6f, type: 3}
+  - {fileID: 1524564644775948609, guid: a71702802e8f8df14a91fba941cc950f, type: 3}
 --- !u!1 &1131621353
 GameObject:
   m_ObjectHideFlags: 0
@@ -57083,7 +57092,7 @@ PrefabInstance:
     - target: {fileID: 7836766953386508351, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: questInfoForPoint
       value: 
-      objectReference: {fileID: 11400000, guid: a72c838628acdc048adcb0413dac76fc, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8471137729272905837, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Size.x
       value: 1.3333334

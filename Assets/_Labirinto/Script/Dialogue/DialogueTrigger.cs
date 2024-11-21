@@ -6,17 +6,16 @@ namespace Dialogue
     public class DialogueTrigger : MonoBehaviour
     {
         [Header("Ink JSON")]
-        [SerializeField] private TextAsset inkJSON;
+        [SerializeField] private TextAsset dialogueInkJSON;
 
         [Header("Quiz JSON")]
-        [SerializeField] public TextAsset quizJson;
+        [SerializeField] public TextAsset challengeDataJSON;
 
         public void EnterDialogue()
         {
             Debug.Log("Entering Dialogue Mode");
-            DialogueManager.Instance.EnterDialogueMode(inkJSON);
-            // Here you might also want to set the quiz JSON if needed
-            ChallengeManager.Instance.SetJson(quizJson);
+            DialogueManager.Instance.EnterDialogueMode(dialogueInkJSON);
+            ChallengeManager.Instance.SetJson(challengeDataJSON);
         }
     }
 }

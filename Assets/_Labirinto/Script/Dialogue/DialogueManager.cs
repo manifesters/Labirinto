@@ -227,9 +227,9 @@ namespace Dialogue
                     Debug.Log("Enter a challenge");
                     ShowChallengePanel("Panel_QuizWindow", PanelShowBehaviour.KEEP_PREVIOUS); 
                     break;
-                 case "START_CHALLENGE_DRAGDROP":
+                 case "START_CHALLENGE_MATCHPAIR":
                     Debug.Log("Enter a challenge");
-                    ShowChallengePanel("Panel_DragDropWindow", PanelShowBehaviour.KEEP_PREVIOUS); 
+                    ShowChallengePanel("Panel_MatchPairWindow", PanelShowBehaviour.KEEP_PREVIOUS); 
                     break;    
                 // Add more tags if necessary
                 default:
