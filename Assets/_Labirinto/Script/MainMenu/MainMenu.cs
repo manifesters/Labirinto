@@ -49,7 +49,16 @@ namespace MainMenu
             DataPersistenceManager.Instance.SaveGame();
             // load the next scene - which will in turn load the game because of 
             // OnSceneLoaded() in the DataPersistenceManager
-            SceneManager.LoadSceneAsync("Labirinto");
+            string lastSceneName = DataPersistenceManager.Instance.GetLastSavedSceneName();
+            if (!string.IsNullOrEmpty(lastSceneName))
+            {
+                SceneManager.LoadSceneAsync(lastSceneName);
+            }
+            else
+            {
+                Debug.LogWarning("No last saved scene found. Loading default scene.");
+                SceneManager.LoadSceneAsync("Labirinto");
+            }
         }
 
         private void DisableMenuButtons() 

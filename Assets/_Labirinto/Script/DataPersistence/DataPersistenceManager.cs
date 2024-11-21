@@ -253,6 +253,11 @@ namespace DataPersistence
             return dataHandler.LoadAllProfiles();
         }
 
+        public string GetLastSavedSceneName()
+        {
+            return gameData?.lastScene;
+        }
+
         private IEnumerator AutoSave()
         {
             while (true) 

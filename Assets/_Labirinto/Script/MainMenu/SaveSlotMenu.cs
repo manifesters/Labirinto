@@ -94,7 +94,16 @@ namespace MainMenu
             // save the game anytime before loading a new scene
             DataPersistenceManager.Instance.SaveGame();
             // load the scene
-            SceneManager.LoadSceneAsync("Labirinto");
+            string lastSceneName = DataPersistenceManager.Instance.GetLastSavedSceneName();
+            if (!string.IsNullOrEmpty(lastSceneName))
+            {
+                SceneManager.LoadSceneAsync(lastSceneName);
+            }
+            else
+            {
+                Debug.LogWarning("No last saved scene found. Loading default scene.");
+                SceneManager.LoadSceneAsync("Labirinto");
+            }
         }
 
         public void OnClearClicked(SaveSlot saveSlot) 

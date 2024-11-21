@@ -1,13 +1,20 @@
 using DataPersistence;
+using Helper;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
-    public class Player : MonoBehaviour, IDataPersistence
+    public class Player : SingletonMonobehaviour<Player>, IDataPersistence
     {
         public float movementSpeed = 2.5f;
         private Vector2 input;
         public Rigidbody2D playerRb;
+
+        public override void Awake()
+        {
+            base.Awake();
+        }
 
         private void Start()
         {
@@ -24,6 +31,8 @@ namespace Player
         public void SaveData(GameData data) 
         {
             data.playerPosition = this.transform.position;
+            data.lastScene = SceneManager.GetActiveScene().name;
+            Debug.Log("Player position is saved" + SceneManager.GetActiveScene().name);
         }
 
         private void Update()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DataPersistence;
 using Helper;
 using Ink.Runtime;
 using Panel;
@@ -227,7 +228,12 @@ namespace Dialogue
                     Debug.Log("Enter a challenge");
                     ShowChallengePanel("Panel_QuizWindow", PanelShowBehaviour.KEEP_PREVIOUS); 
                     break;
-                 case "START_CHALLENGE_MATCHPAIR":
+                case "LOAD_QUARTER1":
+                    Debug.Log("Load quarter 1 secene");
+                    ScenesManager.Instance.LoadQuater1();
+                    DataPersistenceManager.Instance.SaveGame();
+                    break;
+                case "START_CHALLENGE_MATCHPAIR":
                     Debug.Log("Enter a challenge");
                     ShowChallengePanel("Panel_MatchPairWindow", PanelShowBehaviour.KEEP_PREVIOUS); 
                     break;    

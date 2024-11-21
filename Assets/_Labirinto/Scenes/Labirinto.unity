@@ -328,7 +328,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.25
+  orthographic size: 4.5208335
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2023,11 +2023,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 197754144475828523, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.7056093
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: 197754144475828523, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.866626
+      value: -4.82
       objectReference: {fileID: 0}
     - target: {fileID: 197754144475828523, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2072,14 +2072,14 @@ PrefabInstance:
     - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: dialogueInkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 3721a60ab7ddee84d9875579342c0b58, type: 3}
+      objectReference: {fileID: 4900000, guid: 4a57d14cf1506e64dbc93c282b24ef2d, type: 3}
     - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: challengeDataJSON
       value: 
-      objectReference: {fileID: 4900000, guid: feaf56ba596d6451292e85bf07fe5b73, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
-      value: NPC_Coach
+      value: NPC_Datu
       objectReference: {fileID: 0}
     - target: {fileID: 7836766953386508351, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: mainCanvas
@@ -2088,7 +2088,7 @@ PrefabInstance:
     - target: {fileID: 7836766953386508351, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: questInfoForPoint
       value: 
-      objectReference: {fileID: 11400000, guid: 7da2d3fdc58035b46b4db895a83da37e, type: 2}
+      objectReference: {fileID: 11400000, guid: 2acfae4bc525d3d5a93c041f55ef0d3b, type: 2}
     - target: {fileID: 8471137729272905837, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Size.x
       value: 2.6666667
@@ -2107,7 +2107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8950107083840922956, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Radius
-      value: 0.6374748
+      value: 1.49
       objectReference: {fileID: 0}
     - target: {fileID: 8950107083840922956, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Offset.y
@@ -39964,10 +39964,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 440172368}
   - {fileID: 1321742315}
-  - {fileID: 326379956}
   - {fileID: 1741911928}
+  - {fileID: 326379956}
+  - {fileID: 440172368}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1052360713
@@ -44683,12 +44683,16 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 73a975494c6fdc34bb03712d55fd44e5, type: 2}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
-      value: NPC_Assistant
+      value: NPC_Timawa
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836766953386508351, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: startPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7836766953386508351, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: questInfoForPoint
       value: 
-      objectReference: {fileID: 11400000, guid: 12f6552c1c85a41caae900a1a4d921a7, type: 2}
+      objectReference: {fileID: 11400000, guid: d5a4ba624c92a42b8b52138ea0061b3a, type: 2}
     - target: {fileID: 8471137729272905837, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Size.x
       value: 2.6666667
@@ -44707,7 +44711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8950107083840922956, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Radius
-      value: 0.65958357
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 8950107083840922956, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Offset.y
@@ -48332,7 +48336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55cd16f686a6d0d3fb22c052c32cb7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 0
+  dontDestroyOnLoad: 1
   loadCollectibleState: 1
 --- !u!4 &1335527719
 Transform:
@@ -51758,12 +51762,12 @@ PrefabInstance:
       objectReference: {fileID: 4900000, guid: 963310393abb09b4e8f7c8890aeb3f23, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
-      value: NPC_Teacher
+      value: NPC_Alipin
       objectReference: {fileID: 0}
     - target: {fileID: 7836766953386508351, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: questInfoForPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 5a12ecf94d56deb8896b5732ae172e9c, type: 2}
     - target: {fileID: 8471137729272905837, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Size.x
       value: 2.6666667
@@ -51782,7 +51786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8950107083840922956, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Radius
-      value: 1.0289661
+      value: 1.43
       objectReference: {fileID: 0}
     - target: {fileID: 8950107083840922956, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Offset.x
@@ -56385,6 +56389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7265564823955777771, guid: 3ae908eeda31dcc4c98ef5a3649d3961, type: 3}
+      propertyPath: dontDestroyOnLoad
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8574372238004863338, guid: 3ae908eeda31dcc4c98ef5a3649d3961, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -56532,7 +56540,7 @@ PrefabInstance:
       objectReference: {fileID: 4900000, guid: 8004c583c5d276544966977d5940b8e0, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
-      value: NPC_Principal
+      value: NPC_Maharlika
       objectReference: {fileID: 0}
     - target: {fileID: 7836766953386508351, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: mainCanvas
@@ -56541,7 +56549,7 @@ PrefabInstance:
     - target: {fileID: 7836766953386508351, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: questInfoForPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 87adc1d6f3b3e23debc9c1feb671aab6, type: 2}
     - target: {fileID: 8471137729272905837, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Size.x
       value: 1.3333334
@@ -56584,7 +56592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8950107083840922956, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Radius
-      value: 0.68078256
+      value: 1.79
       objectReference: {fileID: 0}
     - target: {fileID: 8950107083840922956, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Offset.y
