@@ -41,7 +41,7 @@ namespace Medal
             }
             else
             {
-                Debug.LogWarning("ScoreText object not found in the current scene!");
+                Debug.LogWarning("Medaltext object not found in the current scene!");
             }
         }
 

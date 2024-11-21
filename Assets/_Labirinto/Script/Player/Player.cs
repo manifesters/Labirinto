@@ -5,16 +5,11 @@ using UnityEngine.SceneManagement;
 
 namespace Player
 {
-    public class Player : SingletonMonobehaviour<Player>, IDataPersistence
+    public class Player : MonoBehaviour, IDataPersistence
     {
         public float movementSpeed = 2.5f;
         private Vector2 input;
         public Rigidbody2D playerRb;
-
-        public override void Awake()
-        {
-            base.Awake();
-        }
 
         private void Start()
         {
