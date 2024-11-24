@@ -69,16 +69,16 @@ namespace DataPersistence
         }
 
         public void OnSceneLoaded(Scene scene, LoadSceneMode mode) 
-        {
-            // Save the game data before handling the new scene
-            SavePlayer();
-            SaveGame();
-
+        {   
             Debug.Log("OnSceneLoaded Called");
             this.dataPersistenceObjects = FindAllDataPersistenceObjects();
             LoadGame();
             this.playerDataPersistenceObjects = FindAllPlayerDataPersistenceObjects();
             LoadPlayer();
+
+            // Save the game data before handling the new scene
+            SavePlayer();
+            SaveGame();
 
             // start up the auto saving coroutine
             if (autoSaveCoroutine != null) 

@@ -3,7 +3,7 @@ using Helper;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Player
+namespace PlayerControl
 {
     public class Player : MonoBehaviour, IDataPersistence
     {
