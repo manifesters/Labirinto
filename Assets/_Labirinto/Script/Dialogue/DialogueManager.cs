@@ -236,7 +236,11 @@ namespace Dialogue
                 case "START_CHALLENGE_MATCHPAIR":
                     Debug.Log("Enter a challenge");
                     ShowChallengePanel("Panel_MatchPairWindow", PanelShowBehaviour.KEEP_PREVIOUS); 
-                    break;    
+                    break;
+                case "START_CHALLENGE_PICTURE":
+                    Debug.Log("Enter a challenge");
+                    ShowChallengePanel("Panel_GuessPictureWindow", PanelShowBehaviour.KEEP_PREVIOUS);
+                    break;
                 // Add more tags if necessary
                 default:
                     Debug.Log("Unhandled tag: " + tag);
