@@ -1292,6 +1292,7 @@ GameObject:
   - component: {fileID: 7906216235036986957}
   - component: {fileID: 7768734584439529650}
   - component: {fileID: 175735734519520413}
+  - component: {fileID: 7814721080346746381}
   m_Layer: 0
   m_Name: Button_Feedback
   m_TagString: Untagged
@@ -1400,7 +1401,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7768734584439529650}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7814721080346746381}
+        m_TargetAssemblyTypeName: Panel.ShowPanelButton, Assembly-CSharp
+        m_MethodName: DoShowPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7814721080346746381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5989943647739112367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951c95242b095c001aadf9c80d4d8ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelID: Panel_FeedbackWindow
+  Behaviour: 0
 --- !u!1 &7161347070572523908
 GameObject:
   m_ObjectHideFlags: 0
