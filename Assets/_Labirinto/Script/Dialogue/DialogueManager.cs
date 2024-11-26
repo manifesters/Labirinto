@@ -228,11 +228,6 @@ namespace Dialogue
                     Debug.Log("Enter a challenge");
                     ShowChallengePanel("Panel_QuizWindow", PanelShowBehaviour.KEEP_PREVIOUS); 
                     break;
-                case "LOAD_QUARTER1":
-                    Debug.Log("Load quarter 1 secene");
-                    ScenesManager.Instance.LoadQuater1();
-                    DataPersistenceManager.Instance.SaveGame();
-                    break;
                 case "START_CHALLENGE_MATCHPAIR":
                     Debug.Log("Enter a challenge");
                     ShowChallengePanel("Panel_MatchPairWindow", PanelShowBehaviour.KEEP_PREVIOUS); 

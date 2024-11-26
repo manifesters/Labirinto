@@ -33,7 +33,7 @@ namespace DataPersistence
         
         public GameData()
         {
-            playerPosition = Vector2.zero;
+            playerPosition = new Vector2(-100, -30);
             playerScore = 0;
             lastScene = "Labirinto";
             questDataEntries = new List<QuestDataEntry>();

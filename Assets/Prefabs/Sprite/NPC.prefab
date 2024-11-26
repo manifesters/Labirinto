@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueInkJSON: {fileID: 0}
   challengeDataJSON: {fileID: 0}
+  targetGameObject: {fileID: 0}
 --- !u!1 &4154603261473521179
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,11 +301,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f27561ed3817d6a80c680406b9a5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfoForPoint: {fileID: 11400000, guid: 841b223d0d7ff274d9a9a6364c904805, type: 2}
+  questInfoForPoint: {fileID: 0}
   startPoint: 1
   finishPoint: 1
   interactButton: {fileID: 4588494210670652674}
   mainCanvas: {fileID: 0}
+  questId: 
 --- !u!1 &9087250105998868722
 GameObject:
   m_ObjectHideFlags: 0
