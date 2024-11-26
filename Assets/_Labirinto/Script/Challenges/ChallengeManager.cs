@@ -27,7 +27,7 @@ namespace Challenge
             dataJson = json;
         }
 
-        // Function to clear quiz data if needed
+        // Function to clear game data if needed
         public void ClearJson()
         {
             dataJson = null;
