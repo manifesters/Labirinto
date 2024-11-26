@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: "Nague\xF1oQuest"
   m_EditorClassIdentifier: 
   <id>k__BackingField: "Nague\xF1oQuest"
-  displayName: "Hanapin si Irige\xF1o"
-  questPrerequisites: []
+  displayName: "Kausapin si Nague\xF1o"
+  questPrerequisites:
+  - {fileID: 11400000, guid: 87adc1d6f3b3e23debc9c1feb671aab6, type: 2}
   questStepPrefabs:
   - {fileID: 6356575162194951626, guid: d75e28abf79d9414fb5582b9defc6b01, type: 3}
   pointReward: 100

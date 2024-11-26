@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <id>k__BackingField: FindBrokenStatueQuest
   displayName: Kausapin si Tangol
-  questPrerequisites: []
+  questPrerequisites:
+  - {fileID: 11400000, guid: 28c1bdd2a67be3a41b4bafb50a543b86, type: 2}
   questStepPrefabs:
   - {fileID: 5748567498503356422, guid: 15007cc46ae73888285cfd953a13bf66, type: 3}
   pointReward: 100

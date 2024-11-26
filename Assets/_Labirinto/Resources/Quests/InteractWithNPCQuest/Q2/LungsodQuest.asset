@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f9aee06e2fd7df2cb4feea012d86e32, type: 3}
-  m_Name: MaharlikaQuest
+  m_Name: LungsodQuest
   m_EditorClassIdentifier: 
-  <id>k__BackingField: MaharlikaQuest
-  displayName: Kausapin si Maharlika
+  <id>k__BackingField: LungsodQuest
+  displayName: Kausapin si Lungsod
   questPrerequisites:
-  - {fileID: 11400000, guid: 2acfae4bc525d3d5a93c041f55ef0d3b, type: 2}
+  - {fileID: 11400000, guid: 7602195cb76e0f144a61573a1dc68491, type: 2}
   questStepPrefabs:
-  - {fileID: 6356575162194951626, guid: a69514b08944b371e90780aac93d3b7c, type: 3}
+  - {fileID: 6356575162194951626, guid: 12897eeb7a70e0f46b9ea43eb0816316, type: 3}
   pointReward: 100

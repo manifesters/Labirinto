@@ -19,5 +19,5 @@
         -> START
         === START ===
          *[Mag Simula!]
-         #LOAD_QUARTER1
+         #START_QUEST
 ->END

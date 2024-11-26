@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: GuroQuest
   m_EditorClassIdentifier: 
   <id>k__BackingField: GuroQuest
-  displayName: Hanapin si Amihan
-  questPrerequisites: []
+  displayName: Kausapin si Guro
+  questPrerequisites:
+  - {fileID: 11400000, guid: 2acfae4bc525d3d5a93c041f55ef0d3b, type: 2}
   questStepPrefabs:
   - {fileID: 6356575162194951626, guid: a9ad93c518cf79941b8fc43e222925f6, type: 3}
   pointReward: 100
