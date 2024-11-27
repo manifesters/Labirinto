@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9aee06e2fd7df2cb4feea012d86e32, type: 3}
+  m_Name: 3_GomezQuest
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: 3_GomezQuest
+  questType: InteractWithNPC
+  displayName: Kausapin si Gomez
+  questPrerequisites:
+  - {fileID: 11400000, guid: b2f0256fd4d4b6016b648ea2c191f4a1, type: 2}
+  questStepPrefabs:
+  - {fileID: 6356575162194951626, guid: 9bc2b7bfa1f8c48df857e695cdb18a3b, type: 3}
+  pointReward: 100

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9aee06e2fd7df2cb4feea012d86e32, type: 3}
+  m_Name: 2_KristineQuest
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: 2_KristineQuest
+  questType: InteractWithNPC
+  displayName: Kausapin si Kristine
+  questPrerequisites:
+  - {fileID: 11400000, guid: 83f8aeec3f907cfdfbc0845e1c74aa66, type: 2}
+  questStepPrefabs:
+  - {fileID: 6356575162194951626, guid: 1e6c80b58cb3206c7bc38de6d96f0c7c, type: 3}
+  pointReward: 100

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9aee06e2fd7df2cb4feea012d86e32, type: 3}
+  m_Name: 15_RubyQuest
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: 15_RubyQuest
+  questType: InteractWithNPC
+  displayName: Kausapin si Ruby
+  questPrerequisites:
+  - {fileID: 11400000, guid: 046224aca7a2122baa0d981f485c18b1, type: 2}
+  questStepPrefabs:
+  - {fileID: 6356575162194951626, guid: 3ad757d94c9eb08cc977532a7b127689, type: 3}
+  pointReward: 100
