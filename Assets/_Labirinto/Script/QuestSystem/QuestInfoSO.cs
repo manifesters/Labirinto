@@ -7,6 +7,9 @@ public class QuestInfoSO : ScriptableObject
 {
     [field: SerializeField] public string id { get; private set; }
 
+    [Header("Quest Type")]
+    public string questType;
+
     [Header("General")]
     public string displayName;
 
