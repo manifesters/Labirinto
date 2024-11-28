@@ -7,6 +7,10 @@ public class AuthenticationSceneController : MonoBehaviour
     {
         if (LootLockerManager.Instance.HasExistingSession())
         {
+            if (Application.internetReachability == NetworkReachability.NotReachable)
+            {
+                ScenesManager.Instance.LoadHomeScene();
+            }
             Debug.Log("Existing session found, loading Main Scene.");
             StartGuestSession();
         }
