@@ -66,7 +66,7 @@ public class QuestPoint : MonoBehaviour
         }
 
         // Start or finish a quest
-        if ((currentQuestState.Equals(QuestState.CAN_START) || currentQuestState.Equals(QuestState.IN_PROGRESS)) && startPoint)
+        if (currentQuestState.Equals(QuestState.CAN_START) && startPoint)
         {
             GameEventsManager.Instance.questEvents.StartQuest(questId);
             // Enter dialogue mode when starting the quest
@@ -114,7 +114,7 @@ public class QuestPoint : MonoBehaviour
     private void UpdateButtonVisibility()
     {
         // Show the button if the player is near and the quest can be started or finished
-        if (playerIsNear && (currentQuestState.Equals(QuestState.CAN_START) || currentQuestState.Equals(QuestState.CAN_FINISH) || currentQuestState.Equals(QuestState.IN_PROGRESS)))
+        if (playerIsNear && (currentQuestState.Equals(QuestState.CAN_START) || currentQuestState.Equals(QuestState.CAN_FINISH)))
         {
             // Ensure the button is parented to the main canvas
             if (interactButton.transform.parent != mainCanvas.transform)
