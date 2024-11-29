@@ -1,3 +1,4 @@
+using MainMenu;
 using UnityEngine;
 
 namespace Panel
@@ -6,20 +7,29 @@ namespace Panel
     {
         private PanelManager _panelManager;
 
-        void Start()
+		AudioManager audioManager;
+
+		private void Awake()
+		{
+			audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+		}
+
+		void Start()
         {
             _panelManager = PanelManager.Instance;
         }
 
         public void DoHidePanel()
         {
-            Debug.Log("The button is clicked");
+			audioManager.PlaySFX(audioManager.uiButton);
+			Debug.Log("The button is clicked");
             _panelManager.HideLastPanel();
         }
 
         public void DestroyPanel()
         {
-            Debug.Log("The Panel Destroyed");
+			audioManager.PlaySFX(audioManager.uiButton);
+			Debug.Log("The Panel Destroyed");
             _panelManager.DestroyLastPanel();
         }
     }

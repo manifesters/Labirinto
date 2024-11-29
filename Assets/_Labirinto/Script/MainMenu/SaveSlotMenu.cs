@@ -21,15 +21,18 @@ namespace MainMenu
         private SaveSlot[] saveSlots;
 
         private bool isLoadingGame = false;
+		AudioManager audioManager;
 
-        private void Awake() 
+		private void Awake() 
         {
             saveSlots = this.GetComponentsInChildren<SaveSlot>();
-        }
+			audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+		}
 
         public void OnSaveSlotClicked(SaveSlot saveSlot) 
         {
-            DisableMenuButtons();
+			audioManager.PlaySFX(audioManager.uiButton);
+			DisableMenuButtons();
 
             // if the game is loading
             if (isLoadingGame) 
@@ -126,7 +129,8 @@ namespace MainMenu
 
         public void OnBackClicked() 
         {
-            mainMenu.ActivateMenu();
+			audioManager.PlaySFX(audioManager.uiButton);
+			mainMenu.ActivateMenu();
             this.DeactivateMenu();
         }
 
