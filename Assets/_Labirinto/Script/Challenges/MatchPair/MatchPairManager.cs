@@ -1,121 +1,127 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
+using TMPro;
 using Newtonsoft.Json;
 using Challenge;
 
-namespace MatchChallenge
+namespace MatchPairGame
 {
     public class MatchGameManager : MonoBehaviour
     {
-        [Header("UI")]
-        [SerializeField] private GameObject matchPanel;
-        [SerializeField] private Transform leftListParent; // For item1 (left side)
-        [SerializeField] private Transform rightListParent; // For item2 (right side)
+        [Header("Game Elements")]
+        [SerializeField] private GameObject draggableItemsPanel;
+        [SerializeField] private GameObject slotPanel;
         [SerializeField] private GameObject draggableItemPrefab;
+        [SerializeField] private GameObject slotPrefab;
+        [SerializeField] private Button submitButton;
+        [SerializeField] private TextMeshProUGUI challengeName;
 
-        private List<Pair> pairs;
-        private Dictionary<string, string> pairMap;
-        private int correctMatches = 0;
+        private Dictionary<string, string> pairs = new Dictionary<string, string>();
 
         void Start()
         {
-            LoadMatchFromChallengeManager();
+            LoadGameFromChallengeManager();
+            submitButton.onClick.AddListener(CheckMatches);
         }
 
-        public void LoadMatchFromChallengeManager()
+        public void LoadGameFromChallengeManager()
         {
-            // Get the matchJson from the ChallengeManager
-            TextAsset matchJson = ChallengeManager.Instance.dataJson;
+            // Get the game JSON from the ChallengeManager
+            TextAsset gameJson = ChallengeManager.Instance.dataJson;
 
-            if (matchJson != null)
+            if (gameJson != null)
             {
-                LoadMatch(matchJson);
+                LoadGame(gameJson);
             }
             else
             {
-                Debug.LogError("No match JSON found in ChallengeManager!");
+                Debug.LogError("No game JSON found in ChallengeManager!");
             }
         }
 
-        public void LoadMatch(TextAsset matchJson)
+        public void LoadGame(TextAsset gameJson)
         {
-            if (matchJson != null)
+            if (gameJson != null)
             {
-                string jsonText = matchJson.text;
-                ChallengeData matchData = JsonConvert.DeserializeObject<ChallengeData>(jsonText);
+                string jsonText = gameJson.text;
+                MatchData matchData = JsonConvert.DeserializeObject<MatchData>(jsonText);
 
-                pairs = matchData.pairs;
-                pairMap = new Dictionary<string, string>();
+                challengeName.text = matchData.challengeName;
 
-                foreach (var pair in pairs)
+                // Populate draggable items and slots
+                foreach (var pair in matchData.pairs)
                 {
-                    pairMap[pair.item1] = pair.item2;
-                    CreateDraggableItem(leftListParent, pair.item1);
-                    CreateDraggableItem(rightListParent, pair.item2);
+                    pairs[pair.item] = pair.pair;
+
+                    // Create draggable item
+                    GameObject draggableItem = Instantiate(draggableItemPrefab, draggableItemsPanel.transform);
+                    draggableItem.GetComponentInChildren<TextMeshProUGUI>().text = pair.item;
+
+                    // Create slot
+                    GameObject slot = Instantiate(slotPrefab, slotPanel.transform);
+                    slot.GetComponentInChildren<TextMeshProUGUI>().text = pair.pair;
+                    slot.name = pair.pair; // Use pair as the slot name
                 }
-
-                matchPanel.SetActive(true);
             }
             else
             {
-                Debug.LogError("Match JSON file is missing!");
+                Debug.LogError("Game JSON file is missing!");
             }
         }
 
-        void CreateDraggableItem(Transform parent, string text)
+        public void CheckMatches()
         {
-            GameObject item = Instantiate(draggableItemPrefab, parent);
-            item.GetComponentInChildren<TMP_Text>().text = text;
-            item.name = text; // Set the name to identify the item
-        }
+            int matchedCount = 0;
 
-        public void CheckMatch(GameObject item1, GameObject item2)
-        {
-            // Check if the items are in the correct pair
-            if (pairMap.TryGetValue(item1.name, out string correctPair))
+            foreach (Transform slot in slotPanel.transform)
             {
-                if (item2.name == correctPair)
+                if (slot.childCount > 1)
                 {
-                    // Correct match
-                    Debug.Log($"Matched: {item1.name} with {item2.name}");
-                    correctMatches++;
-                    item1.SetActive(false); // Optionally hide matched items
-                    item2.SetActive(false);
+                    Transform draggableItem = slot.GetChild(1);
+                    string draggedItemName = draggableItem.GetComponentInChildren<TextMeshProUGUI>().text;
+                    string expectedPair = slot.name;
+
+                    Debug.Log($"Checking slot: {slot.name}, Dragged item: {draggedItemName}");
+
+                    if (pairs.ContainsKey(draggedItemName))
+                    {
+                        if (pairs[draggedItemName] == expectedPair)
+                        {
+                            Debug.Log($"Matched: {draggedItemName} -> {expectedPair}");
+                            matchedCount++;
+                        }
+                        else
+                        {
+                            Debug.Log($"Mismatch: {draggedItemName} -> {expectedPair}");
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log($"No match found for dragged item: {draggedItemName}");
+                    }
                 }
                 else
                 {
-                    // Incorrect match
-                    Debug.Log($"Wrong match: {item1.name} and {item2.name}");
+                    Debug.Log($"Slot {slot.name} is empty or incomplete.");
                 }
             }
 
-            // Check if all matches are made
-            if (correctMatches == pairs.Count)
-            {
-                EndMatch();
-            }
+            Debug.Log($"Matched pairs: {matchedCount}/{pairs.Count}");
         }
+    }
 
-        void EndMatch()
-        {
-            Debug.Log("All pairs matched! Challenge Complete!");
-            matchPanel.SetActive(false); // Hide the match panel
-        }
+    [System.Serializable]
+    public class MatchData
+    {
+        public string challengeName;
+        public List<Pair> pairs;
     }
 
     [System.Serializable]
     public class Pair
     {
-        public string item1;
-        public string item2;
-    }
-
-    [System.Serializable]
-    public class ChallengeData
-    {
-        public string challengeName;
-        public List<Pair> pairs;
+        public string item;
+        public string pair;
     }
 }
