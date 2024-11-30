@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using Newtonsoft.Json;
 using Challenge;
+using System.Linq;
 
 namespace MatchPairGame
 {
@@ -61,8 +62,9 @@ namespace MatchPairGame
 
                 challengeName.text = matchData.challengeName;
 
-                // Populate draggable items and slots
-                foreach (var pair in matchData.pairs)
+                var shuffledPairs = matchData.pairs.OrderBy(pair => Random.value).ToList();
+
+                foreach (var pair in shuffledPairs)
                 {
                     pairs[pair.item] = pair.pair;
 
