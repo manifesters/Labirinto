@@ -1,4 +1,5 @@
 using DataPersistence;
+using Helper;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -58,16 +59,9 @@ namespace MainMenu
             DataPersistenceManager.Instance.SaveGame();
             // load the next scene - which will in turn load the game because of 
             // OnSceneLoaded() in the DataPersistenceManager
-            string lastSceneName = DataPersistenceManager.Instance.GetLastSavedSceneName();
-            if (!string.IsNullOrEmpty(lastSceneName))
-            {
-                SceneManager.LoadSceneAsync(lastSceneName);
-            }
-            else
-            {
-                Debug.LogWarning("No last saved scene found. Loading default scene.");
-                SceneManager.LoadSceneAsync("Labirinto");
-            }
+
+            Debug.LogWarning("No last saved scene found. Loading default scene.");
+            GameManager.Instance.LoadScene("Labirinto", GameState.LABIRINTO);
         }
 
         private void DisableMenuButtons() 

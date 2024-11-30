@@ -1,5 +1,6 @@
 using UnityEngine;
 using Manager;
+using Helper;
 
 public class AuthenticationSceneController : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class AuthenticationSceneController : MonoBehaviour
         {
             if (Application.internetReachability == NetworkReachability.NotReachable)
             {
-                ScenesManager.Instance.LoadHomeScene();
+                GameManager.Instance.LoadScene("Main", GameState.HOME);
             }
             Debug.Log("Existing session found, loading Main Scene.");
             StartGuestSession();
@@ -25,7 +26,7 @@ public class AuthenticationSceneController : MonoBehaviour
         else
         {
             Debug.Log("No existing session found, loading Authentication Scene.");
-            ScenesManager.Instance.LoadAuthenticationScene();
+            GameManager.Instance.LoadAuthenticationScene();
         }
     }
 
@@ -36,7 +37,7 @@ public class AuthenticationSceneController : MonoBehaviour
             if (success)
             {
                 Debug.Log("Guest session started, loading Main Scene.");
-                ScenesManager.Instance.LoadHomeScene();
+                GameManager.Instance.LoadScene("Main", GameState.HOME);
             }
             else
             {
