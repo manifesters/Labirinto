@@ -4,13 +4,13 @@
 -> Laya
 === Laya ===
 
-* ["Paano nagtagumpay ang Asya sa pag-abot ng kalayaan?"]
+* ["Tagumpay ng Asya"]
    "Ang mga bansa sa Asya ay nagtagumpay sa kanilang kalayaan sa pamamagitan ng mga rebolusyon, digmaan, at mga kasunduan."
     -> Laya
-* ["Ano ang mga dapat tandaan upang mapanatili ang kalayaan?"]
+* ["Dapat tandaan"]
    "Kailangan ang pagkakaisa ng mga mamamayan, pagpapahalaga sa kasaysayan, at pagpapalakas ng pambansang ekonomiya at politika."
 
 
 "Mag patuloy na!"
-Quest: Lumang aklat ng mga kwento at armas na ginamit ng mga bayani.
+Quest: Lumang aklat ng mga kwento at armas na ginamit ng mga bayani. or Hanapin si San Anderson
 -> END

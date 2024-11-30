@@ -3,12 +3,12 @@
 
 -> Prinsipe
 === Prinsipe ===
-* ["Paano naapektuhan ang mga tao sa Vietnam at Myanmar?"]
+* ["Tao sa Vietnam at Myanmar?"]
     "Pinilit silang magtrabaho sa ilalim ng malupit na pamumuno ng mga banyaga. Ginamit ang mga likas na yaman para sa interes ng mga kolonya."
     -> Prinsipe
-* ["Bakit hindi nagtagumpay ang mga rebelyon sa Vietnam at Myanmar?"]
-  "Walang sapat na lakas at yaman ang mga tao upang magtagumpay laban sa mga banyagang mananakop."
+* ["Rebelyon sa Vietnam at Myanmar?"]
+  "Hindi nag tagumpay ang rebelyon dahil walang sapat na lakas at yaman ang mga tao upang magtagumpay laban sa mga banyagang mananakop."
 
-
+Quest: Hanapin si Joseño
 
 -> END
