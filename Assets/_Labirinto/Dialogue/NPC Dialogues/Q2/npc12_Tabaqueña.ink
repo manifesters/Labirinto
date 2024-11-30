@@ -3,10 +3,10 @@
 
 "Ang mga patakaran ng Britanya ay nagbigay daan sa monopolyo ng kalakalan at pinilit na ang Malaysia ay magsupply ng mga hilaw na materyales sa kanilang imperyo, na naglimita sa aming lokal na kalakalan."
 
-"Salamat saiyong oras na makinig sa akin. Ikaw ay humayo at hanapin si Emilio."
+"Salamat saiyong oras na makinig sa akin. Ikaw ay humayo at hanapin si Liguaña."
 
 -> Tuan
 === Tuan ===
 *["Hanapin"]
-
+Quest: Hanapin si Liguaña
 ->END

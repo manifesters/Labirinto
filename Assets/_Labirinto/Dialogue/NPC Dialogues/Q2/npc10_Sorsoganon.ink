@@ -3,12 +3,14 @@
 
 -> mendoza
 === mendoza ===
-* [Paano nakaapekto ang kolonyalismo sa mga bansa?"]
+* [Kolonyalismo sa bansa?"]
 
-"Ang kolonyalismo ay nagdulot ng mga hindi pagkakaunawaan at tensyon sa mga bansa sa Timog Silangang Asya. Ang mga artipisyal na hangganan na itinakda ng mga mananakop ay nagbigay daan sa mga digmaan at alitan sa rehiyon."
+"Ang kolonyalismo ay nagdulot ng mga hindi pagkakaunawaan at tensyon sa mga bansa sa Timog Silangang Asya." 
+"Ang mga artipisyal na hangganan na itinakda ng mga mananakop ay nagbigay daan sa mga digmaan at alitan sa rehiyon."
 -> mendoza
-* ["Ano ang naging reaksyon ng mga tao sa kolonyalismo?"]
+* ["Reaksyon kolonyalismo?"]
 
 "Marami ang nag-alsa at lumaban laban sa mga mananakop. Ang mga kilusang paglaban sa kolonyalismo ay nagbigay ng inspirasyon sa mga mamamayan upang ipaglaban ang kanilang kalayaan."
 
+QUEST: HANAPIN SI LEGAZPEñO
 -> END

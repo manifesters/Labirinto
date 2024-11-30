@@ -1,7 +1,7 @@
-﻿"Isang makasaysayang araw sa'yo! Ako’y mula sa Tiwi, isang bayan na kilala sa aming mga hot spring at geothermal energy ang tagapagpaliwanag ng mga patakaran at pamamaraan ng kolonyalismo sa Timog-Silangang Asya."
+﻿"Isang makasaysayang araw sa'yo! Ako’y mula sa Tiwi, isang bayan na kilala sa aming mga hot spring ang tagapagpaliwanag ng mga patakaran at pamamaraan ng kolonyalismo sa Timog-Silangang Asya."
 -> Liwayway
 === Liwayway ===
-*["Alam mo ba na magkaiba ang epekto ng kolonyalismo sa bawat bansa?]
+*["Kolonyalismo sa bawat bansa?]
 "Ang Cambodia, Myanmar, at Vietnam ay may sariling paraan ng pagharap sa mga patakarang ipinataw sa kanila."
 
 "Ang Cambodia ay naging bahagi ng French Indochina."
@@ -16,5 +16,6 @@
 *["Simulan!"]
 #challenge
 
+QUEST: HANAPIN SI Daeteña
 
 -> END

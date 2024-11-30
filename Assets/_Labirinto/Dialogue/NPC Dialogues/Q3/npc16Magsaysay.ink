@@ -1,4 +1,7 @@
-﻿“Ah, ikaw ay dumating sa wakas! Ako pala si Magsaysay. Naglakbay ka ng malayo at natutunan mo ang mga aral ng nakaraan. Ang iyong pakikibaka ay magbibigay daan sa mas magaan na landas. Sa bawat hakbang mo sa lugar na ito, natutunan mo ang tunay na halaga ng nasyonalismo at pagkakaisa ng mga bansa sa Timog-Silangang Asya. Ang Kumperensiya ng Bandung ay nagbigay gabay sa mga bansang ito upang lumaban para sa kanilang kalayaan. Ngayon bibigayn kita ng huling hamon upang iyong makuha ang tagumpay.”
+﻿“Ah, ikaw ay dumating sa wakas! Ako pala si Magsaysay. Naglakbay ka ng malayo at natutunan mo ang mga aral ng nakaraan." 
+"Ang iyong pakikibaka ay magbibigay daan sa mas magaan na landas. Sa bawat hakbang mo sa lugar na ito, natutunan mo ang tunay na halaga ng nasyonalismo at pagkakaisa ng mga bansa sa Timog-Silangang Asya." 
+
+"Ang Kumperensiya ng Bandung ay nagbigay gabay sa mga bansang ito upang lumaban para sa kanilang kalayaan. Ngayon bibigayn kita ng huling hamon upang iyong makuha ang tagumpay.”
 
 *["Simulan!"]
 
