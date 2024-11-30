@@ -16,19 +16,31 @@ namespace MatchPairGame
         [SerializeField] private GameObject slotPrefab;
         [SerializeField] private Button submitButton;
         [SerializeField] private TextMeshProUGUI challengeName;
+        [SerializeField] private Timer gameTimer; // Reference to Timer
 
         private Dictionary<string, string> pairs = new Dictionary<string, string>();
+        private int score = 0; // To track the score
 
         void Start()
         {
             LoadGameFromChallengeManager();
             submitButton.onClick.AddListener(CheckMatches);
+
+            // Ensure gameTimer is assigned before subscribing to events
+            if (gameTimer != null)
+            {
+                gameTimer.OnTimeEnd += CheckMatches;
+            }
+            else
+            {
+                Debug.LogError("Game Timer is not assigned!");
+            }
         }
 
         public void LoadGameFromChallengeManager()
         {
             // Get the game JSON from the ChallengeManager
-            TextAsset gameJson = ChallengeManager.Instance.dataJson;
+            TextAsset gameJson = ChallengeManager.Instance.CurrentChallengeJson;
 
             if (gameJson != null)
             {
@@ -74,13 +86,18 @@ namespace MatchPairGame
         {
             int matchedCount = 0;
 
+            // Reset score
+            score = 0;
+
             foreach (Transform slot in slotPanel.transform)
             {
-                if (slot.childCount > 1)
+                string expectedPair = slot.name;
+
+                // Check if the slot has a draggable item
+                if (slot.childCount > 1) // Ensures the slot contains a draggable item
                 {
-                    Transform draggableItem = slot.GetChild(1);
+                    Transform draggableItem = slot.GetChild(1); // The draggable item is the second child
                     string draggedItemName = draggableItem.GetComponentInChildren<TextMeshProUGUI>().text;
-                    string expectedPair = slot.name;
 
                     Debug.Log($"Checking slot: {slot.name}, Dragged item: {draggedItemName}");
 
@@ -90,6 +107,7 @@ namespace MatchPairGame
                         {
                             Debug.Log($"Matched: {draggedItemName} -> {expectedPair}");
                             matchedCount++;
+                            score += 20; // Add 20 points for each correct match
                         }
                         else
                         {
@@ -103,11 +121,15 @@ namespace MatchPairGame
                 }
                 else
                 {
-                    Debug.Log($"Slot {slot.name} is empty or incomplete.");
+                    // Handle empty slot
+                    Debug.Log($"Slot {slot.name} is empty. No draggable item to check.");
                 }
             }
 
             Debug.Log($"Matched pairs: {matchedCount}/{pairs.Count}");
+            Debug.Log($"Final Score: {score}");
+            ChallengeManager.Instance.CompleteChallenge(score);
+            Destroy(this.gameObject);
         }
     }
 

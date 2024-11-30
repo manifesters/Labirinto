@@ -28,7 +28,7 @@ namespace PictureChallenge
         public void LoadChallengeFromManager()
         {
             // Get the challenge JSON from ChallengeManager
-            TextAsset challengeJson = ChallengeManager.Instance.dataJson;
+            TextAsset challengeJson = ChallengeManager.Instance.CurrentChallengeJson;
 
             if (challengeJson != null)
             {
