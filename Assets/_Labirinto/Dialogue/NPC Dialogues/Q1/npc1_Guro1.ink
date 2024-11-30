@@ -1,4 +1,6 @@
-﻿"Magandang araw! Ako ang iyong unang guro, ang iyong gabay sa landas na ito. Maraming bagay ang naghihintay na matuklasan, at sa bawat hakbang, may mga taong makakatulong sa iyo sa iyong misyon. Hanapin ang mga tao sa paligid, may dala silang mga kaalaman na magbibigay-lakas sa iyong landas. Magtulungan kayo upang malagpasan ang mga pagsubok."
+﻿"Magandang araw! Ako ang iyong unang guro, ang iyong gabay sa landas na ito."
+ "Maraming bagay ang naghihintay na matuklasan, at sa bawat hakbang, may mga taong makakatulong sa iyo sa iyong misyon."
+ "Hanapin ang mga tao sa paligid, may dala silang mga kaalaman na magbibigay-lakas sa iyong landas. Magtulungan kayo upang malagpasan ang mga pagsubok."
 -> Guro1
 === Guro1 ===
 * ["Ano po ang aking misyon?"]

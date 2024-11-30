@@ -2,7 +2,7 @@
 
 ->marce
 === marce ===
-*["Ano ang epekto ng mas malalim na pakikipag-ugnayan sa ASEAN, lalo na sa ekonomiya at seguridad?"]
+*["Malalim ugnayan sa ASEAN"]
 
 "Magkakaroon tayo ng mas malalim na ugnayan sa kalakalan at seguridad."
 

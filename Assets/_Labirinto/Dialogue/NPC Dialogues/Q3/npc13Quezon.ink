@@ -2,10 +2,10 @@
 
 ->QUEZ
 === QUEZ ===
-*["Ang Pilipinas ay naghanap ng mga kaalyado."]
+*["Kaalyado."]
 "Tama! Nakipag-alyansa ang Pilipinas sa iba pang mga bansa."
 ->QUEZ
-*["Marami ang nahirapan sa kahirapan at imprastruktura."]
+*["Kahirapan at imprastruktura."]
 "Oo, mahirap ang kalagayan ng mga bansa dahil sa kahirapan."
 
 QUEST: HANAPIN SI RAMON
