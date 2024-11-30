@@ -1,5 +1,6 @@
 using System.Collections;
 using DataPersistence;
+using Helper;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -19,6 +20,6 @@ public class SettingsController : MonoBehaviour
         yield return null;
 
         // Load the home scene after saving
-        ScenesManager.Instance.LoadHomeScene();
+        GameManager.Instance.LoadScene("Main", GameState.HOME);
     }
 }

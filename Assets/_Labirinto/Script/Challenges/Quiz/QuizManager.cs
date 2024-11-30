@@ -9,27 +9,39 @@ using Score;
 namespace QuizChallenge
 {
     public class QuizManager : MonoBehaviour
-    {   
-        [Header("Quiz")]
+    {
+        [Header("Quiz Elements")]
         [SerializeField] private GameObject quizPanel;
         [SerializeField] private TextMeshProUGUI questionText;
         [SerializeField] private List<Toggle> answerToggles;
         [SerializeField] private ToggleGroup answerToggleGroup;
         [SerializeField] private TextMeshProUGUI challengeName;
+        [SerializeField] private Timer gameTimer;  // Timer reference for timed quizzes
 
         private List<Question> questions;
         private int currentQuestionIndex = 0;
+        private int score = 0;
         private readonly int scorePerQuestion = 10;
 
-        void Start()
+        private void Start()
         {
+            // Load quiz data from ChallengeManager
             LoadQuizFromChallengeManager();
+
+            // Attach timer event if applicable
+            if (gameTimer != null)
+            {
+                gameTimer.OnTimeEnd += EndQuiz; // Ends quiz when time runs out
+            }
+            else
+            {
+                Debug.LogError("Game Timer is not assigned!");
+            }
         }
 
-        public void LoadQuizFromChallengeManager()
+        private void LoadQuizFromChallengeManager()
         {
-            // Get the quizJson from the ChallengeManager
-            TextAsset quizJson = ChallengeManager.Instance.dataJson;
+            TextAsset quizJson = ChallengeManager.Instance.CurrentChallengeJson;
 
             if (quizJson != null)
             {
@@ -41,7 +53,7 @@ namespace QuizChallenge
             }
         }
 
-        public void LoadQuiz(TextAsset quizJson)
+        private void LoadQuiz(TextAsset quizJson)
         {
             if (quizJson != null)
             {
@@ -50,13 +62,14 @@ namespace QuizChallenge
 
                 challengeName.text = challengeData.challengeName;
                 questions = challengeData.quiz.questions;
+
                 ShowQuestion();
                 quizPanel.SetActive(true);
             }
             else
             {
                 Debug.LogError("Quiz JSON file is missing!");
-            }       
+            }
         }
 
         private void ShowQuestion()
@@ -66,21 +79,33 @@ namespace QuizChallenge
                 Question currentQuestion = questions[currentQuestionIndex];
                 questionText.text = currentQuestion.question;
 
-                answerToggleGroup.SetAllTogglesOff(); // Make sure no toggle is selected initially
+                answerToggleGroup.SetAllTogglesOff(); // Ensure no toggle is selected initially
 
-                // Display answer options in toggles
+                // Assign options to toggles
                 for (int i = 0; i < answerToggles.Count; i++)
                 {
-                    answerToggles[i].GetComponentInChildren<Text>().text = currentQuestion.options[i];
+                    if (i < currentQuestion.options.Count)
+                    {
+                        answerToggles[i].gameObject.SetActive(true);
+                        answerToggles[i].GetComponentInChildren<Text>().text = currentQuestion.options[i];
+                    }
+                    else
+                    {
+                        answerToggles[i].gameObject.SetActive(false); // Hide unused toggles
+                    }
                 }
+            }
+            else
+            {
+                Debug.LogWarning("No questions available to display!");
             }
         }
 
         public void SubmitAnswer()
         {
-            // Check which toggle is selected
             int selectedAnswerIndex = -1;
 
+            // Identify the selected answer
             for (int i = 0; i < answerToggles.Count; i++)
             {
                 if (answerToggles[i].isOn)
@@ -92,42 +117,47 @@ namespace QuizChallenge
 
             if (selectedAnswerIndex != -1)
             {
-                // Check if the selected answer is correct
-                Question currentQuestion = questions[currentQuestionIndex];
-                if (selectedAnswerIndex == currentQuestion.correctAnswerIndex)
-                {
-                    // Handle correct answer (e.g., show feedback, increase score)
-                    PointManager.Instance.AddScore(scorePerQuestion); 
-                    Debug.Log("Correct!");
-                }
-                else
-                {
-                    // Handle wrong answer
-                    Debug.Log("Wrong!");
-                }
-
-                currentQuestionIndex++;
-                if (currentQuestionIndex < questions.Count)
-                {
-                    ShowQuestion();
-                }
-                else
-                {
-                    EndQuiz();
-                }
+                EvaluateAnswer(selectedAnswerIndex);
             }
             else
             {
-                // Handle case where no answer was selected
                 Debug.Log("Please select an answer.");
+            }
+        }
+
+        private void EvaluateAnswer(int selectedAnswerIndex)
+        {
+            Question currentQuestion = questions[currentQuestionIndex];
+
+            if (selectedAnswerIndex == currentQuestion.correctAnswerIndex)
+            {
+                Debug.Log("Correct answer!");
+                score += scorePerQuestion;
+            }
+            else
+            {
+                Debug.Log("Wrong answer!");
+            }
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.Count)
+            {
+                ShowQuestion();
+            }
+            else
+            {
+                EndQuiz();
             }
         }
 
         private void EndQuiz()
         {
+            Debug.Log($"Quiz Finished. Final Score: {score}");
             quizPanel.SetActive(false);
-            Destroy(quizPanel);
-            Debug.Log("Quiz Finished");
+
+            ChallengeManager.Instance.CompleteChallenge(score);
+            Destroy(this.gameObject);
         }
     }
 

@@ -1,49 +1,42 @@
 using UnityEngine;
-using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private float timeRemaining = 60f; // Set the time
-    [SerializeField] private TextMeshProUGUI timerText;
-    private GameController gameController; // Reference to GameController
-    private bool isRunning = true; // control the timer running state
+    public GameObject timerBar;
+    [SerializeField] private float timeRemaining = 60f;  // Initial time in seconds
 
-    void Start()
-    {
-        gameController = FindObjectOfType<GameController>(); // reference to GameController
-    }
+    private bool isRunning = true;
+
+    // Define a delegate and event for when the time ends
+    public delegate void TimeEndAction();
+    public event TimeEndAction OnTimeEnd;  // This is the event
 
     void Update()
     {
         if (isRunning && timeRemaining > 0)
         {
-            timeRemaining -= Time.deltaTime;
-            timerText.text = "Time: " + Mathf.Ceil(timeRemaining).ToString();
+            timeRemaining -= Time.deltaTime;  // Decrease time
+            AnimateBar();  // Animate the timer bar
         }
-        else if (timeRemaining <= 0)
+        else if (timeRemaining <= 0 && isRunning)
         {
-            timeRemaining = 0; // Ensure time not go negative
-            timerText.text = "Time: 0";
+            timeRemaining = 0;
+            AnimateBar();  // Final update for the bar when time is up
             isRunning = false;
-            gameController.TimeUp(); // Notify GameController that time is up
+
+            // Trigger the OnTimeEnd event
+            OnTimeEnd?.Invoke();
         }
     }
 
-    public void ReduceTime(float amount)
+    // Animates the timer bar to show remaining time
+    private void AnimateBar()
     {
-        timeRemaining -= amount;
+        float normalizedTime = Mathf.Clamp(timeRemaining / 60f, 0f, 1f);
+        LeanTween.scaleX(timerBar, normalizedTime, 0.1f);  // Scale the bar based on remaining time
     }
 
-    public void Stop()
-    {
-        isRunning = false; // Stop the timer
-    }
-
-    public void StartTimer(float initialTime)
-    {
-        timeRemaining = initialTime; // Reset time and start
-        isRunning = true;
-    }
+    // Returns the remaining time
     public float GetRemainingTime()
     {
         return timeRemaining;

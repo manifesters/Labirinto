@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
@@ -38,18 +36,12 @@ public class DropZone : MonoBehaviour, IDropHandler
                     dropZoneText.color = Color.green;
                     isOccupied = true; // Mark the drop zone as occupied
                     Destroy(draggableWord.gameObject); // Remove the draggable word
-
-                    // Notify the GameController of the correct answer
-                    FindObjectOfType<GameController>().CorrectAnswerPlaced();
                 }
                 else
                 {
                     dropZoneText.color = Color.red;
                     draggableWord.SetColor(Color.red); // Change the color to red if incorrect
                     draggableWord.ResetPosition();
-
-                    // Notify the GameController of the incorrect answer to deduct time
-                    FindObjectOfType<GameController>().IncorrectAnswerPlaced();
                 }
             }
             else
