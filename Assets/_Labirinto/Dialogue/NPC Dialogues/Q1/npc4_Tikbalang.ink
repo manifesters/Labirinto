@@ -1,14 +1,14 @@
-﻿"Ako si Tikbalang, isang gabay sa kalupaan ng Timog Silangang Asya. Ang mga bundok, dagat, at pulo ng rehiyong ito ay may kanya-kanyang kasaysayan at kwento ng pag-aangkop at paglago. Sa bawat anyong lupa at anyong tubig dito, isinilang ang mga kultura at tradisyon ng mga tao. "
+﻿"Ako si Tikbalang, isang gabay sa kalupaan ng Timog Silangang Asya. Handa ka na bang matutunan ang tungkol sa mga salitang may kaugnayan sa ating kapaligiran?"
 -> Tikbalang
 === Tikbalang ===
-* ["Oo, handa na ako!"]
-"Mahusay! Simulan mo na ang iyong paglalakbay. Ang daan ay mahirap, ngunit ang gantimpala ay dakila."
+* ["Handa na ako!"]
+"Ang Biodiversity ay tumutukoy sa pagkakaiba-iba ng mga anyo ng buhay na bumubuo sa ating kalikasan, habang ang Siltation naman ay ang pagdami ng banlik sa tubig na dala ng agos."
 
 Quest: Hanapin si Bakunawa
 -> DONE
 
     -> Tikbalang
-* ["Hindi, hindi pa ako handa."]
+* ["Hindi pa ako handa."]
  "Kung ganoon, hindi ka magtatagumpay sa iyong misyon. Tandaan, ang pag-aalinlangan ay kalaban ng tagumpay. Kung magbago ang iyong isipan, hanapin ang isang bagay na magtutulak sa iyo upang magpatuloy."
 Quest: Collectable Item Decision Holder
  
