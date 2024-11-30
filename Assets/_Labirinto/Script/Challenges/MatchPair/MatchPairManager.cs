@@ -96,10 +96,17 @@ namespace MatchPairGame
                 // Check if the slot has a draggable item
                 if (slot.childCount > 1) // Ensures the slot contains a draggable item
                 {
-                    Transform draggableItem = slot.GetChild(1); // The draggable item is the second child
-                    string draggedItemName = draggableItem.GetComponentInChildren<TextMeshProUGUI>().text;
+                    Transform draggableItem = slot.GetChild(1);
+                    var textMesh = draggableItem.GetComponentInChildren<TextMeshProUGUI>();
 
-                    Debug.Log($"Checking slot: {slot.name}, Dragged item: {draggedItemName}");
+                    if (textMesh == null)
+                    {
+                        Debug.LogWarning($"No TextMeshProUGUI component found in draggable item for slot: {slot.name}. Adding 0 score.");
+                        score += 0; // Add 0 score
+                        continue; // Skip further processing for this slot
+                    }
+
+                    string draggedItemName = textMesh.text;
 
                     if (pairs.ContainsKey(draggedItemName))
                     {
@@ -122,16 +129,18 @@ namespace MatchPairGame
                 else
                 {
                     // Handle empty slot
-                    Debug.Log($"Slot {slot.name} is empty. No draggable item to check.");
+                    Debug.Log($"Slot {slot.name} is empty. Adding 0 score.");
+                    score += 0; // Add 0 score for empty slot
                 }
             }
-
+            
             Debug.Log($"Matched pairs: {matchedCount}/{pairs.Count}");
             Debug.Log($"Final Score: {score}");
             ChallengeManager.Instance.CompleteChallenge(score);
             Destroy(this.gameObject);
         }
     }
+
 
     [System.Serializable]
     public class MatchData
