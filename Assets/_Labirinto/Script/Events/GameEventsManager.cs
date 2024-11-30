@@ -9,6 +9,7 @@ public class GameEventsManager : SingletonMonobehaviour<GameEventsManager>
     public MiscEvents miscEvents;
     public QuestEvents questEvents;
     public StoryEvents storyEvents;
+    public ChallengeEvents challengeEvents;
 
     public override void Awake()
     {
@@ -22,6 +23,7 @@ public class GameEventsManager : SingletonMonobehaviour<GameEventsManager>
             miscEvents = new MiscEvents();
             questEvents = new QuestEvents();
             storyEvents = new StoryEvents();
+            challengeEvents = new ChallengeEvents();
         }
     }
 }
