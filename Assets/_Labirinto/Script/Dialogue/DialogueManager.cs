@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Challenge;
 using DataPersistence;
 using Helper;
 using Ink.Runtime;
@@ -106,33 +107,38 @@ namespace Dialogue
             GameEventsManager.Instance.storyEvents.TriggerOnDialogue();
         }
 
-        private void ContinueStory() 
+        private void ContinueStory()
         {
-            if (currentStory.canContinue) 
-                {
-                    // Get the next line of the story
-                    string nextLine = currentStory.Continue();
+            while (currentStory.canContinue)
+            {
+                // Get the next line of the story
+                string nextLine = currentStory.Continue().Trim();
 
+                // Check for tags in the current line
+                List<string> tags = currentStory.currentTags;
+                foreach (string tag in tags)
+                {
+                    HandleTag(tag);
+                }
+
+                // Skip processing if the line is empty (e.g., just tags)
+                if (!string.IsNullOrEmpty(nextLine))
+                {
                     // Display the next line
-                    if (displayLineCoroutine != null) 
+                    if (displayLineCoroutine != null)
                     {
                         StopCoroutine(displayLineCoroutine);
                     }
                     displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
+                    return;
+                }
+            }
 
-                    // Check for tags in the current line
-                    List<string> tags = currentStory.currentTags;
-                    foreach (string tag in tags) 
-                    {
-                        HandleTag(tag);
-                    }
-                }
-                else 
-                {
-                    Debug.Log("Exit Dialogue");
-                    StartCoroutine(ExitDialogueMode());
-                }
+            // If no more lines, exit dialogue mode
+            Debug.Log("Exit Dialogue");
+            StartCoroutine(ExitDialogueMode());
         }
+
 
         private IEnumerator DisplayLine(string line) 
         {
@@ -226,29 +232,21 @@ namespace Dialogue
             {
                 case "START_CHALLENGE_QUIZ":
                     Debug.Log("Enter a challenge");
-                    ShowChallengePanel("Panel_QuizWindow", PanelShowBehaviour.KEEP_PREVIOUS); 
+                    ChallengeManager.Instance.StartChallenge("Panel_QuizWindow");
                     break;
                 case "START_CHALLENGE_MATCHPAIR":
                     Debug.Log("Enter a challenge");
-                    ShowChallengePanel("Panel_MatchPairWindow", PanelShowBehaviour.KEEP_PREVIOUS); 
+                    ChallengeManager.Instance.StartChallenge("Panel_MatchPairWindow");
                     break;
                 case "START_CHALLENGE_PICTURE":
                     Debug.Log("Enter a challenge");
-                    ShowChallengePanel("Panel_GuessPictureWindow", PanelShowBehaviour.KEEP_PREVIOUS);
+                    ChallengeManager.Instance.StartChallenge("Panel_GuessPictureWindow");
                     break;
                 // Add more tags if necessary
                 default:
                     Debug.Log("Unhandled tag: " + tag);
                     break;
             }
-        }
-
-        private void ShowChallengePanel(string panelID, PanelShowBehaviour behaviour = PanelShowBehaviour.KEEP_PREVIOUS) 
-        {
-            Debug.Log($"Starting the {panelID} challenge...");
-
-            // Call the PanelManager directly to show the panel
-            PanelManager.Instance.ShowPanel(panelID, behaviour);
         }
 
         public Ink.Runtime.Object GetVariableState(string variableName) 

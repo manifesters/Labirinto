@@ -15,7 +15,7 @@ namespace Dialogue
         {
             // Start the dialogue and quiz
             DialogueManager.Instance.EnterDialogueMode(dialogueInkJSON);
-            ChallengeManager.Instance.SetJson(challengeDataJSON);
+            ChallengeManager.Instance.SetCurrentChallengeJson(challengeDataJSON);
         }
     }
 }
