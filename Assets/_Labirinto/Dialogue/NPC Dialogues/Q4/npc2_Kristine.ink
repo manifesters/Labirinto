@@ -9,12 +9,5 @@
 *["Tulong para hindi mag-kagulo"]
 "Tama ka! Ang ZOPFAN ay isa sa mga hakbang ng ASEAN upang pigilan ang mga digmaan at sigalot sa rehiyon. Napakahalaga nito sa pagbuo ng isang stable at peaceful na Timog Silangang Asya."
 
-"Ngayon na alam mo ang patungkol sa ZOPFAN. Ikaw ay aking hahamonin.Mag simula!"
-
-->tin
-=== tin ===
-*["Simulan"]
-#CHALLENGE2
-
 QUEST:HANAPIN SI LEON
 ->END
