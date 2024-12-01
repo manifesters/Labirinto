@@ -10,12 +10,5 @@
 "Ang mga sining at kultura ng ating mga ninuno ay nagsisilbing gabay sa ating pagkakakilanlan."
 "Ang pagpapahalaga sa mga ito ay nagsisiguro na ang ating mga kwento, awit, sayaw, at tradisyon ay magpapatuloy at magiging bahagi ng ating mga susunod na henerasyon."
 
-"Ang iyong pagkatuto mula sa akin ay susubukin ngayon. Handa ka na ba para sa aking hamon na may kinalaman sa mga aral na ibinahagi ko?"
--> Siyokoy
-=== SiyokoyTask ===
-* ["Handa na ako!"]
-
-#Challenge
-#Piece na Ibibigay: Piraso ng Tradisyon
 Quest: Hanapin si Sarimanok
 -> END

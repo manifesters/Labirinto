@@ -2,11 +2,11 @@
 
 -> Jose
 === Jose ===
-* ["Umpisa ng pagkamulat"]
-"Ang pagkamulat sa nasyonalismo ay nag-umpisa noong naranasan ng mga Pilipino ang hindi pantay na trato at pang-aapi ng mga Espanyol, na nagbigay-daan upang maghangad ng kalayaan at katarungan."
+* ["Nasyonalismo"]
+"Ang nasyonalismo ay higit pa sa pagiging makabayan. Isa itong masidhing pagmamahal at pagpapahalaga sa ating Inang-Bayan. Naglalaman ito ng paninindigan, karapatan, at diwa ng pakikisangkot para sa ikabubuti ng lipunan at pagsulong ng ating bansa."
 
 -> Jose
-*["Papel ng mga bayani"]
-"Ang mga bayani tulad nina Rizal, Bonifacio, at iba pa ay nagbigay-inspirasyon sa mga Pilipino na ipaglaban ang kalayaan sa pamamagitan ng kanilang mga akda, paghimagsik, at pagsakripisyo."
+* ["Umpisa ng pagkamulat"]
+"Ang pagkamulat sa nasyonalismo ay nag-umpisa noong naranasan ng mga Pilipino ang hindi pantay na trato at pang-aapi ng mga Espanyol, na nagbigay-daan upang maghangad ng kalayaan at katarungan."
 QUEST:  Hanapin si Gomez
 -> END

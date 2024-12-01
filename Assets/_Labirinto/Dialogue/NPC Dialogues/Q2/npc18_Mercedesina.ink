@@ -1,12 +1,5 @@
-﻿"Magandang araw! Ako’y mula sa Mercedes, isang bayan na kilala sa magagandang dalampasigan, isang eksperto sa kasaysayan at kultura ng Vietnam." 
-"Tulad ng Cambodia, ang Vietnam ay hindi nakaligtas sa mga epekto ng kolonyalismo, lalo na sa ilalim ng pamumuno ng mga Pranses. Ngunit sa kabila ng mga pwersang banyaga, ipinakita ng mga Vietnamese ang kanilang lakas ng loob."
+﻿"Magandang araw! Ako’y mula sa Mercedes, isang bayan na kilala sa magagandang dalampasigan. Napakalaki ng impluwensiya ng kulturang Hapon sa mga bansang tulad ng Pilipinas, Indonesia, at Vietnam. Ang wika, relihiyon, at mga kaugalian ng Hapon ay naging bahagi ng kanilang tradisyon. Makikita mo ito sa ilang aspeto ng kanilang pamumuhay hanggang ngayon."
 
--> linh
-=== linh ===
-* ["Tugon ng Vietnamese"]
-  "Nagkaisa ang mga Vietnamese at nagsagawa ng mga pag-aalsa, gaya ng First Indochina War, upang makamit ang kalayaan."
-    -> linh
-* ["Aspeto ng kolonyal"]
-  "Bagamat naglunsad sila ng mga pag-aalsa, may mga aspeto ng edukasyon at administrasyon ng mga banyaga na inadapt ng mga Vietnamese."
-
+"Ang pop culture ng Hapon—anime, manga, J-pop—ay hindi lamang minahal sa Asya kundi pati na rin sa buong mundo. Isa itong patunay ng patuloy na impluwensiyang kultural ng bansa."
+QUest: Hanapin si Labena
 -> END
