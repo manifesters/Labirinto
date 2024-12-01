@@ -178,7 +178,7 @@ PrefabInstance:
     - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: challengeDataJSON
       value: 
-      objectReference: {fileID: 4900000, guid: a59dd17b2cbec994cbb60fa6a359ecc0, type: 3}
+      objectReference: {fileID: 4900000, guid: b856092241343848897ab88348215e6d, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Kapre
@@ -1567,6 +1567,10 @@ PrefabInstance:
       propertyPath: dialogueInkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 660d42819e9ebf140b9601221c0113d2, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 8e6e4fb2c998a3f90bc15cb02df98ad9, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Batibat
@@ -1672,7 +1676,7 @@ PrefabInstance:
     - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: challengeDataJSON
       value: 
-      objectReference: {fileID: 4900000, guid: feaf56ba596d6451292e85bf07fe5b73, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Datu
@@ -2141,6 +2145,10 @@ PrefabInstance:
       propertyPath: dialogueInkJSON
       value: 
       objectReference: {fileID: 4900000, guid: c499bba3269ad704e8138a2a8c9e8647, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 00a334f29337916f1bea9a8a633d797d, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Amaranhig
@@ -2427,6 +2435,10 @@ PrefabInstance:
       propertyPath: dialogueInkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 4ae42b594c025204bb0391a40fca243f, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: d11e42821556171d3af227f114eb7d79, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Tiyanak
@@ -2770,6 +2782,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 5d4989aaf22b660c3864981ec37510d2, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: "NPC_Labe\xF1a"
@@ -2980,6 +2996,10 @@ PrefabInstance:
       propertyPath: dialogueInkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 5f849c91d3649444a9c628c6d6c7ea24, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: f0a9599dc04f0b5b3a7f2b4271f62323, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Ekek
@@ -3246,7 +3266,7 @@ Transform:
   m_GameObject: {fileID: 505035797}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -413.4, y: -309.34, z: -1.0342642}
+  m_LocalPosition: {x: -409.1, y: -314.44, z: -1.0342642}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3345,6 +3365,72 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 197754144475828523, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
   m_PrefabInstance: {fileID: 507293757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &525512310
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1557485192}
+    m_Modifications:
+    - target: {fileID: 4283531760455548970, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 477.74887
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283531760455548970, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 276.0081
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283531760455548970, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.78402966
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283531760455548970, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283531760455548970, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283531760455548970, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283531760455548970, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283531760455548970, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283531760455548970, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283531760455548970, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105099145509742922, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+      propertyPath: m_Name
+      value: AchievementsManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184049703492769366, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+      propertyPath: dontDestroyOnLoad
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+--- !u!4 &525512311 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4283531760455548970, guid: 3fa0df6b36bc4dff68f0471bfbbaa6d1, type: 3}
+  m_PrefabInstance: {fileID: 525512310}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &527320594
 PrefabInstance:
@@ -3475,7 +3561,7 @@ PrefabInstance:
     - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: challengeDataJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 95c796606ba694365be1ec056c7ef22b, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Guro
@@ -4337,6 +4423,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: d3aa0c0cd0459e62f9e716a98ea41cc1, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: "NPC_Legazpe\xF1o"
@@ -4473,6 +4563,10 @@ PrefabInstance:
       propertyPath: dialogueInkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 56fce339980290d49b4c161ea5da584d, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 38a77563fe826114ba728c25a94f82cb, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Taong-Tuod
@@ -4695,6 +4789,10 @@ PrefabInstance:
       propertyPath: dialogueInkJSON
       value: 
       objectReference: {fileID: 4900000, guid: cb52989821eb3af48a85c372c6f1e076, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: fa984f89d0c25f2c788007c4e329f766, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Amomongo
@@ -5254,6 +5352,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: ef2062135650781c1859362d33724192, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Piliano
@@ -5488,6 +5590,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: dialogueInkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 9c845c3f3bbacc54ab6064441dfa76e1, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: a81fddaee07dc2c02823c50c7017ccfa, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_San Adresnon
@@ -6166,6 +6276,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: dialogueInkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 81ec892b3f9604c44b5d21361495d9a7, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 69622a1cb83f6a7cd916de20bdf3c334, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Buhinon
@@ -6388,6 +6506,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 0048e7d220133c93a829f1397ac46058, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Tiwino
@@ -6565,11 +6687,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6465292094963690418, guid: 201e4e8718c733980a5179f3c0220f4b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -426.9
+      value: -422.6
       objectReference: {fileID: 0}
     - target: {fileID: 6465292094963690418, guid: 201e4e8718c733980a5179f3c0220f4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -318.3
+      value: -323.4
       objectReference: {fileID: 0}
     - target: {fileID: 6465292094963690418, guid: 201e4e8718c733980a5179f3c0220f4b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7108,6 +7230,10 @@ PrefabInstance:
       propertyPath: dialogueInkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 3ec6c9f212d143041a8fb2aca5d03c65, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 929e7e110e4fada57974dd971f11250a, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Bungisngis
@@ -7337,6 +7463,10 @@ PrefabInstance:
       propertyPath: dialogueInkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 370176604b843d74381dfafb46edef59, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 57051534af56356bda6934d1e0a9cda3, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Diwata
@@ -8104,6 +8234,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 386818c5037eaec75a1ae031754bad4a, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: "NPC_Darague\xF1o"
@@ -8381,6 +8515,7 @@ Transform:
   - {fileID: 1975261066}
   - {fileID: 1315021228}
   - {fileID: 1509371202}
+  - {fileID: 525512311}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1564641986
@@ -55148,11 +55283,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2530884239578271739, guid: 807119ff02454b54ab89f3362dd13a0e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.62
+      value: -111.6
       objectReference: {fileID: 0}
     - target: {fileID: 2530884239578271739, guid: 807119ff02454b54ab89f3362dd13a0e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.91
+      value: 26.86
       objectReference: {fileID: 0}
     - target: {fileID: 2530884239578271739, guid: 807119ff02454b54ab89f3362dd13a0e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -55343,12 +55478,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849101746615581709, guid: a5ee58aed6d5cbf49a158fe578d07bcd, type: 3}
       propertyPath: PrefabsForPool.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5849101746615581709, guid: a5ee58aed6d5cbf49a158fe578d07bcd, type: 3}
       propertyPath: PrefabsForPool.Array.data[6]
       value: 
       objectReference: {fileID: 4084621698566744612, guid: a06954a7200ba3a25bdbd281bc2a8557, type: 3}
+    - target: {fileID: 5849101746615581709, guid: a5ee58aed6d5cbf49a158fe578d07bcd, type: 3}
+      propertyPath: PrefabsForPool.Array.data[7]
+      value: 
+      objectReference: {fileID: 1524564644775948609, guid: ec60bc9ad37d4d3d1a4e51083c9f7de7, type: 3}
     - target: {fileID: 5976731166792943921, guid: a5ee58aed6d5cbf49a158fe578d07bcd, type: 3}
       propertyPath: m_SizeDelta.x
       value: -32.4841
@@ -55548,7 +55687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8438766223085731505, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: orthographic size
-      value: 4.859375
+      value: 4.4270835
       objectReference: {fileID: 0}
     - target: {fileID: 9032220251598996485, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: m_LocalPosition.x

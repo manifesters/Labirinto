@@ -13,6 +13,8 @@ namespace PlayerControl
 
         private void Start()
         {
+            // ACHIEVEMENT: Create First Game
+            AchievementsManager.Instance.CompleteAchievement("1Manlalaro");
             playerRb = GetComponent<Rigidbody2D>();  // Proper assignment
         }
 
@@ -26,7 +28,6 @@ namespace PlayerControl
         public void SaveData(GameData data) 
         {
             data.playerPosition = this.transform.position;
-            data.lastScene = SceneManager.GetActiveScene().name;
             Debug.Log("Player position is saved" + SceneManager.GetActiveScene().name);
         }
 

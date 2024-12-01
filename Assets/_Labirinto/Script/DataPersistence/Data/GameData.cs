@@ -24,7 +24,8 @@ namespace DataPersistence
         public long lastUpdated;
         public string playerSavedName;
         public int playerScore;
-        public string lastScene;
+        public int finishedQuest;
+        public int itemCollected;
         public Vector2 playerPosition;
 
         // Quest
@@ -35,7 +36,8 @@ namespace DataPersistence
         {
             playerPosition = new Vector2(-100, -30);
             playerScore = 0;
-            lastScene = "Labirinto";
+            finishedQuest = 0;
+            itemCollected = 0;
             questDataEntries = new List<QuestDataEntry>();
             collectibleItemDataEntries = new List<CollectibleItemDataEntry>();
         }

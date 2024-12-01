@@ -14,6 +14,7 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>, IDataPersisten
     [SerializeField] private TMP_Text inProgressQuest;
 
     public Dictionary<string, Quest> questMap { get; set;}
+    private int finishedQuest;
 
     public override void Awake()
     {
@@ -132,8 +133,87 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>, IDataPersisten
     private void FinishQuest(string id)
     {
         Quest quest = GetQuestById(id);
+
+        // Update quest state to finished
         ChangeQuestState(quest.info.id, QuestState.FINISHED);
+
+        // Increment the number of finished quests
+        finishedQuest++;
+
+        HandleFinishedQuestActions();
     }
+
+   private void HandleFinishedQuestActions()
+    {
+        switch (finishedQuest)
+        {
+            case 1:
+                AchievementsManager.Instance.CompleteAchievement("1Tagapagsimula");
+                Debug.Log("First quest NPC - Achievement unlocked: Tagapagsimula");
+                break;
+
+            case 5:
+                AchievementsManager.Instance.CompleteAchievement("2Mananaliksik");
+                Debug.Log("5 NPC quest - Achievement unlocked: Mananaliksik");
+                break;
+
+            case 10:
+                AchievementsManager.Instance.CompleteAchievement("3Manlalakbay");
+                Debug.Log("10 NPC quest - Achievement unlocked: Manlalakbay");
+                break;
+
+            case 15:
+                AchievementsManager.Instance.CompleteAchievement("4Magsisiyasat");
+                Debug.Log("15 NPC quest - Achievement unlocked: Magsisiyasat");
+                break;
+
+            case 20:
+                AchievementsManager.Instance.CompleteAchievement("5Tagapag-tipon");
+                Debug.Log("20 NPC quest - Achievement unlocked: Tagapag-tipon");
+                break;
+
+            case 25:
+                AchievementsManager.Instance.CompleteAchievement("6Tagapag-usisa");
+                Debug.Log("25 NPC quest - Achievement unlocked: Tagapag-usisa");
+                break;
+
+            case 30:
+                AchievementsManager.Instance.CompleteAchievement("7Matipuno");
+                Debug.Log("30 NPC quest - Achievement unlocked: Matipuno");
+                break;
+
+            case 35:
+                AchievementsManager.Instance.CompleteAchievement("8Matyaga");
+                Debug.Log("35 NPC quest - Achievement unlocked: Matyaga");
+                break;
+
+            case 40:
+                AchievementsManager.Instance.CompleteAchievement("9Masigasig");
+                Debug.Log("40 NPC quest - Achievement unlocked: Masigasig");
+                break;
+
+            case 45:
+                AchievementsManager.Instance.CompleteAchievement("10Tagapagtuklas");
+                Debug.Log("45 NPC quest - Achievement unlocked: Tagapagtuklas");
+                break;
+
+            case 50:
+                AchievementsManager.Instance.CompleteAchievement("11Bayani");
+                Debug.Log("50 NPC quest - Achievement unlocked: Bayani");
+                break;
+
+            case 55:
+                AchievementsManager.Instance.CompleteAchievement("12Talino Tagapagsimula");
+                Debug.Log("55 NPC quest - Achievement unlocked: Talino Tagapagsimula");
+                break;
+
+            default:
+                Debug.Log($"Total finished quests: {finishedQuest}. Keep going!");
+                break;
+        }
+    }
+
+
 
     private void QuestStepStateChange(string id, int stepIndex, QuestStepState questStepState)
     {
@@ -219,6 +299,8 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>, IDataPersisten
         {
             questMap = CreateQuestMap(data);
             Debug.Log("Quest Entries Loaded");
+
+            finishedQuest = questMap.Values.Count(quest => quest.state == QuestState.FINISHED);
         }
         else
         {
@@ -228,6 +310,7 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>, IDataPersisten
 
     public void SaveData(GameData data)
     {
+        data.finishedQuest = finishedQuest;
         foreach (Quest quest in questMap.Values)
         {
             try 
@@ -257,8 +340,6 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>, IDataPersisten
                 {
                     data.questDataEntries.Add(entry);
                 }
-                
-                Debug.Log(serializedData);
             }
             catch (System.Exception e)
             {

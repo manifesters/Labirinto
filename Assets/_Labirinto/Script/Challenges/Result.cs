@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using Challenge;
-using LootLocker.Extension.DataTypes;
 using Helper;
 
 public class Result : MonoBehaviour
@@ -40,13 +39,15 @@ public class Result : MonoBehaviour
     {
         for (int i = 0; i < stars.Length; i++)
         {
-            stars[i].SetActive(i < starCount); // Activate stars up to the star count
+            stars[i].SetActive(i < starCount); 
         }
     }
 
     public void CloseResultPanel()
     {
+        GameEventsManager.Instance.challengeEvents.CompleteChallenge();
         ChallengeManager.Instance.ClearChallenge();
+        Destroy(gameObject);
     }
 
     private int CalculateStars(int score)

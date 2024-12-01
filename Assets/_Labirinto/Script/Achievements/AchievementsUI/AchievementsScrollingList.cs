@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DataPersistence;
 using Medal;
 using UnityEngine;
 
@@ -86,6 +87,7 @@ public class AchievementsScrollingList : MonoBehaviour
             Debug.Log("Rewards Claimed: " + achievement.info.id);
             MedalManager.Instance.AddMedal(achievement.info.medalReward);
             AchievementsManager.Instance.achievementsMap[achievement.info.id].rewardClaimed = true;
+            DataPersistenceManager.Instance.SavePlayer();
         }
     }
 }

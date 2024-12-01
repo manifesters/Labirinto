@@ -127,13 +127,10 @@ namespace DataPersistence
             this.gameData = new GameData();
             this.gameData.playerSavedName = playerSavedName;
 
-            // ACHIEVEMENT: Create First Game
-            AchievementsManager.Instance.CompleteAchievement("CreateFirstGame");
-
             Debug.Log("New game data created with save name: " + playerSavedName);
         }
 
-        // load player data
+        // SAVING THE PLAYER DATA
         public void LoadPlayer()
         {
             // load any saved data from a file using the data handler
@@ -145,6 +142,7 @@ namespace DataPersistence
             }
         }
 
+        // LOADING THE GAME DATA ON SAVE SLOT
         public void LoadGame()
         {
             // return right away if data persistence is disabled
@@ -159,7 +157,7 @@ namespace DataPersistence
             // if no data can be loaded, don't continue
             if (this.gameData == null) 
             {
-                Debug.Log("No data was found. A New Game needs to be started before data can be loaded.");
+                Debug.Log("No game data was found on save slots. A New Game needs to be started before data can be loaded.");
                 return;
             }
 
@@ -170,12 +168,12 @@ namespace DataPersistence
             }
         }
 
-        // save player data
+        // SAVING THE PLAYER DATA
         public void SavePlayer()
         {
             if (this.playerData == null) 
             {
-                Debug.LogWarning("No player data was found");
+                Debug.LogWarning("No player data was found. A New Game needs to be started before data can be saved.");
                 return;
             }
 
@@ -187,6 +185,7 @@ namespace DataPersistence
             dataHandler.SavePlayerData(playerData);
         }
 
+        // SAVING GAME DATA ON SAVE SLOT
         public void SaveGame()
         {
             // return right away if data persistence is disabled
@@ -198,7 +197,7 @@ namespace DataPersistence
             // if we don't have any data to save, log a warning here
             if (this.gameData == null) 
             {
-                Debug.LogWarning("No data was found. A New Game needs to be started before data can be saved.");
+                Debug.LogWarning("No game data on save slots was found. A New Game needs to be started before data can be saved.");
                 return;
             }
 

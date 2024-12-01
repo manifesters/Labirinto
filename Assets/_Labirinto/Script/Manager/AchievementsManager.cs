@@ -8,7 +8,6 @@ using static DataPersistence.PlayerData;
 public class AchievementsManager : SingletonMonobehaviour<AchievementsManager>, IPlayerDataPersistence
 {
     public Dictionary<string, Achievement> achievementsMap { get; private set; }
-
     public override void Awake()
     {
         base.Awake();
@@ -67,6 +66,7 @@ public class AchievementsManager : SingletonMonobehaviour<AchievementsManager>, 
     {
        this.achievementsMap[achievementId].isCompleted = true;
        Debug.Log("Achievement Completed");
+       DataPersistenceManager.Instance.SavePlayer();
     }
 
     public void LoadPlayerData(PlayerData playerData)
@@ -86,7 +86,6 @@ public class AchievementsManager : SingletonMonobehaviour<AchievementsManager>, 
                 // Update the existing achievement with data from PlayerData
                 achievement.isCompleted = dataEntry.isCompleted;
                 achievement.rewardClaimed = dataEntry.isRewardClaimed;
-                Debug.Log($"Loaded data for: {achievement.info.achievementName}");
             }
             else
             {
@@ -112,7 +111,6 @@ public class AchievementsManager : SingletonMonobehaviour<AchievementsManager>, 
                 // Update the existing entry
                 existingEntry.isCompleted = achievement.isCompleted;
                 existingEntry.isRewardClaimed = achievement.rewardClaimed;
-                Debug.Log($"Updated data for: {achievement.info.achievementName}");
             }
             else
             {
@@ -125,7 +123,6 @@ public class AchievementsManager : SingletonMonobehaviour<AchievementsManager>, 
                 };
                 
                 playerData.achievementsDataEntries.Add(newEntry);
-                Debug.Log($"Added new data for: {achievement.info.achievementName}");
             }
         }
         
