@@ -9,7 +9,7 @@ namespace Medal
     public class MedalManager : SingletonMonobehaviour<MedalManager>, IPlayerDataPersistence
     {
         [SerializeField] private TextMeshProUGUI medalText;
-        private int playerMedal;
+        public int playerMedal;
 
         public override void Awake()
         {

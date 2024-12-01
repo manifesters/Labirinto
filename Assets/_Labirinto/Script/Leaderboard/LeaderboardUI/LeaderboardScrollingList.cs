@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using LootLocker.Requests;
+using Manager;
+using Medal;
 using UnityEngine;
 
 public class LeaderboardScrollingList : MonoBehaviour
@@ -13,6 +15,7 @@ public class LeaderboardScrollingList : MonoBehaviour
     private void Start()
     {
         GetTopPlayers();
+        LootLockerManager.Instance.SubmitScore(MedalManager.Instance.playerMedal);
     }
 
     public void GetTopPlayers()
