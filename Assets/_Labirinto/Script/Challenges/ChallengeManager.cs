@@ -95,11 +95,13 @@ namespace Challenge
                     Debug.Log($"Challenge completed with score: {score}");
                     SetState(ChallengeState.Completed);
                     GameEventsManager.Instance.challengeEvents.CompleteChallenge();
+                    SetState(ChallengeState.Inactive);
                 }
                 else
                 {
                     Debug.Log($"Challenge failed with score: {score}");
-                    SetState(ChallengeState.Failed);
+                    SetState(ChallengeState.Completed);
+                    SetState(ChallengeState.Inactive);
                 }
 
                 // Get the Result component and pass the score
