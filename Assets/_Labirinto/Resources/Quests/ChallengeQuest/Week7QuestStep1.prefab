@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2194107510286382570}
   - component: {fileID: 3066748502883882212}
-  - component: {fileID: 6874398251305494378}
+  - component: {fileID: -2958364561713013486}
   m_Layer: 0
-  m_Name: FIndBrokenStatueQuestStep
+  m_Name: Week7QuestStep1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.44
---- !u!114 &6874398251305494378
+--- !u!114 &-2958364561713013486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5748567498503356422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a52523477d3633b1cbd44ed26d93deba, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c6074fb5ed0693a3ac7eb1f1a263110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statueName: Broken Statue
+  challengeType: 
