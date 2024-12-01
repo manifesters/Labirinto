@@ -17,6 +17,4 @@
 "Ang kalikasan dito ay direktang nakakaimpluwensya sa mga hanapbuhay at kultura."
     
 "Salamat sa iyong pakikinig sa akin. Ngayon, hanapin ang tagapangalaga ng mga kagubatan ng Timog Silangang Asya."
-
-Quest: Hanapin si Kapre
 -> END

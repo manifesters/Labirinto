@@ -8,5 +8,4 @@
 "Ang kalakalan ay nagdala ng mga bagong ideya, kalakal, at teknolohiya mula sa Tsina at India, na nagpatibay sa kanilang ekonomiya at kultura."
 
 "Malapit ka na sa iyong huling pagsubok, kaya't alalahanin mo ang lahat ng aral na iyong natutunan. Ito ang magiging susi sa iyong tagumpay."
-Quest: Hanapin si Bungisngis
 -> END

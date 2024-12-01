@@ -9,6 +9,4 @@
 * ["Halaga ng IOH"]
   "Island Origin Hypothesis ay nagbibigay linaw sa pinagmulan ng mga Austronesian at kung paano nila naiambag ang kanilang kultura at kasanayan sa mga komunidad sa Asya." 
 "Ang migrasyon ng mga Austronesian ay nagbukas ng bagong yugto sa ating kasaysayan."
-
-Quest: Hanapin si Amaranhig
 -> END

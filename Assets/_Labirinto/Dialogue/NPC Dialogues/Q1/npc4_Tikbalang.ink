@@ -10,6 +10,4 @@ Quest: Hanapin si Bakunawa
     -> Tikbalang
 * ["Hindi pa ako handa."]
  "Kung ganoon, hindi ka magtatagumpay sa iyong misyon. Tandaan, ang pag-aalinlangan ay kalaban ng tagumpay. Kung magbago ang iyong isipan, hanapin ang isang bagay na magtutulak sa iyo upang magpatuloy."
-Quest: Collectable Item Decision Holder
- 
 -> END

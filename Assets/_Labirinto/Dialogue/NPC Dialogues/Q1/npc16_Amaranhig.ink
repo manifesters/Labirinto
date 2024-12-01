@@ -4,8 +4,5 @@
 -> AmaTask
 === AmaTask ===
 * ["Handa na ako!"]
-#Challenge
-
-#Piece na Ibibigay: Piraso ng Pag-unlad
-Quest: Hanapin si Busaw
+#START_CHALLENGE_QUIZ
 -> END

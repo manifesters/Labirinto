@@ -13,5 +13,4 @@
 "Ito ang nagbigay daan sa pagpapalitan ng mga ideya, kalakalan, at wika, na humubog sa ating pagkakakilanlan bilang mga Pilipino at nagbigay sa atin ng mas malalim na ugnayan sa mga katabing bansa."
 
 "Ipagpatuloy mo ang iyong paglalakbay at hanapin si Ekkek para mas mapalawak ang iyong kaalaman."
-Quest: Hanapin si Ekkek
 -> END

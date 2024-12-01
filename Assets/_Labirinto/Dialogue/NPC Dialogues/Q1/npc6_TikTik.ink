@@ -7,5 +7,4 @@
 * ["Renewable at non-renewable resources"]
 "Ang renewable resources ay mabilis na napapalitan ng kalikasan, tulad ng hangin at tubig." 
 "Samantala, ang non-renewable resources, tulad ng langis at karbon, ay inaabot ng milyong taon bago muling mabuo."
-Quest: Hanapin si Tiyanak
 -> END

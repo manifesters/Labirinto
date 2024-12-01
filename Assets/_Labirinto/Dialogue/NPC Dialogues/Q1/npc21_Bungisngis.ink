@@ -9,7 +9,5 @@
 -> BungTask
 === BungTask ===
 * ["Handa na ako!"]
-#Challenge
-#Piece na Ibibigay: Piraso ng Tagumpay
-
+#START_CHALLENGE_QUIZ
 -> END

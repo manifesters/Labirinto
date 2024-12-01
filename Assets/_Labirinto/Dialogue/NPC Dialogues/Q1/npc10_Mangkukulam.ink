@@ -11,5 +11,4 @@
 "Mayroon din silang mga seremonyang may kaugnayan sa agrikultura, pangingisda, at mga selebrasyon ng mga diyos na nagpapakita ng kanilang pananampalataya."
 
 "Sa iyong pakikinig ay may katumbas na gantimpala. Isang bagay na magagamit mo sa iyong paglalakbay."
-Quest: Hanapin si Batibat
 -> END

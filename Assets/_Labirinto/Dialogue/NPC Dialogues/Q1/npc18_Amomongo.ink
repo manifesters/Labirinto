@@ -12,7 +12,5 @@ Handa ka na ba para sa aking hamon na may kinalaman sa mga aral na ibinahagi ko?
 -> AmoTask
 === AmoTask ===
 * ["Handa na ako!"]
-#Challenge
-#Piece na Ibibigay: Piraso ng Pagtanggap
-Quest: Hanapin si Santelmo
+#START_CHALLENGE_MATCHIMAGE
 -> END

@@ -3,8 +3,5 @@
 === Tiyanak ===
  "Batid ko na ang iyong layunin ay mahalaga, kaya't ngayon ay aking susubukin ang iyong kakayahan at kaalaman. Handa ka na ba?"
   *["Simulan"]
-
-#Challenge
-#Piece na Ibibigay: Piraso ng Karagatang Buhay
-Quest: Hanapin si Manananggal
+  #START_CHALLENGE_MATCHWORD
 -> END

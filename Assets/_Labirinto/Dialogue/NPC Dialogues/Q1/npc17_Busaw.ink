@@ -7,7 +7,4 @@
     -> Busaw
 * ["Pagpapalaganap ng kultura"]
 "Sa pamamagitan ng mga bangkang ito, ang mga Austronesian ay nakapagtatag ng mga komunidad sa iba't ibang isla at nakipagkalakalan sa mga karatig-bansa. Ito ay nagpapakita ng kanilang kahusayan sa pandagat."
-
-
-Quest: Hanapin si Amomongo
 -> END

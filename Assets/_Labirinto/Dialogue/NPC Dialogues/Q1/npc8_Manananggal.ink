@@ -9,6 +9,4 @@
 * ["Epekto ng kalikasan"]
 "Ang likas na yaman at anyong lupa ng bawat rehiyon ang nagtutulak sa pag-unlad ng kanilang kultura at ekonomiya."
 "Halimbawa, ang mayayamang kagubatan at tubig ng mga kapuluan ay nagbibigay ng kabuhayan at nagbubuklod sa komunidad."
-
-Quest: Hanapin si Diwata
 -> END

@@ -7,6 +7,4 @@
     -> Santelmo
 * ["Kalikasan sa Ayutthaya?"]
 "Ang Ayutthaya ay itinayo sa pook na may mga ilog, na nagsilbing daanan ng kalakalan at proteksyon."
-
-Quest: Hanapin si Malakat
 -> END

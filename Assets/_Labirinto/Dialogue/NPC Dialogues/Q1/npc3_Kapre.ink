@@ -4,6 +4,5 @@
 -> Kapre
 === Kapre ===
 * ["Handa na ako!"]
-#START_CHALLENGE_PICTURE
-
+#START_CHALLENGE_QUIZ
 -> END

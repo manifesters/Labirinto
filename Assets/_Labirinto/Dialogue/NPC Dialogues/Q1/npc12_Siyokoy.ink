@@ -9,6 +9,4 @@
 * ["Sining at kultura"]
 "Ang mga sining at kultura ng ating mga ninuno ay nagsisilbing gabay sa ating pagkakakilanlan."
 "Ang pagpapahalaga sa mga ito ay nagsisiguro na ang ating mga kwento, awit, sayaw, at tradisyon ay magpapatuloy at magiging bahagi ng ating mga susunod na henerasyon."
-
-Quest: Hanapin si Sarimanok
 -> END

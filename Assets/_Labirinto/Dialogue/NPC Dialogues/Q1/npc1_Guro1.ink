@@ -8,7 +8,4 @@
     -> Guro1
 * ["Saan po ako unang pupunta?"]
    "Mag libot at Simulang hanapin ang isang diwata na kumakatawan sa hangin at kalikasa. Bawat isa ay may hawak na piraso ng kaalamang magpapalapit sa'yo sa iyong tunay na layunin. Huwag magmadali; unti-unti mong matutuklasan ang iyong hinahanap sa bawat hakbang."
-
-   
-Quest: Hanapin si Amihan
 -> END

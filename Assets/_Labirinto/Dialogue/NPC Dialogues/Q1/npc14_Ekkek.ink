@@ -4,7 +4,5 @@
 ->ETask
 === ETask ===
 * ["Handa na ako!"]
-#Challenge
-#Piece na Ibibigay: Piraso ng Kaayosan
-Quest: Hanapin si Aghoy
+#START_CHALLENGE_MATCHWORD
 -> END

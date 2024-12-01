@@ -4,6 +4,5 @@
 -> Bakunawa
 === Bakunawa ===
 * ["Simulan"]
-#CHALLENGE
-Quest: Hanapin si TikTik
+#START_CHALLENGE_MATCHWORD
 -> END

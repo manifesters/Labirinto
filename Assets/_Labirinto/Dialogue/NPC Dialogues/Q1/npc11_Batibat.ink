@@ -4,8 +4,5 @@
 -> Batibat
 === Batibat ===
 * ["Handa na ako!"]
-#Challenge
-
-#Piece na Ibibigay: Piraso ng Pagtuklas
-Quest: Hanapin si Siyokoy
+#START_CHALLENGE_QUIZ
 -> END
