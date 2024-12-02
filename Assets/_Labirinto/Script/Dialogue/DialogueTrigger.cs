@@ -1,4 +1,5 @@
 using Challenge;
+using TMPro;
 using UnityEngine;
 
 namespace Dialogue
@@ -11,10 +12,14 @@ namespace Dialogue
         [Header("Quiz JSON")]
         [SerializeField] public TextAsset challengeDataJSON;
 
+        [Header("NPC Details")]
+        [SerializeField] private string npcName;
+        [SerializeField] private Sprite npcPortrait;
+
         public void EnterDialogue()
         {
             // Start the dialogue and quiz
-            DialogueManager.Instance.EnterDialogueMode(dialogueInkJSON);
+            DialogueManager.Instance.EnterDialogueMode(dialogueInkJSON, npcName, npcPortrait);
             ChallengeManager.Instance.SetCurrentChallengeJson(challengeDataJSON);
         }
     }

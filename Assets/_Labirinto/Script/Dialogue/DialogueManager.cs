@@ -4,6 +4,7 @@ using Challenge;
 using DataPersistence;
 using Helper;
 using Ink.Runtime;
+using LootLocker.Extension.DataTypes;
 using Panel;
 using TMPro;
 using UnityEngine;
@@ -21,8 +22,11 @@ namespace Dialogue
 
         [Header("Dialogue UI")]
         [SerializeField] private GameObject dialoguePanel;
+        [SerializeField] private TextMeshProUGUI npcNamePanel;
+        [SerializeField] private Image npcPortraitPanel;
         [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private Button continueButton;
+        [SerializeField] private Button skipButton;
 
         [Header("Choices UI")]
         [SerializeField] private GameObject[] choices;
@@ -49,6 +53,7 @@ namespace Dialogue
             dialogueIsPlaying = false;
             dialoguePanel.SetActive(false);
             continueButton.gameObject.SetActive(false);
+            skipButton.onClick.AddListener(SkipDialogue);
 
             // to get all the choices text
             choicesText = new TextMeshProUGUI[choices.Length];
@@ -82,15 +87,17 @@ namespace Dialogue
             }
         }
 
-        // Begin the dialogue when player click the interact button
-        public void EnterDialogueMode(TextAsset inkJSON) 
+        public void EnterDialogueMode(TextAsset inkJSON, string npcName, Sprite npcPortraitSprite)
         {
             currentStory = new Story(inkJSON.text);
             dialogueIsPlaying = true;
             dialoguePanel.SetActive(true);
 
-            dialogueVariables.StartListening(currentStory);
+            // Set NPC name and portrait
+            npcNamePanel.text = npcName;
+            npcPortraitPanel.sprite = npcPortraitSprite;
 
+            dialogueVariables.StartListening(currentStory);
             ContinueStory();
         }
 
@@ -106,6 +113,24 @@ namespace Dialogue
             dialogueText.text = "";
             GameEventsManager.Instance.storyEvents.TriggerOnDialogue();
         }
+
+        private void SkipDialogue()
+        {
+            if (displayLineCoroutine != null)
+            {
+                StopCoroutine(displayLineCoroutine);
+                displayLineCoroutine = null;
+            }
+
+            // Instantly display the full line of text
+            dialogueText.maxVisibleCharacters = dialogueText.text.Length;
+
+            // Allow continuation to next line or choices immediately
+            continueButton.gameObject.SetActive(true);
+            DisplayChoices();
+            canContinueToNextLine = true;
+        }
+
 
         private void ContinueStory()
         {
