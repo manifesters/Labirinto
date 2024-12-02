@@ -103,6 +103,7 @@ namespace QuizChallenge
 
         public void SubmitAnswer()
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
             int selectedAnswerIndex = -1;
 
             // Identify the selected answer

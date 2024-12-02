@@ -7,13 +7,6 @@ namespace Panel
     {
         private PanelManager _panelManager;
 
-		AudioManager audioManager;
-
-		private void Awake()
-		{
-			audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-		}
-
 		void Start()
         {
             _panelManager = PanelManager.Instance;
@@ -21,14 +14,14 @@ namespace Panel
 
         public void DoHidePanel()
         {
-			audioManager.PlaySFX(audioManager.uiButton);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
 			Debug.Log("The button is clicked");
             _panelManager.HideLastPanel();
         }
 
         public void DestroyPanel()
         {
-			audioManager.PlaySFX(audioManager.uiButton);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
 			Debug.Log("The Panel Destroyed");
             _panelManager.DestroyLastPanel();
         }

@@ -7,13 +7,6 @@ public class UsernameValidator : MonoBehaviour
 {
     [SerializeField] private TMP_InputField usernameInputField;
 
-	AudioManager audioManager;
-
-	public void Awake()
-	{
-		audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-	}
-
 	public void Start()
     {
         if (!PlayerPrefs.HasKey("PlayerName") && PlayerPrefs.HasKey("TemporaryUsername"))
@@ -42,7 +35,6 @@ public class UsernameValidator : MonoBehaviour
 
     public void OnSetUsernameButtonClicked()
     {
-		audioManager.PlaySFX(audioManager.uiButton);
 		if (Application.internetReachability != NetworkReachability.NotReachable)
         {
             SetUsername();

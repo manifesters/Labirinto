@@ -55,6 +55,7 @@ public class QuestPoint : MonoBehaviour
 
     private void OnInteractButtonClicked()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
         SubmitPressed(); // Call the method to handle quest submission
     }
 

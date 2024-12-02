@@ -17,12 +17,6 @@ namespace MainMenu
         [SerializeField] private Button continueGameButton;
         [SerializeField] private Button loadGameButton;
 
-		AudioManager audioManager;
-		public void Awake()
-		{
-			audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-		}
-
 		private void Start() 
         {
             DisableButtonsDependingOnData();
@@ -39,21 +33,21 @@ namespace MainMenu
 
         public void OnNewGameClicked() 
         {
-			audioManager.PlaySFX(audioManager.uiButton);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
 			saveSlotsMenu.ActivateMenu(false);
             this.DeactivateMenu();
         }
 
         public void OnLoadGameClicked() 
         {
-			audioManager.PlaySFX(audioManager.uiButton);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
 			saveSlotsMenu.ActivateMenu(true);
             this.DeactivateMenu();
         }
 
         public void OnContinueGameClicked() 
         {
-			audioManager.PlaySFX(audioManager.uiButton);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
 			DisableMenuButtons();
             // save the game anytime before loading a new scene
             DataPersistenceManager.Instance.SaveGame();
@@ -72,15 +66,15 @@ namespace MainMenu
 
         public void ActivateMenu() 
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
 			this.gameObject.SetActive(true);
-			audioManager.PlaySFX(audioManager.uiButton);
 			DisableButtonsDependingOnData();
         }
 
         public void DeactivateMenu() 
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
 			this.gameObject.SetActive(false);
-			audioManager.PlaySFX(audioManager.uiButton);
 		}
     }    
 }

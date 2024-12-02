@@ -26,6 +26,7 @@ namespace MainMenu
 
             // Assign listeners
             confirmButton.onClick.AddListener(() => {
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
                 string inputText = nameInputField.text;
 
                 if (!string.IsNullOrEmpty(inputText)) 
@@ -40,6 +41,7 @@ namespace MainMenu
             });
 
             cancelButton.onClick.AddListener(() => {
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
                 cancelAction();
                 DeactivateMenu();
             });

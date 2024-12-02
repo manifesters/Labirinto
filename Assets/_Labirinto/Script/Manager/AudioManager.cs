@@ -1,44 +1,84 @@
-using System.Collections;
-using System.Collections.Generic;
+using Helper;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : SingletonMonobehaviour<AudioManager>
 {
-	[Header("Audio Source")]
-	[SerializeField] AudioSource musicSource;
-	[SerializeField] AudioSource SFXSource;
+    [Header("Audio Sources")]
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource SFXSource;
 
-	[Header("Audio Clip")]
-	public AudioClip[] bgmClips;
+    [Header("BGM Clips")]
+    [SerializeField] public AudioClip bgm_splash;
+    [SerializeField] public AudioClip bgm_home;
+    [SerializeField] public AudioClip bgm_labirinto;
 
-	public bool control = true;
-	public AudioClip uiButton;
-	public AudioClip dialogueButton;
-	public void PlayBGM(int index)
-	{
-		if (index >= 0 && index < bgmClips.Length)
-		{
-			musicSource.clip = bgmClips[index];
-			musicSource.Play();
-		}
-	}
-	public void PlaySFX(AudioClip clip)
-	{
-		SFXSource.PlayOneShot(clip);
-	}
-	public void controlAudio()
-	{
-		control = !control;
-		if (control)
-		{
-			AudioListener.volume = 1f;
-			Debug.Log(control);
-		}
-		else
-		{
-			AudioListener.volume = 0f;
-			Debug.Log(control);
-		}
-	}
+	[Header("SFX Clips")]
+    [SerializeField] public AudioClip button_click;
+    [SerializeField] public AudioClip inventory_click;
+
+
+    public bool control = true;
+
+    public void PLAY_SPLASH_BGM()
+    {
+        if (bgm_splash != null)
+        {
+            musicSource.clip = bgm_splash;
+            musicSource.Play();
+            Debug.Log($"Playing BGM: {bgm_splash.name}");
+        }
+        else
+        {
+            Debug.LogWarning("BGM clip is null.");
+        }
+    }
+
+	public void PLAY_HOME_BGM()
+    {
+        if (bgm_home != null)
+        {
+            musicSource.clip = bgm_home;
+            musicSource.Play();
+            Debug.Log($"Playing BGM: {bgm_home.name}");
+        }
+        else
+        {
+            Debug.LogWarning("BGM clip is null.");
+        }
+    }
+
+	public void PLAY_LABIRINTO_BGM()
+    {
+        if (bgm_labirinto != null)
+        {
+            musicSource.clip = bgm_labirinto;
+            musicSource.Play();
+            Debug.Log($"Playing BGM: {bgm_labirinto.name}");
+        }
+        else
+        {
+            Debug.LogWarning("BGM clip is null.");
+        }
+    }
+
+    public void StopBGM()
+    {
+        musicSource.Stop();
+    }
+
+	// play sfx
+    public void PlaySFX(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            SFXSource.PlayOneShot(clip);
+        }
+    }
+
+    public void ControlAudio()
+    {
+        control = !control;
+        AudioListener.volume = control ? 1f : 0f;
+        Debug.Log($"Audio control toggled: {control}");
+    }
 }

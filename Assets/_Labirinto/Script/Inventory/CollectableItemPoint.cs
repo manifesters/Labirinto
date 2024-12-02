@@ -87,6 +87,7 @@ public class CollectibleItemPoint : MonoBehaviour
 
     private void OnCollectButtonClicked()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
         if (playerIsNear && collectable && collectibleManager != null)
         {
             collectibleManager.CollectItem(itemInfoForPoint.id);

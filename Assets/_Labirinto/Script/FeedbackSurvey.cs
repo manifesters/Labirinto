@@ -16,6 +16,7 @@ public class FeedbackSurvey : MonoBehaviour
     // Method to send feedback
     public void Send()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
         // Check if a toggle is selected
         Toggle selectedToggle = GetSelectedToggle();
         if (selectedToggle == null)

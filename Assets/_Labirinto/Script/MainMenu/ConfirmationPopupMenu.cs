@@ -26,10 +26,12 @@ namespace MainMenu
 
             // assign the onClick listeners
             confirmButton.onClick.AddListener(() => {
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
                 DeactivateMenu();
                 confirmAction();
             });
             cancelButton.onClick.AddListener(() => {
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
                 DeactivateMenu();
                 cancelAction();
             });

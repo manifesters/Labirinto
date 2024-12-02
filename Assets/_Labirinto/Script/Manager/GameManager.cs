@@ -38,7 +38,8 @@ namespace Helper
                 DataPersistenceManager.Instance.SavePlayer();
             }
 
-            SetGameState(GameState.SPLASH); // Initialize to the splash screen
+            SetGameState(GameState.SPLASH);
+            AudioManager.Instance.PLAY_SPLASH_BGM();
         }
 
         public void SetGameState(GameState newState)
@@ -57,16 +58,16 @@ namespace Helper
             switch (state)
             {
                 case GameState.SPLASH:
-                    // Handle splash screen logic
+                   AudioManager.Instance.PLAY_SPLASH_BGM();
                     break;
                 case GameState.AUTHENTICATION:
                     // Handle authentication screen logic
                     break;
                 case GameState.HOME:
-                    // Handle home screen logic
+                    AudioManager.Instance.PLAY_HOME_BGM();
                     break;
                 case GameState.LABIRINTO:
-                    // Handle home screen logic
+                    AudioManager.Instance.PLAY_LABIRINTO_BGM();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(state), state, null);

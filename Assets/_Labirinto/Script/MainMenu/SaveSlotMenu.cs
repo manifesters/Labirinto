@@ -22,17 +22,15 @@ namespace MainMenu
         private SaveSlot[] saveSlots;
 
         private bool isLoadingGame = false;
-		AudioManager audioManager;
 
 		private void Awake() 
         {
             saveSlots = this.GetComponentsInChildren<SaveSlot>();
-			audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 		}
 
         public void OnSaveSlotClicked(SaveSlot saveSlot) 
         {
-			audioManager.PlaySFX(audioManager.uiButton);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
 			DisableMenuButtons();
 
             // if the game is loading
@@ -48,6 +46,7 @@ namespace MainMenu
                     "Starting a New Game with this slot will override the currently saved data. Are you sure?",
                     // function to execute if we select 'yes'
                     () => {
+                        AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
                         savedNamePopupMenu.ActivateMenu(
                             "Enter save name",
                             (inputText) => {
@@ -67,6 +66,7 @@ namespace MainMenu
                     },
                     // function to execute if we select 'cancel'
                     () => {
+                        AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
                         this.ActivateMenu(isLoadingGame);
                     }
                 );
@@ -103,17 +103,20 @@ namespace MainMenu
 
         public void OnClearClicked(SaveSlot saveSlot) 
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
             DisableMenuButtons();
 
             confirmationPopupMenu.ActivateMenu(
                 "Are you sure you want to delete this saved data?",
                 // function to execute if we select 'yes'
                 () => {
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
                     DataPersistenceManager.Instance.DeleteProfileData(saveSlot.GetProfileId());
                     ActivateMenu(isLoadingGame);
                 },
                 // function to execute if we select 'cancel'
                 () => {
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
                     ActivateMenu(isLoadingGame);
                 }
             );
@@ -121,7 +124,7 @@ namespace MainMenu
 
         public void OnBackClicked() 
         {
-			audioManager.PlaySFX(audioManager.uiButton);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
 			mainMenu.ActivateMenu();
             this.DeactivateMenu();
         }

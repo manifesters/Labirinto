@@ -68,6 +68,7 @@ public class QuestLogScrollingList : MonoBehaviour
 
     private void OnQuestSelected(Quest quest)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
         if (idToPanelMap.TryGetValue(quest.info.id, out QuestLogPanel questLogPanel) && !quest.rewardClaimed)
         {
             questLogPanel.DisableButton();

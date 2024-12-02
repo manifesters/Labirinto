@@ -109,6 +109,7 @@ namespace Dialogue
 
         private void ContinueStory()
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
             while (currentStory.canContinue)
             {
                 // Get the next line of the story
@@ -214,6 +215,7 @@ namespace Dialogue
 
         public void MakeChoice(int choiceIndex)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
             if (canContinueToNextLine) 
             {
                 currentStory.ChooseChoiceIndex(choiceIndex);

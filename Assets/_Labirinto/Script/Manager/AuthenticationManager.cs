@@ -4,16 +4,9 @@ using Helper;
 
 public class AuthenticationSceneController : MonoBehaviour
 {
-    AudioManager audioManager;
-
-	public void Awake()
-	{
-		audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-	}
-
 	public void OnStartGameClicked()
     {
-        audioManager.PlaySFX(audioManager.uiButton);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
         if (LootLockerManager.Instance.HasExistingSession())
         {
             if (Application.internetReachability == NetworkReachability.NotReachable)

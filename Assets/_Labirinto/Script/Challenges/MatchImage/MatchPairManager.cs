@@ -117,6 +117,7 @@ namespace MatchPairGame
 
         public void CheckMatches()
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
             int matchedCount = 0;
 
             // Reset score

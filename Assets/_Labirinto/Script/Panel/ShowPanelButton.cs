@@ -4,11 +4,6 @@ namespace Panel
 {
     public class ShowPanelButton : MonoBehaviour
     {
-		AudioManager audioManager;
-		public void Awake()
-		{
-			audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-		}
 		public string PanelID;
 
         public PanelShowBehaviour Behaviour;
@@ -22,7 +17,7 @@ namespace Panel
 
         public void DoShowPanel()
         {
-			audioManager.PlaySFX(audioManager.uiButton);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
 			Debug.Log("The button is clicked");
             _panelManager.ShowPanel(PanelID, Behaviour);
         }
