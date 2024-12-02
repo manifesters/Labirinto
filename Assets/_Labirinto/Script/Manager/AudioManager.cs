@@ -15,9 +15,11 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
 	[Header("SFX Clips")]
     [SerializeField] public AudioClip button_click;
     [SerializeField] public AudioClip inventory_click;
+	[SerializeField] public AudioClip walking;
 
 
-    public bool control = true;
+
+	public bool control = true;
 
     public void PLAY_SPLASH_BGM()
     {

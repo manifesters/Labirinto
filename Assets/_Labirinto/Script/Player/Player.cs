@@ -7,10 +7,12 @@ namespace PlayerControl
 {
     public class Player : MonoBehaviour, IDataPersistence
     {
+        public Joystick joystickMovement;
         public float movementSpeed = 2.5f;
         private Vector2 input;
         public Rigidbody2D playerRb;
         public Animator animator;
+        AudioSource audioSource;
 
 		private void Awake()
 		{
@@ -20,6 +22,7 @@ namespace PlayerControl
         {
             // ACHIEVEMENT: Create First Game
             AchievementsManager.Instance.CompleteAchievement("1Manlalaro");
+            audioSource = GetComponent<AudioSource>();
             playerRb = GetComponent<Rigidbody2D>();  // Proper assignment
             
         }
@@ -39,8 +42,8 @@ namespace PlayerControl
 
         private void Update()
         {
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
+			input.x = joystickMovement.Horizontal * movementSpeed;
+            input.y = joystickMovement.Vertical * movementSpeed;
 
             var targetPos = transform.position;
             targetPos.x += input.x;
@@ -49,20 +52,25 @@ namespace PlayerControl
 			animator.SetFloat("Horizontal", input.x);
 			animator.SetFloat("Vertical", input.y);
             animator.SetFloat("Speed", input.sqrMagnitude);
-            
-			
 		}
-
         private void FixedUpdate()
         {
             // Stop player movement if a dialogue is playing
             if (Dialogue.DialogueManager.Instance.dialogueIsPlaying)
             {
+                playerRb.velocity = Vector2.zero;
                 return;
             }
-
-            // Move the player based on input
-            playerRb.MovePosition(playerRb.position + input * movementSpeed * Time.fixedDeltaTime); 
+            else if (joystickMovement.Direction.y != 0)
+            {
+                // Move the player based on input
+                //playerRb.MovePosition(playerRb.position + input * movementSpeed * Time.fixedDeltaTime);
+                playerRb.velocity = new Vector2(joystickMovement.Direction.x * movementSpeed, joystickMovement.Direction.y * movementSpeed);
+			}
+            else
+            {
+                playerRb.velocity = Vector2.zero;
+            }
         }
     }
 }
