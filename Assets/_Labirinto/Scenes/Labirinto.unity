@@ -1102,9 +1102,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5603032815125249528, guid: 46541e935028b2d41aa5fbee9e8cfc26, type: 3}
+      propertyPath: itemInfoForPoint
+      value: 
+      objectReference: {fileID: 11400000, guid: f0361d8d446c8a841b623d844855586a, type: 2}
     - target: {fileID: 8873855285249333513, guid: 46541e935028b2d41aa5fbee9e8cfc26, type: 3}
       propertyPath: m_Name
-      value: Kasuotang Etniko (Munting Bersyon)
+      value: Pamilya
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2025,8 +2029,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2759972246656812047, guid: 2e7f040719fcb514fa7defd32d9f1c77, type: 3}
       propertyPath: m_Name
-      value: Tapis
+      value: Nusantao Trading Network
       objectReference: {fileID: 0}
+    - target: {fileID: 4418105424904412528, guid: 2e7f040719fcb514fa7defd32d9f1c77, type: 3}
+      propertyPath: itemInfoForPoint
+      value: 
+      objectReference: {fileID: 11400000, guid: 53992dc734e043443a53ddfc0584b499, type: 2}
     - target: {fileID: 5721593768979784895, guid: 2e7f040719fcb514fa7defd32d9f1c77, type: 3}
       propertyPath: m_LocalPosition.x
       value: -98.45855
@@ -2067,6 +2075,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6732099715767177042, guid: 2e7f040719fcb514fa7defd32d9f1c77, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1403708481, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2779,9 +2791,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3263497820261230333, guid: 91a1e1783573d3f468d40230a1c7ccf7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 518785722, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
+    - target: {fileID: 5128177669323624753, guid: 91a1e1783573d3f468d40230a1c7ccf7, type: 3}
+      propertyPath: itemInfoForPoint
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f3c2092c1ba70f48bfd13b683e21614, type: 2}
     - target: {fileID: 8375561018351685791, guid: 91a1e1783573d3f468d40230a1c7ccf7, type: 3}
       propertyPath: m_Name
-      value: Munting Pigura ng Lalaki at Babae
+      value: Austronesian Migration
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3384,6 +3404,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 636438382}
     m_Modifications:
+    - target: {fileID: 2264567182339981437, guid: 515df7cb03a74964986a1560582cb062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1646409101, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
     - target: {fileID: 7241003400449136097, guid: 515df7cb03a74964986a1560582cb062, type: 3}
       propertyPath: m_LocalPosition.x
       value: -109.15915
@@ -3426,8 +3450,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7278591516032832994, guid: 515df7cb03a74964986a1560582cb062, type: 3}
       propertyPath: m_Name
-      value: Globo
+      value: Abiotic Resources
       objectReference: {fileID: 0}
+    - target: {fileID: 8724549781653800083, guid: 515df7cb03a74964986a1560582cb062, type: 3}
+      propertyPath: itemInfoForPoint
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ca2d74c01abdaf42958208c41a307e8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6414,14 +6442,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2371315903798810061, guid: 32c38d0c2cd959f4cab08abbb631dd2d, type: 3}
+      propertyPath: itemInfoForPoint
+      value: 
+      objectReference: {fileID: 11400000, guid: 479f1a98e31a03d42a167ce20f55cbda, type: 2}
     - target: {fileID: 6127140030392091631, guid: 32c38d0c2cd959f4cab08abbb631dd2d, type: 3}
       propertyPath: m_Name
-      value: Munting Espada
+      value: Rehiyon
       objectReference: {fileID: 0}
     - target: {fileID: 9149806824855849509, guid: 32c38d0c2cd959f4cab08abbb631dd2d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1995972858, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
+      objectReference: {fileID: 394589546, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6770,8 +6802,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 305884949080819665, guid: 5ff60cac976e5d74eb5194aa5ca23844, type: 3}
       propertyPath: m_Name
-      value: Munting Bahay-Kubo
+      value: Island Origin Hypothesis
       objectReference: {fileID: 0}
+    - target: {fileID: 3797886914988373877, guid: 5ff60cac976e5d74eb5194aa5ca23844, type: 3}
+      propertyPath: itemInfoForPoint
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e7bad1612a9d5746befacb2a75e5d4f, type: 2}
     - target: {fileID: 4958861141281506262, guid: 5ff60cac976e5d74eb5194aa5ca23844, type: 3}
       propertyPath: m_LocalPosition.x
       value: -101.1337
@@ -6812,6 +6848,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8984638616473620995, guid: 5ff60cac976e5d74eb5194aa5ca23844, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 755146130, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8912,7 +8952,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 243795214075922508, guid: 807119ff02454b54ab89f3362dd13a0e, type: 3}
       propertyPath: m_Name
-      value: Item
+      value: Kahoy na Puno
       objectReference: {fileID: 0}
     - target: {fileID: 2530884239578271739, guid: 807119ff02454b54ab89f3362dd13a0e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8966,6 +9006,10 @@ PrefabInstance:
       propertyPath: itemInfoForPoint
       value: 
       objectReference: {fileID: 11400000, guid: f9e4eacd8f5837148b2bca668abf51da, type: 2}
+    - target: {fileID: 5857969816919089503, guid: 807119ff02454b54ab89f3362dd13a0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -864517332, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9681,8 +9725,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1648899608311382613, guid: fc05df1bdff4b834b87ded96c90dd89d, type: 3}
       propertyPath: m_Name
-      value: Munting Bangka
+      value: GDP
       objectReference: {fileID: 0}
+    - target: {fileID: 4764663505011201897, guid: fc05df1bdff4b834b87ded96c90dd89d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 975960780, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
+    - target: {fileID: 5062020215411715852, guid: fc05df1bdff4b834b87ded96c90dd89d, type: 3}
+      propertyPath: itemInfoForPoint
+      value: 
+      objectReference: {fileID: 11400000, guid: 967fdb2ee3494d54195e05434bc38f48, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10762,7 +10814,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 560609252596602879, guid: 241ae55272c7e3d439182eb049a4c180, type: 3}
       propertyPath: m_Name
-      value: Munting Pagoda
+      value: Panahong Neolitiko Artifact
       objectReference: {fileID: 0}
     - target: {fileID: 1553553931065889084, guid: 241ae55272c7e3d439182eb049a4c180, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10804,6 +10856,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3793761834467494831, guid: 241ae55272c7e3d439182eb049a4c180, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -574924510, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
+    - target: {fileID: 8767970323707984246, guid: 241ae55272c7e3d439182eb049a4c180, type: 3}
+      propertyPath: itemInfoForPoint
+      value: 
+      objectReference: {fileID: 11400000, guid: b4399c89582c1404791e4aaaffa991ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -55972,7 +56032,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 243795214075922508, guid: 807119ff02454b54ab89f3362dd13a0e, type: 3}
       propertyPath: m_Name
-      value: SoutEastAsiaMap
+      value: Timog Silangang-Asya
       objectReference: {fileID: 0}
     - target: {fileID: 2530884239578271739, guid: 807119ff02454b54ab89f3362dd13a0e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56026,6 +56086,10 @@ PrefabInstance:
       propertyPath: itemInfoForPoint
       value: 
       objectReference: {fileID: 11400000, guid: 46149682d879b74b6853540718a55559, type: 2}
+    - target: {fileID: 5857969816919089503, guid: 807119ff02454b54ab89f3362dd13a0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1503856711, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -56373,7 +56437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8438766223085731505, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: orthographic size
-      value: 5.296875
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9032220251598996485, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: m_LocalPosition.x
