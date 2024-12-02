@@ -172,8 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9893b747dce26824b3dcd77e556df45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joystickMovement: {fileID: 0}
   movementSpeed: 5
   playerRb: {fileID: 3515486299969899498}
+  animator: {fileID: 315536750986076797}
 --- !u!95 &315536750986076797
 Animator:
   serializedVersion: 5
@@ -184,7 +186,7 @@ Animator:
   m_GameObject: {fileID: 2499261671877374351}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32c7467dbf24db5469e1259dad956460, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
