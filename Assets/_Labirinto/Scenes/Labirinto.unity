@@ -7832,6 +7832,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7062038594727140668, guid: 583a03913dd3d69429a745fb3d822540, type: 3}
   m_PrefabInstance: {fileID: 1342750691}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1362896635 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 315536750986076797, guid: 3ae908eeda31dcc4c98ef5a3649d3961, type: 3}
+  m_PrefabInstance: {fileID: 604442927546918880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1372078583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55015,10 +55020,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 315536750986076797, guid: 3ae908eeda31dcc4c98ef5a3649d3961, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 32c7467dbf24db5469e1259dad956460, type: 2}
     - target: {fileID: 2499261671877374351, guid: 3ae908eeda31dcc4c98ef5a3649d3961, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7265564823955777771, guid: 3ae908eeda31dcc4c98ef5a3649d3961, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1362896635}
     - target: {fileID: 8574372238004863338, guid: 3ae908eeda31dcc4c98ef5a3649d3961, type: 3}
       propertyPath: m_LocalPosition.x
       value: -100.9
@@ -55620,7 +55633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8438766223085731505, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: orthographic size
-      value: 5.90625
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9032220251598996485, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: m_LocalPosition.x

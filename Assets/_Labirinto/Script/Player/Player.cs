@@ -10,12 +10,18 @@ namespace PlayerControl
         public float movementSpeed = 2.5f;
         private Vector2 input;
         public Rigidbody2D playerRb;
+        public Animator animator;
 
-        private void Start()
+		private void Awake()
+		{
+			animator = GetComponent<Animator>();
+		}
+		private void Start()
         {
             // ACHIEVEMENT: Create First Game
             AchievementsManager.Instance.CompleteAchievement("1Manlalaro");
             playerRb = GetComponent<Rigidbody2D>();  // Proper assignment
+            
         }
 
         // Load the player position from saved game data
@@ -24,7 +30,7 @@ namespace PlayerControl
             this.transform.position = data.playerPosition;
         }
 
-        // Save the player's position to the game data
+        // Save the player's position to the game data.
         public void SaveData(GameData data) 
         {
             data.playerPosition = this.transform.position;
@@ -39,7 +45,13 @@ namespace PlayerControl
             var targetPos = transform.position;
             targetPos.x += input.x;
             targetPos.y += input.y;
-        }
+
+			animator.SetFloat("Horizontal", input.x);
+			animator.SetFloat("Vertical", input.y);
+            animator.SetFloat("Speed", input.sqrMagnitude);
+            
+			
+		}
 
         private void FixedUpdate()
         {
@@ -50,7 +62,7 @@ namespace PlayerControl
             }
 
             // Move the player based on input
-            playerRb.MovePosition(playerRb.position + input * movementSpeed * Time.fixedDeltaTime);
+            playerRb.MovePosition(playerRb.position + input * movementSpeed * Time.fixedDeltaTime); 
         }
     }
 }

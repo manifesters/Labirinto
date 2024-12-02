@@ -27,9 +27,10 @@ namespace DataPersistence
         public int finishedQuest;
         public int itemCollected;
         public Vector2 playerPosition;
+		public float audioVolume;
 
-        // Quest
-        public List<QuestDataEntry> questDataEntries;
+		// Quest
+		public List<QuestDataEntry> questDataEntries;
         public List<CollectibleItemDataEntry> collectibleItemDataEntries;
         
         public GameData()
