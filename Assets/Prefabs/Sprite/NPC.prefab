@@ -46,7 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueInkJSON: {fileID: 0}
   challengeDataJSON: {fileID: 0}
-  targetGameObject: {fileID: 0}
+  npcName: 
+  npcPortrait: {fileID: 0}
 --- !u!1 &4154603261473521179
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +307,6 @@ MonoBehaviour:
   finishPoint: 1
   interactButton: {fileID: 4588494210670652674}
   mainCanvas: {fileID: 0}
-  questId: 
 --- !u!1 &9087250105998868722
 GameObject:
   m_ObjectHideFlags: 0
