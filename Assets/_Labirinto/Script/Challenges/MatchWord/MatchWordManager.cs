@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using Newtonsoft.Json;
 using Challenge;
+using System.Linq;
 
 namespace MatchWordGame
 {
@@ -61,15 +62,22 @@ namespace MatchWordGame
 
                 challengeName.text = matchData.challengeName;
 
+                // Shuffle pairs
+                var shuffledItem = matchData.pairs.OrderBy(pair => Random.value).ToList();
+                var shuffledSlot = matchData.pairs.OrderBy(pair => Random.value).ToList();
+
                 // Populate draggable items and slots
-                foreach (var pair in matchData.pairs)
+                foreach (var pair in shuffledItem)
                 {
                     pairs[pair.item] = pair.pair;
 
                     // Create draggable item
                     GameObject draggableItem = Instantiate(draggableItemPrefab, draggableItemsPanel.transform);
                     draggableItem.GetComponentInChildren<TextMeshProUGUI>().text = pair.item;
-
+                }
+                
+                foreach (var pair in shuffledSlot)
+                {
                     // Create slot
                     GameObject slot = Instantiate(slotPrefab, slotPanel.transform);
                     slot.GetComponentInChildren<TextMeshProUGUI>().text = pair.pair;

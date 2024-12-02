@@ -19,5 +19,5 @@
         -> START
         === START ===
          *[Mag Simula!]
-         #START_CHALLENGE_MATCHPAIR
+         #START_CHALLENGE_MATCHIMAGE
 ->END

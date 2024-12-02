@@ -1759,7 +1759,7 @@ PrefabInstance:
     - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: challengeDataJSON
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4900000, guid: 57051534af56356bda6934d1e0a9cda3, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Datu
@@ -4879,11 +4879,11 @@ PrefabInstance:
     - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: dialogueInkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 56fce339980290d49b4c161ea5da584d, type: 3}
+      objectReference: {fileID: 4900000, guid: 3e1dacf3ae633f64a9e6d729df2d95f3, type: 3}
     - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: challengeDataJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 38a77563fe826114ba728c25a94f82cb, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Taong-Tuod
@@ -7536,8 +7536,8 @@ Transform:
   - {fileID: 415992012}
   - {fileID: 35188548}
   - {fileID: 360777430}
-  - {fileID: 705606100}
   - {fileID: 1372078584}
+  - {fileID: 705606100}
   - {fileID: 402232856}
   - {fileID: 953483485}
   - {fileID: 1309893469}
@@ -8506,7 +8506,11 @@ PrefabInstance:
     - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: dialogueInkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 3e1dacf3ae633f64a9e6d729df2d95f3, type: 3}
+      objectReference: {fileID: 4900000, guid: 390cd68e55108dc5e8db4dd436995e3d, type: 3}
+    - target: {fileID: 5602689498985928608, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
+      propertyPath: challengeDataJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 38a77563fe826114ba728c25a94f82cb, type: 3}
     - target: {fileID: 6179761486817100011, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
       propertyPath: m_Name
       value: NPC_Sigbin
@@ -56401,7 +56405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8438766223085731505, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: orthographic size
-      value: 5
+      value: 5.296875
       objectReference: {fileID: 0}
     - target: {fileID: 9032220251598996485, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: m_LocalPosition.x

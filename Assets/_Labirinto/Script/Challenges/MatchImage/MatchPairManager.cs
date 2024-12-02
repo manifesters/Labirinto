@@ -63,9 +63,10 @@ namespace MatchPairGame
                 challengeName.text = matchData.challengeName;
 
                 // Shuffle pairs
-                var shuffledPairs = matchData.pairs.OrderBy(pair => Random.value).ToList();
+                var shuffledItem = matchData.pairs.OrderBy(pair => Random.value).ToList();
+                var shuffledSlot = matchData.pairs.OrderBy(pair => Random.value).ToList();
 
-                foreach (var pair in shuffledPairs)
+                foreach (var pair in shuffledItem)
                 {
                     pairs[pair.item] = pair.pair;
 
@@ -77,7 +78,7 @@ namespace MatchPairGame
                     Image draggableItemImage = draggableItem.GetComponentInChildren<Image>();
                     if (draggableItemImage != null)
                     {
-                        Sprite itemSprite = Resources.Load<Sprite>($"MatchPairRes/{pair.itemImage}");
+                        Sprite itemSprite = Resources.Load<Sprite>($"MatchImage/ImgMatchImage/{pair.itemImage}");
                         if (itemSprite != null)
                         {
                             draggableItemImage.sprite = itemSprite;
@@ -87,25 +88,40 @@ namespace MatchPairGame
                             Debug.LogWarning($"Image not found for draggable item: {pair.itemImage}");
                         }
                     }
+                }
 
+                foreach (var pair in shuffledSlot)
+                {
                     // Create slot
                     GameObject slot = Instantiate(slotPrefab, slotPanel.transform);
                     slot.GetComponentInChildren<TextMeshProUGUI>().text = pair.pair;
-                    slot.name = pair.pair; // Use pair as the slot name
+                    slot.name = pair.pair;
 
                     // Assign the image for the slot
-                    Image slotImage = slot.GetComponentInChildren<Image>();
-                    if (slotImage != null)
+                    Transform imageTransform = slot.transform.Find("Slot_Image");
+                    if (imageTransform != null)
                     {
-                        Sprite slotSprite = Resources.Load<Sprite>($"MatchPairRes/{pair.slotImage}");
-                        if (slotSprite != null)
+                        Image slotImage = imageTransform.GetComponent<Image>();
+                        if (slotImage != null)
                         {
-                            slotImage.sprite = slotSprite;
+                            Sprite slotSprite = Resources.Load<Sprite>($"MatchImage/ImgMatchImage/{pair.slotImage}");
+                            if (slotSprite != null)
+                            {
+                                slotImage.sprite = slotSprite;
+                            }
+                            else
+                            {
+                                Debug.LogWarning($"Image not found for slot: {pair.slotImage}");
+                            }
                         }
                         else
                         {
-                            Debug.LogWarning($"Image not found for slot: {pair.slotImage}");
+                            Debug.LogWarning($"Image component not found on child: ImageChildName");
                         }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Child with name 'ImageChildName' not found in slot");
                     }
                 }
             }
