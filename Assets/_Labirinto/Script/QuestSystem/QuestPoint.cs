@@ -14,7 +14,7 @@ public class QuestPoint : MonoBehaviour
 
     [Header("Interact Button")]
     [SerializeField] private Button interactButton;
-    [SerializeField] private Canvas mainCanvas;
+    [SerializeField] private GameObject panel;
 
     private Button interactButtonComponent; // Reference to the Button component
     private bool playerIsNear = false;
@@ -30,13 +30,13 @@ public class QuestPoint : MonoBehaviour
     {
         questId = questInfoForPoint.id;
         questIcon = GetComponentInChildren<QuestIcon>();
-        dialogueTrigger = GetComponentInChildren<DialogueTrigger>(); // Get the DialogueTrigger component
+        dialogueTrigger = GetComponentInChildren<DialogueTrigger>();
 
-        // Ensure the button is hidden at the start
+       // hide interact button
         interactButton.gameObject.SetActive(false);
         buttonRectTransform = interactButton.GetComponent<RectTransform>();
 
-        // Add a listener to the button click
+        // listner on interact button
         interactButtonComponent = interactButton.GetComponent<Button>();
         interactButtonComponent.onClick.AddListener(OnInteractButtonClicked);
     }
@@ -114,15 +114,13 @@ public class QuestPoint : MonoBehaviour
 
     private void UpdateButtonVisibility()
     {
-        // Show the button if the player is near and the quest can be started or finished
         if (playerIsNear && (currentQuestState.Equals(QuestState.CAN_START) || currentQuestState.Equals(QuestState.CAN_FINISH)))
         {
-            // Ensure the button is parented to the main canvas
-            if (interactButton.transform.parent != mainCanvas.transform)
+            if (interactButton.transform.parent != panel.transform)
             {
-                buttonRectTransform.SetParent(mainCanvas.transform, false);
+                buttonRectTransform.SetParent(panel.transform, false);
 
-                // Set the desired position
+                // Optionally adjust the button's position within the panel
                 buttonRectTransform.anchoredPosition = new Vector2(300, -70);
             }
 
