@@ -14,9 +14,11 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
 
     [Header("SFX Clips")]
     [SerializeField] public AudioClip button_click;
-    [SerializeField] public AudioClip inventory_click;
-
-	public bool control = true;
+    [SerializeField] public AudioClip sfx_inventory_click;
+    [SerializeField] public AudioClip sfx_walking;
+    [SerializeField] public AudioClip sfx_correct;
+    [SerializeField] public AudioClip sfx_error;
+    [SerializeField] public AudioClip sfx_typing;
 
     public void Start()
     {
@@ -106,12 +108,5 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
         {
             SFXSource.PlayOneShot(clip);
         }
-    }
-
-    public void ControlAudio()
-    {
-        control = !control;
-        AudioListener.volume = control ? 1f : 0f;
-        Debug.Log($"Audio control toggled: {control}");
     }
 }

@@ -1066,9 +1066,11 @@ MonoBehaviour:
   bgm_home: {fileID: 8300000, guid: ef615007f9c880a45a820b2ba18a139c, type: 3}
   bgm_labirinto: {fileID: 8300000, guid: b85bc7b9d66d068458738699125cf7c5, type: 3}
   button_click: {fileID: 8300000, guid: 50e4f55236376064eb156a8e7c7a8b61, type: 3}
-  inventory_click: {fileID: 8300000, guid: 475e527b7f268254eb55999117a6c610, type: 3}
-  walking: {fileID: 8300000, guid: a276054719ab5424a94822598919722d, type: 3}
-  control: 0
+  sfx_inventory_click: {fileID: 8300000, guid: 475e527b7f268254eb55999117a6c610, type: 3}
+  sfx_walking: {fileID: 8300000, guid: a276054719ab5424a94822598919722d, type: 3}
+  sfx_correct: {fileID: 8300000, guid: 6f1f3044c8ba8384abd2ecda60ed273b, type: 3}
+  sfx_error: {fileID: 8300000, guid: dfc3ee4d52202db4587425316fb7f230, type: 3}
+  sfx_typing: {fileID: 8300000, guid: 9375f2bdd747c004cb1012d181f88b9a, type: 3}
 --- !u!1001 &8448265432547497282
 PrefabInstance:
   m_ObjectHideFlags: 0

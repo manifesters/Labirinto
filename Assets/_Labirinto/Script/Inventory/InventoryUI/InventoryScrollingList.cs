@@ -17,6 +17,7 @@ public class InventoryScrollingList : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.sfx_inventory_click);
          if (CollectibleManager.Instance == null)
         {
             Debug.LogError("CollectibleManager.Instance is null. Ensure CollectibleManager is initialized.");
