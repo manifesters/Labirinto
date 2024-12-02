@@ -12,15 +12,46 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
     [SerializeField] public AudioClip bgm_home;
     [SerializeField] public AudioClip bgm_labirinto;
 
-	[Header("SFX Clips")]
+    [Header("SFX Clips")]
     [SerializeField] public AudioClip button_click;
     [SerializeField] public AudioClip inventory_click;
-	[SerializeField] public AudioClip walking;
-
-
 
 	public bool control = true;
 
+    public void Start()
+    {
+        if (PlayerPrefs.HasKey("BGM Volume"))
+        {
+            SetBGMVolume(PlayerPrefs.GetFloat("BGM Volume"));
+        }
+        else
+        {
+            SetBGMVolume(0.5f); 
+        }
+
+        if (PlayerPrefs.HasKey("SFX Volume"))
+        {
+            SetSFXVolume(PlayerPrefs.GetFloat("SFX Volume"));
+        }
+        else
+        {
+            SetSFXVolume(0.5f); 
+        }
+    }
+
+    public void SetBGMVolume(float volume)
+    {
+        musicSource.volume = volume;
+        PlayerPrefs.SetFloat("BGM Volume", volume);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        SFXSource.volume = volume;
+        PlayerPrefs.SetFloat("SFX Volume", volume); 
+    }
+
+    // -------- Play BGM or SFX -----------
     public void PLAY_SPLASH_BGM()
     {
         if (bgm_splash != null)
@@ -35,7 +66,7 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
         }
     }
 
-	public void PLAY_HOME_BGM()
+    public void PLAY_HOME_BGM()
     {
         if (bgm_home != null)
         {
@@ -49,7 +80,7 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
         }
     }
 
-	public void PLAY_LABIRINTO_BGM()
+    public void PLAY_LABIRINTO_BGM()
     {
         if (bgm_labirinto != null)
         {
@@ -68,7 +99,7 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
         musicSource.Stop();
     }
 
-	// play sfx
+    // Play SFX
     public void PlaySFX(AudioClip clip)
     {
         if (clip != null)
