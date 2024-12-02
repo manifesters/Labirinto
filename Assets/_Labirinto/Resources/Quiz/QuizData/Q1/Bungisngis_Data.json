@@ -1,30 +1,56 @@
 {
   "challengeName": "Historical Quiz",
+  "instructions": "Piliin ang tamang sagot sa bawat tanong.",
   "quiz": {
     "questions": [
       {
         "question": "Ano ang pangunahing ikinabubuhay ng mga tao sa kabihasnang Khmer?",
-        "options": ["Pagtatanim ng palay", "Pagmimina", "Pagtitinda ng mga alahas", "Pag-aalaga ng hayop"],
+        "options": [ "Pagtatanim ng palay", "Pagmimina", "Pagtitinda ng mga alahas", "Pag-aalaga ng hayop" ],
         "correctAnswerIndex": 0
       },
       {
         "question": "Bakit umunlad ang kalakalan sa kaharian ng Ayutthaya?",
-        "options": ["Dahil sa estratehikong lokasyon", "Dahil sa lakas ng kanilang hukbo", "Dahil sa kanilang likas na yaman", "Dahil sa relihiyong Buddha"],
+        "options": [ "Dahil sa estratehikong lokasyon", "Dahil sa lakas ng kanilang hukbo", "Dahil sa kanilang likas na yaman", "Dahil sa relihiyong Buddha" ],
         "correctAnswerIndex": 0
       },
       {
         "question": "Sa pagpasok ng ika-anim na siglo, alin sa mga sumusunod ang naging malakas sa hilagang bahagi ng Timog-Silangang Asya?",
-        "options": ["Tibeto-Burman", "Mongolia", "Angkor", "Sailendra"],
-        "correctAnswerIndex": 0
+        "options": [ "Mongolia", "Tibeto-Burman", "Angkor", "Sailendra" ],
+        "correctAnswerIndex": 1
       },
       {
         "question": "Ano ang dahilan ng lakas ng kapangyarihan ng Funan?",
-        "options": ["Kalakalan", "Likas na yaman", "Pamana ng kultura", "Pagtatanim ng palay"],
+        "options": [ "Kalakalan", "Likas na yaman", "Pamana ng kultura", "Pagtatanim ng palay" ],
         "correctAnswerIndex": 0
       },
       {
         "question": "Bago dumating ang mga dayuhang Kanluranin, ano ang mga kasanayan ng mga sinaunang Pilipino?",
-        "options": ["Agrikultura, kalakalan, at mga sistemang pampamahalaan", "Pagtitinda ng mga alahas at kasuotan", "Pagtanggap ng mga misyonaryo", "Pagpapaunlad ng teknolohiya"],
+        "options": [ "Agrikultura, kalakalan, at mga sistemang pampamahalaan", "Pagtitinda ng mga alahas at kasuotan", "Pagtanggap ng mga misyonaryo", "Pagpapaunlad ng teknolohiya" ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Ano ang naging pundasyon ng kulturang Hoabinhian?",
+        "options": [ "MPagpapanday", "Pagmimina", "Maunlad na agrikultura", "Pagpapalago ng hayop" ],
+        "correctAnswerIndex": 2
+      },
+      {
+        "question": "Saan nagmula ang mga Austronesian ayon sa teoryang Austronesian Migration?",
+        "options": [ "Mainland China", "Taiwan", "Pilipinas", "Vietnam" ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Anong bansa ang unang nakarating at namuhay sa Pilipinas?",
+        "options": [ "Austronesian", "Malay", "Chinese", "Indian" ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Ano ang tawag sa alyansa ng mga barangay sa sinaunang Pilipinas?",
+        "options": [ "Kaharian", "Sultanato", "Karadyaan", "Barangay Federation" ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Anong kultura ang umusbong sa Vietnam noong Panahong Neolitiko?",
+        "options": [ "Hoabinhian", "Dongson", "Mayan", "Jomon" ],
         "correctAnswerIndex": 0
       }
     ]

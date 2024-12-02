@@ -1,32 +1,58 @@
 {
-    "challengeName": "Quarter 1 Pre-test",
-    "quiz": {
-      "questions": [
-        {
-          "question": "Ano ang tawag sa rehiyong kinabibilangan ng mga bansang Myanmar, Thailand, at Laos?",
-          "options": [ "Mainland Southeast Asia", "Insular Southeast Asia", "Kanlurang Asya", "Timog Asya" ],
-          "correctAnswerIndex": 0
-        },
-        {
-          "question": "Alin sa mga sumusunod ang kabilang sa Insular Southeast Asia?",
-          "options": [ "Pilipinas", "Vietnam", "Laos", "Cambodia" ],
-          "correctAnswerIndex": 0
-        },
-        {
-          "question": "Aling bansa sa Southeast Asia ang nahahati sa Mainland at Insular Southeast Asia?",
-          "options": [ "Malaysia", "Thailand", "Myanmar", "Indonesia" ],
-          "correctAnswerIndex": 0
-        },
-        {
-          "question": "Ano ang rehiyon ng Southeast Asia na binubuo ng mga pulo?",
-          "options": [ "Insular Southeast Asia", "Mainland Southeast Asia", "Kanlurang Asya", "Silangang Asya" ],
-          "correctAnswerIndex": 0
-        },
-        {
-          "question": "Alin sa mga sumusunod ang hindi bahagi ng Mainland Southeast Asia?",
-          "options": [ "Myanmar", "Laos", "Brunei Darussalam", "Vietnam" ],
-          "correctAnswerIndex": 2
-        }
-      ]
-    }
+  "challengeName": "Mainland O Insular",
+  "instructions": "Piliin ang tamang sagot.",
+  "quiz": {
+    "questions": [
+      {
+        "question": "Saan madalas nagaganap ang pagputok ng mga bulkan?",
+        "options": [ "Mainland", "Insular", "Ring of Fire", "Silangang Asya" ],
+        "correctAnswerIndex": 2
+      },
+      {
+        "question": "Anong rehiyon ang binubuo ng Pilipinas, Indonesia, at East Timor?",
+        "options": [ "Mainland", "Insular", "Ring of Fire", "Kanluran" ],
+        "correctAnswerIndex": 1
+      },
+      {
+        "question": "Ano ang pag-aaral ng pisikal na katangian ng daigdig?",
+        "options": [ "Ring of Fire", "Heograpiya", "Kabihasnan", "Agham" ],
+        "correctAnswerIndex": 1
+      },
+      {
+        "question": "Alin ang bahagi ng Insular Southeast Asia?",
+        "options": [ "Amerika", "China", "Pilipinas", "Malaysia" ],
+        "correctAnswerIndex": 2
+      },
+      {
+        "question": "Aling rehiyon ang tangway sa South China Sea at Indian Ocean?",
+        "options": [ "Mainland", "Insular", "Ring of Fire", "Malay" ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Saan kabilang ang Myanmar, Thailand, at Laos?",
+        "options": [ "Mainland", "Insular", "Kanluran", "Timog" ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Alin ang kabilang sa Insular Southeast Asia?",
+        "options": [ "Pilipinas", "Vietnam", "Laos", "Cambodia" ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Aling bansa ang bahagi ng Mainland at Insular?",
+        "options": [ "Malaysia", "Thailand", "Myanmar", "Indonesia" ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Aling rehiyon ang binubuo ng mga pulo?",
+        "options": [ "Insular", "Mainland", "Kanluran", "Silangan" ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Alin ang hindi bahagi ng Mainland?",
+        "options": [ "Myanmar", "Laos", "Brunei", "Vietnam" ],
+        "correctAnswerIndex": 2
+      }
+    ]
   }
+}

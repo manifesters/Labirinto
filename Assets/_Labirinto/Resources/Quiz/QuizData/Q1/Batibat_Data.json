@@ -1,32 +1,57 @@
-{
-  "challengeName": "Family Structures in Southeast Asia",
-  "quiz": {
-    "questions": [
+
+  {
+    "challengeName": "Family and Society",
+    "instructions": "Piliin ang tamang sagot.",
+    "quiz": [
       {
-        "question": "Ano ang tawag sa pamilya na mayroong limitadong bilang ng kasapi?",
-        "options": ["Nuclear family", "Extended family", "Unilineal family", "Bilateral family"],
+        "question": "Ito ay batayang yunit ng lipunan.",
+        "options": [ "Pamilya", "Kasal", "Egalitarian", "Patriyarkal" ],
         "correctAnswerIndex": 0
       },
       {
-        "question": "Ano ang tawag sa pamilya na binubuo ng maraming henerasyon at malalapit na kamag-anak?",
-        "options": ["Nuclear family", "Extended family", "Patrilineal family", "Patriarchy family"],
+        "question": "Anyo ng pamilya na binubuo ng magulang at mga anak.",
+        "options": [ "Ekstended", "Nukleyar", "Polygamy", "Matrilineal" ],
         "correctAnswerIndex": 1
       },
       {
-        "question": "Anong uri ng pamilya ang may kapangyarihang magpasya ang lalaki?",
-        "options": ["Patriarchy", "Matriarchy", "Egalitarian", "Unilineal"],
-        "correctAnswerIndex": 0
+        "question": "Binubuo ng magulang, anak, at iba pang kaanak.",
+        "options": [ "Nukleyar", "Ekstended", "Matriyarkal", "Monogamy" ],
+        "correctAnswerIndex": 1
       },
       {
-        "question": "Anong uri ng pamilya ang sumusunod sa linya ng ama sa pag-aari at pamana?",
-        "options": ["Unilineal", "Bilateral", "Patrilineal", "Matriarchy"],
+        "question": "Ang lalaki ang pinuno ng pamilya.",
+        "options": [ "Egalitarian", "Patriyarkal", "Matrilineal", "Matriyarkal" ],
+        "correctAnswerIndex": 1
+      },
+      {
+        "question": "Ang babae ang pinuno ng pamilya.",
+        "options": [ "Patriyarkal", "Egalitarian", "Matriyarkal", "Monogamy" ],
         "correctAnswerIndex": 2
       },
       {
-        "question": "Anong uri ng pamilya ang may maraming asawa?",
-        "options": ["Monogamy", "Polygamy", "Extended family", "Nuclear family"],
+        "question": "Ito ang nagpapatibay sa pagsasama ng mag-asawa.",
+        "options": [ "Kasal", "Pamilya", "Polygamy", "Nukleyar" ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Ang sistema ng kasal kung saan isa lamang ang asawa.",
+        "options": [ "Polygamy", "Monogamy", "Ekstended", "Egalitarian" ],
         "correctAnswerIndex": 1
+      },
+      {
+        "question": "Pinapayagan ang pag-aasawa ng higit sa isa.",
+        "options": [ "Monogamy", "Polygamy", "Matrilineal", "Patriyarkal" ],
+        "correctAnswerIndex": 1
+      },
+      {
+        "question": "Ang kamag-anak ay mula lamang sa panig ng ina.",
+        "options": [ "Matrilineal", "Patriyarkal", "Matriyarkal", "Nukleyar" ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Pantay ang kapangyarihan ng lalaki at babae sa pamilya.",
+        "options": [ "Egalitarian", "Matriyarkal", "Patriyarkal", "Nukleyar" ],
+        "correctAnswerIndex": 0
       }
     ]
   }
-}
