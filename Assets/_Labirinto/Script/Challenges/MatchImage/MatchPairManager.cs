@@ -63,9 +63,10 @@ namespace MatchPairGame
                 challengeName.text = matchData.challengeName;
 
                 // Shuffle pairs
-                var shuffledPairs = matchData.pairs.OrderBy(pair => Random.value).ToList();
+                var shuffledItem = matchData.pairs.OrderBy(pair => Random.value).ToList();
+                var shuffledSlot = matchData.pairs.OrderBy(pair => Random.value).ToList();
 
-                foreach (var pair in shuffledPairs)
+                foreach (var pair in shuffledItem)
                 {
                     pairs[pair.item] = pair.pair;
 
@@ -87,7 +88,10 @@ namespace MatchPairGame
                             Debug.LogWarning($"Image not found for draggable item: {pair.itemImage}");
                         }
                     }
+                }
 
+                foreach (var pair in shuffledSlot)
+                {
                     // Create slot
                     GameObject slot = Instantiate(slotPrefab, slotPanel.transform);
                     slot.GetComponentInChildren<TextMeshProUGUI>().text = pair.pair;
