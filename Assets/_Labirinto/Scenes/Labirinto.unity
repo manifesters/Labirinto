@@ -4818,72 +4818,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 197754144475828523, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
   m_PrefabInstance: {fileID: 695602094}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &696626254
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 636438382}
-    m_Modifications:
-    - target: {fileID: 4176374349595656571, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-      propertyPath: m_Name
-      value: Maliit na Piraso ng Puzzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7383885510748585869, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -78.07469
-      objectReference: {fileID: 0}
-    - target: {fileID: 7383885510748585869, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -19.95105
-      objectReference: {fileID: 0}
-    - target: {fileID: 7383885510748585869, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.4299119
-      objectReference: {fileID: 0}
-    - target: {fileID: 7383885510748585869, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7383885510748585869, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7383885510748585869, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7383885510748585869, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7383885510748585869, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7383885510748585869, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7383885510748585869, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8901592547698371037, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -574924510, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
---- !u!4 &696626255 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7383885510748585869, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
-  m_PrefabInstance: {fileID: 696626254}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &703744046
 GameObject:
   m_ObjectHideFlags: 0
@@ -27923,6 +27857,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3427953750886361021, guid: f313b63a0edf2f043bf5bdff95dd6850, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 083201fb4c5ce1a4ba00c6e2891ffa8c, type: 3}
     - target: {fileID: 7923925016046988067, guid: f313b63a0edf2f043bf5bdff95dd6850, type: 3}
       propertyPath: m_Name
       value: Monumento ni Ho Chi Minh
@@ -81277,7 +81215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8438766223085731505, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: orthographic size
-      value: 7.5
+      value: 6.03125
       objectReference: {fileID: 0}
     - target: {fileID: 9032220251598996485, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: m_LocalPosition.x
