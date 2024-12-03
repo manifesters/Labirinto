@@ -3180,11 +3180,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!4 &426510209 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4622803642020550343, guid: 4ab29723b9df72a41ac90ea189d48ccb, type: 3}
-  m_PrefabInstance: {fileID: 976441407}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &439754167
 GameObject:
   m_ObjectHideFlags: 0
@@ -25896,11 +25891,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
---- !u!4 &1243354422 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4622803642020550343, guid: 4ab29723b9df72a41ac90ea189d48ccb, type: 3}
-  m_PrefabInstance: {fileID: 656297715}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1257144146
 GameObject:
   m_ObjectHideFlags: 0
@@ -27211,16 +27201,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1339071865}
-  - {fileID: 1243354422}
   - {fileID: 1314103290}
-  - {fileID: 189451085}
   - {fileID: 1919182226}
   - {fileID: 1080597387}
   - {fileID: 1381163488}
-  - {fileID: 426510209}
-  - {fileID: 1962465477}
-  - {fileID: 1630433498}
-  - {fileID: 1156702369}
   m_Father: {fileID: 505035798}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1485391075
@@ -28372,6 +28356,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 975960780, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
+    - target: {fileID: 5062020215411715852, guid: fc05df1bdff4b834b87ded96c90dd89d, type: 3}
+      propertyPath: mainCanvas
+      value: 
+      objectReference: {fileID: 1329843917}
     - target: {fileID: 5062020215411715852, guid: fc05df1bdff4b834b87ded96c90dd89d, type: 3}
       propertyPath: itemInfoForPoint
       value: 
@@ -29792,11 +29780,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 197754144475828523, guid: 4285420e2cdb1e7c0a4389c9229b9612, type: 3}
   m_PrefabInstance: {fileID: 1961089949}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1962465477 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4622803642020550343, guid: 4ab29723b9df72a41ac90ea189d48ccb, type: 3}
-  m_PrefabInstance: {fileID: 1131786575}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1963362946
 GameObject:
@@ -81252,8 +81235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8438766223085731505, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: orthographic size
-      value: 7.5
-      value: 7.5
+      value: 8.34375
       objectReference: {fileID: 0}
     - target: {fileID: 9032220251598996485, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: m_LocalPosition.x
