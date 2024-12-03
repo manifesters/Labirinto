@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using Challenge;
 using Helper;
+using Score;
 
 public class Result : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class Result : MonoBehaviour
         // Show the result panel
         starPanel.SetActive(true);
         okButton.SetActive(true);
+
+        PointManager.Instance.AddScore(score);
     }
 
     private void UpdateStars(int starCount)
