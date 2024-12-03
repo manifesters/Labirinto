@@ -2084,6 +2084,7 @@ Transform:
   - {fileID: 1410579978}
   - {fileID: 1503444989}
   - {fileID: 362593877}
+  - {fileID: 703744047}
   m_Father: {fileID: 1257144147}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &313528556
@@ -4487,11 +4488,11 @@ Transform:
   m_GameObject: {fileID: 595421605}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.32, y: 7.49, z: 0.03738957}
+  m_LocalPosition: {x: -6.27, y: 7.47, z: 0.07477914}
   m_LocalScale: {x: 0.92222, y: 0.92222, z: 0.92222}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 703744047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &612683769 stripped
 Transform:
@@ -5098,6 +5099,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7383885510748585869, guid: d1b948338fcd94a4bbf358dea9122284, type: 3}
   m_PrefabInstance: {fileID: 696626254}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &703744046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 703744047}
+  m_Layer: 0
+  m_Name: Kapre
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &703744047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703744046}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 595421606}
+  - {fileID: 1498747588}
+  m_Father: {fileID: 312118833}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &705606099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27298,11 +27332,11 @@ Transform:
   m_GameObject: {fileID: 1498747587}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.52, y: 7.5, z: 0.03738957}
+  m_LocalPosition: {x: -10.470001, y: 7.4800034, z: 0.07477914}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 703744047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1503387486
 PrefabInstance:
@@ -81235,7 +81269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8438766223085731505, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: orthographic size
-      value: 8.34375
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 9032220251598996485, guid: c1432ebc22d320ceaada569ef3191b70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -81514,5 +81548,3 @@ SceneRoots:
   - {fileID: 1703382358}
   - {fileID: 874487791}
   - {fileID: 2041668620}
-  - {fileID: 595421606}
-  - {fileID: 1498747588}
