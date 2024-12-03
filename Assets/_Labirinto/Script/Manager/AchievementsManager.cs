@@ -4,6 +4,7 @@ using Helper;
 using DataPersistence;
 using System.Linq;
 using static DataPersistence.PlayerData;
+using Panel;
 
 public class AchievementsManager : SingletonMonobehaviour<AchievementsManager>, IPlayerDataPersistence
 {

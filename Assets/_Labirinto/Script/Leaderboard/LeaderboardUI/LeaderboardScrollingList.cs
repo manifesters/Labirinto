@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using LootLocker.Requests;
 using Manager;
 using Medal;
+using Panel;
 using UnityEngine;
 
 public class LeaderboardScrollingList : MonoBehaviour
@@ -39,7 +40,7 @@ public class LeaderboardScrollingList : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Failed to fetch leaderboard data: " + response.errorData);
+                PanelManager.Instance.ShowPanel("Panel_NoInternetWindow", PanelShowBehaviour.HIDE_PREVIOUS);
             }
         });
     }

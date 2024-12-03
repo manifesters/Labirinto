@@ -4,8 +4,6 @@ using Challenge;
 using DataPersistence;
 using Helper;
 using Ink.Runtime;
-using LootLocker.Extension.DataTypes;
-using Panel;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

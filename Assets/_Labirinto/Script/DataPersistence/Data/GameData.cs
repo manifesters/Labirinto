@@ -35,7 +35,7 @@ namespace DataPersistence
         
         public GameData()
         {
-            playerPosition = new Vector2(-100, -30);
+            playerPosition = new Vector2(-3, -95);
             playerScore = 0;
             finishedQuest = 0;
             itemCollected = 0;
