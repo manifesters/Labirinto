@@ -3037,11 +3037,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 295053132571923212, guid: 91a1e1783573d3f468d40230a1c7ccf7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.9
+      value: 19.3
       objectReference: {fileID: 0}
     - target: {fileID: 295053132571923212, guid: 91a1e1783573d3f468d40230a1c7ccf7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -53.1
+      value: -74.6
       objectReference: {fileID: 0}
     - target: {fileID: 295053132571923212, guid: 91a1e1783573d3f468d40230a1c7ccf7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3677,11 +3677,11 @@ PrefabInstance:
       objectReference: {fileID: -1646409101, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
     - target: {fileID: 7241003400449136097, guid: 515df7cb03a74964986a1560582cb062, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.3
+      value: -32.44
       objectReference: {fileID: 0}
     - target: {fileID: 7241003400449136097, guid: 515df7cb03a74964986a1560582cb062, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -74.2
+      value: -51.61
       objectReference: {fileID: 0}
     - target: {fileID: 7241003400449136097, guid: 515df7cb03a74964986a1560582cb062, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16376,6 +16376,10 @@ PrefabInstance:
       propertyPath: mainCanvas
       value: 
       objectReference: {fileID: 5099717212125272412}
+    - target: {fileID: 4308978323249930348, guid: 70b838f83d1db2a4e8dfef0b0dc84deb, type: 3}
+      propertyPath: itemInfoForPoint
+      value: 
+      objectReference: {fileID: 11400000, guid: 7af7fa03044b64d469ea6c446a564c6f, type: 2}
     - target: {fileID: 5104631821462894222, guid: 70b838f83d1db2a4e8dfef0b0dc84deb, type: 3}
       propertyPath: m_Name
       value: Mapa ng ASEAN Member
@@ -36084,11 +36088,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4622803642020550343, guid: 4ab29723b9df72a41ac90ea189d48ccb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.34398
+      value: 34.52
       objectReference: {fileID: 0}
     - target: {fileID: 4622803642020550343, guid: 4ab29723b9df72a41ac90ea189d48ccb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9139013
+      value: -8.58
       objectReference: {fileID: 0}
     - target: {fileID: 4622803642020550343, guid: 4ab29723b9df72a41ac90ea189d48ccb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37258,6 +37262,10 @@ PrefabInstance:
       propertyPath: mainCanvas
       value: 
       objectReference: {fileID: 5099717212125272412}
+    - target: {fileID: 5624268697223047142, guid: e494cbf297f3a684d94d39c5fc9f8ad7, type: 3}
+      propertyPath: itemInfoForPoint
+      value: 
+      objectReference: {fileID: 11400000, guid: 502e5852ea5e4b34981e992e03b274ce, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38779,11 +38787,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1553553931065889084, guid: 241ae55272c7e3d439182eb049a4c180, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.29
+      value: 70.72
       objectReference: {fileID: 0}
     - target: {fileID: 1553553931065889084, guid: 241ae55272c7e3d439182eb049a4c180, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -68.38
+      value: -48.66
       objectReference: {fileID: 0}
     - target: {fileID: 1553553931065889084, guid: 241ae55272c7e3d439182eb049a4c180, type: 3}
       propertyPath: m_LocalPosition.z
@@ -38821,6 +38829,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -574924510, guid: 97b9ed8d422771b41ab2d8de0ff4090d, type: 3}
+    - target: {fileID: 8767970323707984246, guid: 241ae55272c7e3d439182eb049a4c180, type: 3}
+      propertyPath: mainCanvas
+      value: 
+      objectReference: {fileID: 5099717212125272412}
     - target: {fileID: 8767970323707984246, guid: 241ae55272c7e3d439182eb049a4c180, type: 3}
       propertyPath: itemInfoForPoint
       value: 
@@ -84674,11 +84686,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2530884239578271739, guid: 807119ff02454b54ab89f3362dd13a0e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -110.44
+      value: -31.27
       objectReference: {fileID: 0}
     - target: {fileID: 2530884239578271739, guid: 807119ff02454b54ab89f3362dd13a0e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.48
+      value: -58.97
       objectReference: {fileID: 0}
     - target: {fileID: 2530884239578271739, guid: 807119ff02454b54ab89f3362dd13a0e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -84794,7 +84806,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.921875
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
