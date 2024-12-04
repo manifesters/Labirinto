@@ -43,7 +43,7 @@ namespace MainMenu
             else if (saveSlot.hasData) 
             {
                 confirmationPopupMenu.ActivateMenu(
-                    "Starting a New Game with this slot will override the currently saved data. Are you sure?",
+                    "Mabubura ang kasalukuyang naka-save na data. Sigurado ka?",
                     // function to execute if we select 'yes'
                     () => {
                         AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);
@@ -107,7 +107,7 @@ namespace MainMenu
             DisableMenuButtons();
 
             confirmationPopupMenu.ActivateMenu(
-                "Are you sure you want to delete this saved data?",
+                "Sigurado ka bang nais mong burahin?",
                 // function to execute if we select 'yes'
                 () => {
                     AudioManager.Instance.PlaySFX(AudioManager.Instance.button_click);

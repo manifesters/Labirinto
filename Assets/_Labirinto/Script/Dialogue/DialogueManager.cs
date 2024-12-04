@@ -257,7 +257,7 @@ namespace Dialogue
             {
                 case "START_CHALLENGE_QUIZ":
                     Debug.Log("Enter a challenge");
-                    ChallengeManager.Instance.StartChallenge("Panel_QuizWindow");
+                    ChallengeManager.Instance.StartChallenge("Panel_QuizWindow1");
                     break;
                 case "START_CHALLENGE_MATCHIMAGE":
                     Debug.Log("Enter a challenge");
@@ -265,7 +265,7 @@ namespace Dialogue
                     break;
                 case "START_CHALLENGE_MATCHWORD":
                     Debug.Log("Enter a challenge");
-                    ChallengeManager.Instance.StartChallenge("Panel_MatchWordWindow");
+                    ChallengeManager.Instance.StartChallenge("Panel_MatchWordWindow1");
                     break;
                 case "START_CHALLENGE_PICTURE":
                     Debug.Log("Enter a challenge");

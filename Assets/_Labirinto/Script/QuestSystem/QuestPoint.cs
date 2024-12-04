@@ -120,8 +120,12 @@ public class QuestPoint : MonoBehaviour
             {
                 buttonRectTransform.SetParent(panel.transform, false);
 
-                // Optionally adjust the button's position within the panel
-                buttonRectTransform.anchoredPosition = new Vector2(300, -70);
+                // Reset local scale to prevent unintended shrinking or enlarging
+                buttonRectTransform.localScale = Vector3.one;
+
+                // Optionally adjust the button's position and size within the panel
+                buttonRectTransform.anchoredPosition = new Vector2(610, -235);
+                buttonRectTransform.sizeDelta = new Vector2(200, 50);
             }
 
             interactButton.gameObject.SetActive(true);

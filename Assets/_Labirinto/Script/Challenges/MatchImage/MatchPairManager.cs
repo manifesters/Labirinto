@@ -98,7 +98,7 @@ namespace MatchPairGame
                     slot.name = pair.pair;
 
                     // Assign the image for the slot
-                    Transform imageTransform = slot.transform.Find("Slot_Image");
+                    Transform imageTransform = slot.transform.Find("ImagePair");
                     if (imageTransform != null)
                     {
                         Image slotImage = imageTransform.GetComponent<Image>();
