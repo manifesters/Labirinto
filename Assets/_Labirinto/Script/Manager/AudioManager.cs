@@ -10,6 +10,7 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
     [Header("BGM Clips")]
     [SerializeField] public AudioClip bgm_splash;
     [SerializeField] public AudioClip bgm_home;
+    [SerializeField] public AudioClip bgm_starting_story;
     [SerializeField] public AudioClip bgm_labirinto;
 
     [Header("SFX Clips")]
@@ -75,6 +76,20 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
             musicSource.clip = bgm_home;
             musicSource.Play();
             Debug.Log($"Playing BGM: {bgm_home.name}");
+        }
+        else
+        {
+            Debug.LogWarning("BGM clip is null.");
+        }
+    }
+
+    public void PLAY_STORYMODE()
+    {
+        if (bgm_labirinto != null)
+        {
+            musicSource.clip = bgm_starting_story;
+            musicSource.Play();
+            Debug.Log($"Playing BGM: {bgm_starting_story.name}");
         }
         else
         {

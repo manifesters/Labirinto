@@ -68,7 +68,7 @@ namespace Helper
                     AudioManager.Instance.PLAY_HOME_BGM();
                     break;
                 case GameState.STORYMODE:
-                    AudioManager.Instance.PLAY_HOME_BGM();
+                    AudioManager.Instance.PLAY_STORYMODE();
                     break;
                 case GameState.LABIRINTO:
                     AudioManager.Instance.PLAY_LABIRINTO_BGM();
