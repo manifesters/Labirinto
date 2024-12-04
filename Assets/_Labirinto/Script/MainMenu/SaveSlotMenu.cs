@@ -82,7 +82,9 @@ namespace MainMenu
                         // Proceed with game logic using inputText
                         DataPersistenceManager.Instance.ChangeSelectedProfileId(saveSlot.GetProfileId());
                         DataPersistenceManager.Instance.NewGame(inputText);
-                        SaveGameAndLoadScene();
+                        DataPersistenceManager.Instance.SaveGame();
+                        GameManager.Instance.LoadScene("StartStory", GameState.STORYMODE);
+                        //SaveGameAndLoadScene();
                     },
                     // function to execute if we select 'cancel'
                     () => {

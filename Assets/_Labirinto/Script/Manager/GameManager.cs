@@ -10,6 +10,7 @@ namespace Helper
         SPLASH,
         AUTHENTICATION,
         HOME,
+        STORYMODE,
         LABIRINTO,
     }
 
@@ -64,6 +65,9 @@ namespace Helper
                     // Handle authentication screen logic
                     break;
                 case GameState.HOME:
+                    AudioManager.Instance.PLAY_HOME_BGM();
+                    break;
+                case GameState.STORYMODE:
                     AudioManager.Instance.PLAY_HOME_BGM();
                     break;
                 case GameState.LABIRINTO:
