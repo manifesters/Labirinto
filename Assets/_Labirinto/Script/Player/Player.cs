@@ -48,10 +48,18 @@ namespace PlayerControl
             var targetPos = transform.position;
             targetPos.x += input.x;
             targetPos.y += input.y;
-
-			animator.SetFloat("Horizontal", input.x);
-			animator.SetFloat("Vertical", input.y);
-            animator.SetFloat("Speed", input.sqrMagnitude);
+            if(input.x != 0 || input.y != 0)
+            {
+				animator.SetFloat("X", input.x);
+				animator.SetFloat("Y", input.y);
+                animator.SetBool("isWalking", true);
+            }
+            else
+            {
+				animator.SetBool("isWalking", false);
+			}
+			
+     
 		}
         private void FixedUpdate()
         {
