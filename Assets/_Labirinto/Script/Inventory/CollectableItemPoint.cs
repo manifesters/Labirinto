@@ -12,7 +12,7 @@ public class CollectibleItemPoint : MonoBehaviour
 
     [Header("Collect Button")]
     [SerializeField] private Button collectButton;
-    [SerializeField] private Canvas mainCanvas;
+    [SerializeField] private GameObject panel;
 
     private bool playerIsNear = false;
     private RectTransform buttonRectTransform;
@@ -47,11 +47,7 @@ public class CollectibleItemPoint : MonoBehaviour
             playerIsNear = false;
             collectButton.gameObject.SetActive(false);
 
-            // Delay setting the parent to avoid Canvas deactivation issue
-            if (mainCanvas.isActiveAndEnabled) 
-            {
-                buttonRectTransform.SetParent(this.transform);
-            }
+            buttonRectTransform.SetParent(this.transform);
         }
     }
 
@@ -70,11 +66,16 @@ public class CollectibleItemPoint : MonoBehaviour
     {
         if (playerIsNear && collectable)
         {
-            // Only change the parent if the main canvas is active
-            if (mainCanvas.isActiveAndEnabled && collectButton.transform.parent != mainCanvas.transform)
+            if (collectButton.transform.parent != panel.transform)
             {
-                buttonRectTransform.SetParent(mainCanvas.transform, false);
-                buttonRectTransform.anchoredPosition = new Vector2(300, -70);
+                buttonRectTransform.SetParent(panel.transform, false);
+
+                // Reset local scale to prevent unintended shrinking or enlarging
+                buttonRectTransform.localScale = Vector3.one;
+
+                // Adjust the button's position and size within the panel
+                buttonRectTransform.anchoredPosition = new Vector2(610, -235);
+                buttonRectTransform.sizeDelta = new Vector2(200, 150);
             }
 
             collectButton.gameObject.SetActive(true);

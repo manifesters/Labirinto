@@ -289,8 +289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -199}
-  m_SizeDelta: {x: -973.855, y: -968.8347}
+  m_AnchoredPosition: {x: -26, y: -158}
+  m_SizeDelta: {x: -1233.9807, y: -730.8474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &830517506
 MonoBehaviour:
@@ -437,8 +437,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: -600, y: -500}
+  m_AnchoredPosition: {x: 0, y: 94}
+  m_SizeDelta: {x: -682.6163, y: -500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974545156
 MonoBehaviour:
@@ -752,6 +752,10 @@ PrefabInstance:
     - target: {fileID: 3655433294775264866, guid: 6e5166114ef9a461993090f47c0ea974, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507059180454434392, guid: 6e5166114ef9a461993090f47c0ea974, type: 3}
+      propertyPath: useEncryption
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

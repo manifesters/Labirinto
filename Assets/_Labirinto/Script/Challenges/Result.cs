@@ -63,9 +63,13 @@ public class Result : MonoBehaviour
         {
             return 2; // 2 stars for score 40-60
         }
+        else if (score == 0)
+        {
+            return 0; // 0 stars for a score of exactly 0
+        }
         else
         {
-            return 1; // 1 star for score 0-40
+            return 1; // 1 star for score 1-39
         }
     }
 }

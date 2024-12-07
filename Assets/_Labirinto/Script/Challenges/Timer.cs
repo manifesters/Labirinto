@@ -5,6 +5,8 @@ public class Timer : MonoBehaviour
     public GameObject timerBar;
     [SerializeField] private float timeRemaining = 60f;  // Initial time in seconds
 
+    public GameObject pausePanel;
+
     private bool isRunning = true;
 
     // Define a delegate and event for when the time ends
@@ -41,4 +43,17 @@ public class Timer : MonoBehaviour
     {
         return timeRemaining;
     }
+
+    public void ToggleTimer()
+    {
+        isRunning = !isRunning;
+        pausePanel.SetActive(true);
+    }
+
+    public void TimeContinue()
+    {
+        isRunning = !isRunning;
+        pausePanel.SetActive(false);
+    }
+
 }
