@@ -1,3 +1,4 @@
+using Challenge;
 using Dialogue;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,6 +24,7 @@ public class QuestPoint : MonoBehaviour
 
     private QuestIcon questIcon;
     private DialogueTrigger dialogueTrigger;
+    private ChallengeTrigger challengeTrigger;
 
     private RectTransform buttonRectTransform;
 
@@ -31,6 +33,7 @@ public class QuestPoint : MonoBehaviour
         questId = questInfoForPoint.id;
         questIcon = GetComponentInChildren<QuestIcon>();
         dialogueTrigger = GetComponentInChildren<DialogueTrigger>();
+        challengeTrigger = GetComponentInChildren<ChallengeTrigger>();
 
        // hide interact button
         interactButton.gameObject.SetActive(false);
@@ -70,8 +73,15 @@ public class QuestPoint : MonoBehaviour
         if (currentQuestState.Equals(QuestState.CAN_START) && startPoint)
         {
             GameEventsManager.Instance.questEvents.StartQuest(questId);
-            // Enter dialogue mode when starting the quest
-            dialogueTrigger.EnterDialogue();
+            if (questInfoForPoint.questType == "InteractWithNPC")
+            {
+                // Enter dialogue mode when starting the quest
+                dialogueTrigger.EnterDialogue();
+            }
+            else if (questInfoForPoint.questType == "Challenge")
+            {
+                challengeTrigger.EnterChallenge();
+            }
         }
         else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
         {

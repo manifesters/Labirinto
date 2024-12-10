@@ -7,14 +7,15 @@ using Score;
 public class Result : MonoBehaviour
 {
     [Header("Result Objects")]
-    [SerializeField] private GameObject successObject; // Object to show on success
-    [SerializeField] private GameObject failedObject; // Object to show on failure
+    [SerializeField] private GameObject successObject;
+    [SerializeField] private GameObject failedObject;
 
     [Header("Panel Elements")]
-    [SerializeField] private GameObject starPanel; // Panel containing star objects
-    [SerializeField] private GameObject[] stars; // Array of star GameObjects
-    [SerializeField] private TextMeshProUGUI scoreText; // Text to display the score
-    [SerializeField] private GameObject okButton; // OK button to close the panel
+    [SerializeField] private GameObject starPanel;
+    [SerializeField] private GameObject[] stars;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private GameObject okButton;
+    [SerializeField] private GameObject retryButton;
 
     public void SetResult(bool isSuccess, int score)
     {
@@ -29,13 +30,17 @@ public class Result : MonoBehaviour
         UpdateStars(starCount);
 
         // Update score text
-        scoreText.text = "Score: " + score;
+        scoreText.text = score.ToString();
 
         // Show the result panel
         starPanel.SetActive(true);
-        okButton.SetActive(true);
+        okButton.SetActive(isSuccess);
+        retryButton.SetActive(!isSuccess);
 
-        PointManager.Instance.AddScore(score);
+        if (isSuccess)
+        {
+            PointManager.Instance.AddScore(score);
+        }
     }
 
     private void UpdateStars(int starCount)
@@ -46,11 +51,17 @@ public class Result : MonoBehaviour
         }
     }
 
-    public void CloseResultPanel()
+    public void RetryButtonClick()
+    {
+        ChallengeManager.Instance.RetryChallenge();
+        Destroy(this.gameObject);
+    }
+
+    public void OKButtonClick()
     {
         GameEventsManager.Instance.challengeEvents.CompleteChallenge();
         ChallengeManager.Instance.ClearChallenge();
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 
     private int CalculateStars(int score)

@@ -54,7 +54,7 @@ public class QuestManager : SingletonMonobehaviour<QuestManager>, IDataPersisten
                 quest.InstantiateCurrentQuestStep(this.transform);
             }
 
-            if (quest.info.questType == "InteractWithNPC" && quest.state == QuestState.IN_PROGRESS)
+            if ((quest.info.questType == "InteractWithNPC" || quest.info.questType == "Challenge") && quest.state == QuestState.IN_PROGRESS)
             {
                 // Reset the quest state to CAN_START
                 quest.state = QuestState.CAN_START;

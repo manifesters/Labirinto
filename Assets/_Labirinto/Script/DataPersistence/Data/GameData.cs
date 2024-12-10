@@ -22,11 +22,11 @@ namespace DataPersistence
     public class GameData
     {
         public long lastUpdated;
-        public string playerSavedName;
+        public Vector2 playerPosition;
         public int playerScore;
+        public string playerSavedName;
         public int finishedQuest;
         public int itemCollected;
-        public Vector2 playerPosition;
 		public float audioVolume;
 
 		// Quest

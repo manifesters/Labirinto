@@ -16,19 +16,7 @@ namespace Challenge
     {
         public ChallengeState CurrentState { get; private set; }
         public TextAsset CurrentChallengeJson { get; private set; }
-
-        public void SetCurrentChallengeJson(TextAsset challengeJson)
-        {
-            if (challengeJson != null)
-            {
-                CurrentChallengeJson = challengeJson;
-                Debug.Log("Challenge JSON set successfully.");
-            }
-            else
-            {
-                Debug.LogError("Challenge JSON is null!");
-            }
-        }
+        public string CurrentChallengePanel { get; private set; }
 
         private void SetState(ChallengeState newState)
         {
@@ -64,9 +52,20 @@ namespace Challenge
         }
 
         // starting a challenge
-        public void StartChallenge(string challengePanel)
+        public void StartChallenge(TextAsset challengeJson, string challengePanel, Sprite challengeImage)
         {
-            if (CurrentState == ChallengeState.Inactive)
+            if (challengeJson != null && challengePanel != null)
+            {
+                CurrentChallengeJson = challengeJson;
+                CurrentChallengePanel = challengePanel;
+                Debug.Log("Challenge JSON set successfully.");
+            }
+            else
+            {
+                Debug.LogError("Challenge JSON is null!");
+            }
+
+            if (CurrentState == ChallengeState.Inactive || CurrentState == ChallengeState.Failed)
             {
                 SetState(ChallengeState.Ongoing);
                 Debug.Log("ChallengeManager: Challenge has started.");
@@ -100,8 +99,7 @@ namespace Challenge
                 else
                 {
                     Debug.Log($"Challenge failed with score: {score}");
-                    SetState(ChallengeState.Completed);
-                    SetState(ChallengeState.Inactive);
+                    SetState(ChallengeState.Failed);
                 }
 
                 // Get the Result component and pass the score
@@ -117,7 +115,7 @@ namespace Challenge
             }
             else
             {
-                Debug.LogWarning("ChallengeManager: No active challenge to complete.");
+                Debug.LogWarning("ChallengeManager: Challenge is not ongoing");
             }
         }
 
@@ -127,9 +125,7 @@ namespace Challenge
             {
                 Debug.Log("ChallengeManager: Retrying challenge...");
                 SetState(ChallengeState.Ongoing);
-                // Reset challenge-related data
-                ClearChallenge(); // Clear previous data if necessary
-                // Reload challenge logic or UI
+                ShowChallengePanel(CurrentChallengePanel, PanelShowBehaviour.KEEP_PREVIOUS);
             }
             else
             {

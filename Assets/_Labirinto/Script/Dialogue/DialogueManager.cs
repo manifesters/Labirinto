@@ -37,9 +37,6 @@ namespace Dialogue
         private Coroutine displayLineCoroutine;
         private DialogueVariables dialogueVariables;
 
-        // Quest
-        private QuestPoint questPoint;
-
         public override void Awake()
         {
             base.Awake();
@@ -140,10 +137,6 @@ namespace Dialogue
 
                 // Check for tags in the current line
                 List<string> tags = currentStory.currentTags;
-                foreach (string tag in tags)
-                {
-                    HandleTag(tag);
-                }
 
                 // Skip processing if the line is empty (e.g., just tags)
                 if (!string.IsNullOrEmpty(nextLine))
@@ -243,38 +236,6 @@ namespace Dialogue
             {
                 currentStory.ChooseChoiceIndex(choiceIndex);
                 ContinueStory();
-            }
-        }
-
-        public void SetQuestPoint(QuestPoint questPoint)
-        {
-            this.questPoint = questPoint;
-        }
-
-        private void HandleTag(string tag) 
-        {
-            switch (tag) 
-            {
-                case "START_CHALLENGE_QUIZ":
-                    Debug.Log("Enter a challenge");
-                    ChallengeManager.Instance.StartChallenge("Panel_QuizWindow");
-                    break;
-                case "START_CHALLENGE_MATCHIMAGE":
-                    Debug.Log("Enter a challenge");
-                    ChallengeManager.Instance.StartChallenge("Panel_MatchImageWindow");
-                    break;
-                case "START_CHALLENGE_MATCHWORD":
-                    Debug.Log("Enter a challenge");
-                    ChallengeManager.Instance.StartChallenge("Panel_MatchWordWindow");
-                    break;
-                case "START_CHALLENGE_PICTURE":
-                    Debug.Log("Enter a challenge");
-                    ChallengeManager.Instance.StartChallenge("Panel_GuessPictureWindow");
-                    break;
-                // Add more tags if necessary
-                default:
-                    Debug.Log("Unhandled tag: " + tag);
-                    break;
             }
         }
 
