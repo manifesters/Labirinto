@@ -90,6 +90,7 @@ namespace QuizChallenge
                     {
                         answerToggles[i].gameObject.SetActive(true);
                         answerToggles[i].GetComponentInChildren<Text>().text = currentQuestion.options[i];
+                        ResetTextColor(answerToggles[i]);
                     }
                     else
                     {
@@ -136,14 +137,22 @@ namespace QuizChallenge
             {
                 Debug.Log("Correct answer!");
                 score += scorePerQuestion;
+                HighlightText(answerToggles[selectedAnswerIndex], Color.green);
             }
             else
             {
                 Debug.Log("Wrong answer!");
+                HighlightText(answerToggles[selectedAnswerIndex], Color.red);
+                HighlightText(answerToggles[currentQuestion.correctAnswerIndex], Color.green);
             }
 
             currentQuestionIndex++;
 
+            Invoke(nameof(NextQuestion), 2f);
+        }
+
+        private void NextQuestion()
+        {
             if (currentQuestionIndex < questions.Count)
             {
                 ShowQuestion();
@@ -151,6 +160,24 @@ namespace QuizChallenge
             else
             {
                 EndQuiz();
+            }
+        }
+
+        private void HighlightText(Toggle toggle, Color color)
+        {
+            var textComponent = toggle.GetComponentInChildren<Text>();
+            if (textComponent != null)
+            {
+                textComponent.color = color;
+            }
+        }
+
+        private void ResetTextColor(Toggle toggle)
+        {
+            var textComponent = toggle.GetComponentInChildren<Text>();
+            if (textComponent != null)
+            {
+                textComponent.color = Color.black;
             }
         }
 
