@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f9aee06e2fd7df2cb4feea012d86e32, type: 3}
-  m_Name: TikbalangQuest
+  m_Name: 4WeekChallengeQuest
   m_EditorClassIdentifier: 
-  <id>k__BackingField: TikbalangQuest
-  questType: InteractWithNPC
-  displayName: Kausapin si Tikbalang
+  <id>k__BackingField: 4WeekChallengeQuest
+  questType: Challenge
+  displayName: Week 4 Challenge
   questPrerequisites:
-  - {fileID: 11400000, guid: abe6c8fe0e9be837087c254dfa3c519a, type: 2}
+  - {fileID: 11400000, guid: bdbd5e959ea91ca4e84c99d4c10a84c5, type: 2}
   questStepPrefabs:
-  - {fileID: 6356575162194951626, guid: 846ae3975adeca84698b2e69f3ada7b7, type: 3}
+  - {fileID: 5748567498503356422, guid: a03416e2854f7e57aa8db517430914fb, type: 3}
   pointReward: 100
