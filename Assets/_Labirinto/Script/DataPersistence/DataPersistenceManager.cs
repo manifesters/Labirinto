@@ -19,8 +19,8 @@ namespace DataPersistence
         [SerializeField] private string fileName;
         [SerializeField] private bool useEncryption;
 
-        [Header("Auto Saving Configuration")]
-        [SerializeField] private float autoSaveTimeSeconds = 60f;
+        //[Header("Auto Saving Configuration")]
+        //[SerializeField] private float autoSaveTimeSeconds = 60f;
 
         private GameData gameData;
         private PlayerData playerData;
@@ -85,7 +85,7 @@ namespace DataPersistence
             {
                 StopCoroutine(autoSaveCoroutine);
             }
-            autoSaveCoroutine = StartCoroutine(AutoSave());
+            //autoSaveCoroutine = StartCoroutine(AutoSave());
         }
 
         public void ChangeSelectedProfileId(string newProfileId) 
@@ -252,7 +252,7 @@ namespace DataPersistence
             return dataHandler.LoadAllProfiles();
         }
 
-        private IEnumerator AutoSave()
+        /* private IEnumerator AutoSave()
         {
             while (true) 
             {
@@ -261,6 +261,6 @@ namespace DataPersistence
                 SaveGame();
                 Debug.Log("Auto Saved Game");
             }
-        }
+        } */
     }   
 }

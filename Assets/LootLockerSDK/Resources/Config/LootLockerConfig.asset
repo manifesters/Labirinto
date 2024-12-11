@@ -9,24 +9,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 182cd195a28310e479cddf7ff82822f8, type: 3}
   m_Name: LootLockerConfig
-  m_EditorClassIdentifier: lootlocker.lootlockersdk.runtime:LootLocker:LootLockerConfig
-  apiKey: 
+  m_EditorClassIdentifier: 
+  apiKey: dev_2d3093a0c05f4bb08963d3d722733a26
   token: 
-  adminToken: 
+  adminToken: c938e91cc5a0e517d10efffd2be3a8c70b9c288e
   refreshToken: 
-  domainKey: 
+  domainKey: seb87cie
   gameID: 0
   game_version: 1.0.0.0
   sdk_version: 
   deviceID: defaultPlayerId
   playerULID: 
   url: https://api.lootlocker.com/v1
-  adminUrl: https://api.lootlocker.com/admin
-  playerUrl: https://api.lootlocker.com/player
-  userUrl: https://api.lootlocker.com/game
-  baseUrl: https://api.lootlocker.com
+  adminUrl: https://seb87cie.api.lootlocker.com/admin
+  playerUrl: https://seb87cie.api.lootlocker.com/player
+  userUrl: https://seb87cie.api.lootlocker.com/game
+  baseUrl: https://seb87cie.api.lootlocker.com
   clientSideRequestTimeOut: 180
-  currentDebugLevel: 0
+  currentDebugLevel: 3
   allowTokenRefresh: 1
