@@ -17,7 +17,8 @@ namespace MatchPairGame
         [SerializeField] private GameObject slotPrefab;
         [SerializeField] private Button submitButton;
         [SerializeField] private TextMeshProUGUI challengeName;
-        [SerializeField] private Timer gameTimer; // Reference to Timer
+        [SerializeField] private TextMeshProUGUI instructionDesc;
+        [SerializeField] private Timer gameTimer;
 
         private Dictionary<string, string> pairs = new Dictionary<string, string>();
         private int score = 0; // To track the score
@@ -61,6 +62,7 @@ namespace MatchPairGame
                 MatchData matchData = JsonConvert.DeserializeObject<MatchData>(jsonText);
 
                 challengeName.text = matchData.challengeName;
+                instructionDesc.text = matchData.instructionDesc;
 
                 // Shuffle pairs
                 var shuffledItem = matchData.pairs.OrderBy(pair => Random.value).ToList();
@@ -196,6 +198,7 @@ namespace MatchPairGame
     public class MatchData
     {
         public string challengeName;
+        public string instructionDesc;
         public List<Pair> pairs;
     }
 

@@ -1,8 +1,9 @@
 using UnityEngine;
 using TMPro;
 using Challenge;
-using Helper;
 using Score;
+using Helper;
+using DataPersistence;
 
 public class Result : MonoBehaviour
 {
@@ -16,6 +17,15 @@ public class Result : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private GameObject okButton;
     [SerializeField] private GameObject retryButton;
+    [SerializeField] private GameObject closeButton;
+
+     private void Awake()
+    {
+        if (closeButton != null)
+        {
+            closeButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(CloseButtonClick);
+        }
+    }
 
     public void SetResult(bool isSuccess, int score)
     {
@@ -29,7 +39,7 @@ public class Result : MonoBehaviour
         // Update the star display
         UpdateStars(starCount);
 
-        // Update score text
+        // Update score text// Reference to Timer
         scoreText.text = score.ToString();
 
         // Show the result panel
@@ -61,6 +71,13 @@ public class Result : MonoBehaviour
     {
         GameEventsManager.Instance.challengeEvents.CompleteChallenge();
         ChallengeManager.Instance.ClearChallenge();
+        Destroy(this.gameObject);
+    }
+
+    private void CloseButtonClick()
+    {
+        DataPersistenceManager.Instance.SaveGame();
+        GameManager.Instance.LoadScene("Labirinto", GameState.LABIRINTO);
         Destroy(this.gameObject);
     }
 

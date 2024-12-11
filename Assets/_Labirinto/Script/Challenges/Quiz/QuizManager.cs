@@ -16,7 +16,8 @@ namespace QuizChallenge
         [SerializeField] private List<Toggle> answerToggles;
         [SerializeField] private ToggleGroup answerToggleGroup;
         [SerializeField] private TextMeshProUGUI challengeName;
-        [SerializeField] private Timer gameTimer;  // Timer reference for timed quizzes
+        [SerializeField] private TextMeshProUGUI instructionDesc;
+        [SerializeField] private Timer gameTimer; 
 
         private List<Question> questions;
         private int currentQuestionIndex = 0;
@@ -61,6 +62,7 @@ namespace QuizChallenge
                 ChallengeData challengeData = JsonConvert.DeserializeObject<ChallengeData>(jsonText);
 
                 challengeName.text = challengeData.challengeName;
+                instructionDesc.text = challengeData.instructionDesc;
                 questions = challengeData.quiz.questions;
 
                 ShowQuestion();
@@ -174,6 +176,7 @@ namespace QuizChallenge
     public class ChallengeData
     {
         public string challengeName;
+        public string instructionDesc;
         public QuizData quiz;
     }
 
