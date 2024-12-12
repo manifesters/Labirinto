@@ -4,7 +4,6 @@
 * ["Handa na ako!"]
 "Ang Biodiversity ay tumutukoy sa pagkakaiba-iba ng mga anyo ng buhay na bumubuo sa ating kalikasan, habang ang Siltation naman ay ang pagdami ng banlik sa tubig na dala ng agos."
 
-Quest: Hanapin si Bakunawa
 -> DONE
 
     -> Tikbalang
