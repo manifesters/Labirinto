@@ -41,7 +41,7 @@ public class AchievementsBar : MonoBehaviour
     {
         if (this.claimButton != null)
         {
-            this.claimButtonText.text = "Trying";
+            this.claimButtonText.text = "Sinusubok";
             this.claimButton.interactable = false;
         }
     }
@@ -50,8 +50,9 @@ public class AchievementsBar : MonoBehaviour
     {
         if (this.claimButton != null)
         {
-            this.claimButtonText.text = "Claimed";
+            this.claimButtonText.text = "Nakuha";
             this.claimButton.interactable = false;
+            this.claimButtonText.color = Color.red;
         }
     }
 }
