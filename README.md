@@ -1,15 +1,58 @@
-# Labirinto 
+# 🎮 Labirinto: An Interactive Game-Based Learning for Araling Panlipunan 7
 
-Labirinto is a 2D mobile android game, that features Philippine historical events.
-This game is build in Unity alongside with lootlocker, and other third parties assets.
+**Labirinto** is our **Capstone Project**, developed as an educational mobile game aimed at helping Grade 7 students learn Araling Panlipunan through interactive storytelling and gameplay.
 
-Link of Labitinto apk 
-https://drive.google.com/file/d/17xA5aaI9zCZuDVJ3vK2VMhFDE5XXfwiK/view?usp=drive_link
+🔗 **Game APK:** [Labirinto](https://drive.google.com/file/d/17xA5aaI9zCZuDVJ3vK2VMhFDE5XXfwiK/view?usp=drive_link)
 
-## Labirinto in game sample images
+---
 
-![Intro](https://github.com/user-attachments/assets/c59861a1-aab4-4d87-bf21-cd85fc38d9b9)
-![Home](https://github.com/user-attachments/assets/71ad8861-5e66-4b0e-80c7-5e24cbcc60cb)
-![Gameplay](https://github.com/user-attachments/assets/bbcbdd1b-299a-48cd-b8a3-9894866dfffb)
-![Achievements](https://github.com/user-attachments/assets/c1db2b6c-ac07-4028-af23-1919674483db)
-![Gameplay 2](https://github.com/user-attachments/assets/c12f2bf3-329f-42a4-94e1-59fa1bf3c0ac)
+## 📸 Game Screenshots
+
+<p align="center">
+  <img src="screenshots/screenshot1.jpg" width="30%" />
+  <img src="screenshots/screenshot2.jpg" width="30%" />
+  <img src="screenshots/screenshot3.jpg" width="30%" />
+</p>
+<p align="center">
+  <img src="screenshots/screenshot4.jpg" width="30%" />
+  <img src="screenshots/screenshot5.jpg" width="30%" />
+  <img src="screenshots/screenshot6.jpg" width="30%" />
+</p>
+<p align="center">
+  <img src="screenshots/screenshot7.jpg" width="30%" />
+  <img src="screenshots/screenshot8.jpg" width="30%" />
+  <img src="screenshots/screenshot9.jpg" width="30%" />
+</p>
+
+---
+
+## 🎯 Making Learning Engaging Through Game-Based Education
+
+Labirinto: An Interactive Game-Based Learning Tool for Araling Panlipunan 7 is an innovative top-down 2D RPG adventure mobile game developed as a supplementary educational tool to enhance student engagement and comprehension in Araling Panlipunan. Designed for Grade 7 students and aligned with the MATATAG Curriculum, the game addresses common challenges in traditional teaching methods, such as a lack of interest and difficulties in understanding historical concepts.
+
+---
+
+## 🧩 Game Features
+
+- 🗨️ Interactive dialogues  
+- 📖 Story-driven quests  
+- 🗺️ Large explorable map  
+- 🌀 Maze challenges  
+- 🏆 Achievements  
+- 📊 Leaderboard  
+
+---
+
+## 📦 Tech Stack
+
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=unity,cs,xd" height="60" />
+  </a>
+</p>
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
